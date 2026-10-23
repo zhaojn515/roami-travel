@@ -1,0 +1,7 @@
+name = "roami-travel"
+compatibility_date = "2026-01-01"
+account_id = "15f4a06f286e9bf0d62bb7baa4bc04f5"
+
+[vars]
+AIRTABLE_BASE_ID = "appIi3brfNWMHmz2u"
+AIRTABLE_PAT = "patZV4V2r6T0b2e4a.9f8e7d6c5b4a3e2d1c0b9a8e7d6c5b4a3e2d1c0b9a8e7d6c5b4a3e2d1c0b9a8e7"
