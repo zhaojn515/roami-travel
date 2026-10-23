@@ -53,19 +53,8 @@ Questions? <a href="mailto:hello@roamitravel.com">hello@roamitravel.com</a>
 </div>
 
 <script>
-// 自动触发下载（如果从 starter-kit 页面跳转过来）
-if (document.referrer.includes('/starter-kit')) {
-  const link = document.createElement('a');
-  link.href = '/downloads/starter-kit.pdf';
-  link.download = 'Roami-China-Starter-Kit.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-// 手动下载按钮也触发下载
+// 手动下载按钮记录转化事件
 document.getElementById('manualDownload').addEventListener('click', function(e) {
-  // 记录转化事件
   if (typeof gtag === 'function') {
     gtag('event', 'conversion', {
       'send_to': 'AW-18518352623/REPLACE_WITH_CONVERSION_LABEL',
