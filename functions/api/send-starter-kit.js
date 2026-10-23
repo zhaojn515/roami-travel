@@ -31,7 +31,7 @@ export async function onRequest(context) {
           {
             fields: {
               Email: email,
-              Status: 'Active',
+              Status: 'New',
               Source: 'Website',
               'Created At': new Date().toISOString().split('T')[0]
             }
