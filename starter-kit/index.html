@@ -109,23 +109,13 @@ document.getElementById('starterKitForm').addEventListener('submit', async (e) =
     if (response.ok) {
       const result = await response.json();
       
-      // 触发下载
+      // 触发 PDF 下载
       const link = document.createElement('a');
-      link.href = result.downloadUrl;
+      link.href = '/downloads/starter-kit.pdf';
       link.download = 'Roami-China-Starter-Kit.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      
-      // 显示成功消息
-      document.querySelector('.icon').textContent = '✓';
-      document.querySelector('h1').textContent = 'Download Started!';
-      document.querySelector('.subtitle').innerHTML = `
-        Your China Travel Starter Kit is downloading now.<br>
-        <span style="color: var(--teal); font-weight: 600;">Check your downloads folder.</span>
-      `;
-      document.querySelector('.benefits').style.display = 'none';
-      document.querySelector('.form').style.display = 'none';
       
       // 发送转化事件到 Google Ads
       if (typeof gtag === 'function') {
@@ -135,6 +125,9 @@ document.getElementById('starterKitForm').addEventListener('submit', async (e) =
           'currency': 'CNY'
         });
       }
+      
+      // 跳转到 thank-you 页面
+      window.location.href = result.redirectUrl || '/thank-you/?product=starter-kit';
     } else {
       const error = await response.json();
       console.error('API error:', error);

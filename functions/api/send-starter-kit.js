@@ -31,8 +31,9 @@ export async function onRequest(context) {
           {
             fields: {
               Email: email,
-              Date: new Date().toISOString(),
-              Source: 'website'
+              Status: 'Active',
+              Source: 'Website',
+              'Created At': new Date().toISOString().split('T')[0]
             }
           }
         ]
@@ -45,10 +46,42 @@ export async function onRequest(context) {
       // 即使保存失败，也允许下载
     }
 
-    // 返回下载 URL
+    // 发送邮件通知到 hello@roamitravel.com
+    if (env.RESEND_API_KEY) {
+      try {
+        const now = new Date();
+        const dateStr = now.toISOString();
+        
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            from: 'Roami Travel <noreply@roamitravel.com>',
+            to: 'hello@roamitravel.com',
+            subject: `🎉 New Starter Kit Download - ${email}`,
+            html: `
+              <h2>New Starter Kit Download</h2>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Date:</strong> ${dateStr}</p>
+              <p><strong>Product:</strong> China Travel Starter Kit (Free)</p>
+              <hr>
+              <p style="color: #666; font-size: 14px;">This is an automated notification from Roami Travel website.</p>
+            `
+          })
+        });
+      } catch (emailError) {
+        console.error('Email notification failed:', emailError);
+        // 邮件失败不影响下载
+      }
+    }
+
+    // 返回成功状态和重定向 URL
     return new Response(JSON.stringify({ 
       success: true,
-      downloadUrl: '/downloads/starter-kit.pdf'
+      redirectUrl: '/thank-you/?product=starter-kit'
     }), {
       headers: { 'Content-Type': 'application/json' }
     });
