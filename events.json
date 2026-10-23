@@ -1,0 +1,27 @@
+{
+  "updated": "2026-10-15",
+  "events": [
+    {
+      "slug": "apec-2026-shenzhen",
+      "title": "APEC 2026 Shenzhen",
+      "badge": "Summit",
+      "category": "summit",
+      "impact_type": "disruption",
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-19",
+      "publish_from": "2026-10-14",
+      "remove_from_home": "2026-11-21",
+      "location": "Shenzhen International Exchange Center, Futian District",
+      "date_display": "18–19 November 2026 · Futian District",
+      "one_liner": "APEC 2026 takes place in Shenzhen on 18–19 November. Expect enhanced security at metro stations, temporary traffic controls near venues, and boosted public transit with 50% off fares during the summit.",
+      "cta_text": "Read the travel guide →",
+      "landing_url": "/events/apec-2026-shenzhen/",
+      "note": "Updated 15 Oct 2026 from official announcements",
+      "confidence": "high",
+      "sources": ["english.www.gov.cn", "apec.org", "Xinhua", "Shenzhen official"],
+      "last_verified": "2026-10-15",
+      "show_on_home": true,
+      "home_priority": 1
+    }
+  ]
+}

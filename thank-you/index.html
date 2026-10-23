@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Thank You — Roami Travel</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18518352623"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18518352623');
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#0f766e;--teal-dark:#0d6b63;--teal-glow:rgba(15,118,110,0.08);--gray-900:#1a1a1a;--gray-600:#666;--gray-400:#999;--border:#e5e7eb}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--gray-900);background:#f8f9fa;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.container{max-width:520px;width:100%;text-align:center;background:white;border-radius:16px;padding:48px 32px;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
+.icon{width:64px;height:64px;background:var(--teal-glow);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px}
+h1{font-size:24px;font-weight:700;margin-bottom:12px;color:var(--gray-900)}
+p{font-size:15px;color:var(--gray-600);line-height:1.6;margin-bottom:16px}
+.email{font-weight:600;color:var(--teal)}
+.cta{display:inline-block;margin-top:24px;padding:14px 32px;background:var(--teal);color:white;text-decoration:none;border-radius:10px;font-weight:600;font-size:15px;transition:background 0.2s}
+.cta:hover{background:var(--teal-dark);text-decoration:none}
+.footer{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--gray-400)}
+.footer a{color:var(--teal);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="icon" id="thankYouIcon">✓</div>
+<h1 id="thankYouTitle">Thank you!</h1>
+<p id="thankYouMessage1"></p>
+<p id="thankYouMessage2" style="font-size:13px;">If you don't see it in a few minutes, check your spam folder or contact <span class="email">hello@roamitravel.com</span></p>
+<a id="thankYouCta" class="cta" href="#"></a>
+<div class="footer">
+Need help? <a href="mailto:hello@roamitravel.com">hello@roamitravel.com</a><br>
+<a href="https://roamitravel.com">roamitravel.com</a>
+</div>
+</div>
+
+<script>
+// 从 URL 参数获取产品类型
+const urlParams = new URLSearchParams(window.location.search);
+const product = urlParams.get('product');
+
+// 产品配置
+const products = {
+  'starter-kit': {
+    icon: '📦',
+    title: 'Starter Kit is on its way!',
+    message1: 'Check your email — we\'ve sent you the China Travel Starter Kit. It should arrive within 12 hours.',
+    ctaText: 'Explore Our Paid Guides',
+    ctaLink: 'https://roamitravel.com'
+  },
+  'playbook': {
+    icon: '✓',
+    title: 'Thank you for your purchase!',
+    message1: 'Your Playbook is on its way. Check your email — we\'ve sent you a download link and your access code.',
+    ctaText: 'Open Playbook',
+    ctaLink: 'https://playbook.roamitravel.com'
+  },
+  'itinerary': {
+    icon: '🗺️',
+    title: 'Thank you for your order!',
+    message1: 'Your personalized itinerary will be ready within 24 hours. We\'ll email you the link as soon as it\'s ready.',
+    ctaText: 'Back to Home',
+    ctaLink: 'https://roamitravel.com'
+  },
+  'concierge': {
+    icon: '💬',
+    title: 'Thank you for choosing our Companion service!',
+    message1: 'We\'ll contact you within 24 hours to schedule your onboarding call and set up your WeChat concierge.',
+    ctaText: 'Back to Home',
+    ctaLink: 'https://roamitravel.com'
+  }
+};
+
+// 获取产品配置，默认为 starter-kit
+const config = products[product] || products['starter-kit'];
+
+// 更新页面内容
+document.getElementById('thankYouIcon').textContent = config.icon;
+document.getElementById('thankYouTitle').textContent = config.title;
+document.getElementById('thankYouMessage1').textContent = config.message1;
+document.getElementById('thankYouCta').textContent = config.ctaText;
+document.getElementById('thankYouCta').href = config.ctaLink;
+</script>
+</body>
+</html>

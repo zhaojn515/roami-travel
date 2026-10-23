@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B7A6B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- noindex: 客户私有页面，禁止搜索引擎收录 -->
+<meta name="robots" content="noindex, nofollow">
+<title>Roami — Shenzhen Tech Safari</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --roami-teal: #0B7A6B;
+  --roami-teal-dark: #096156;
+  --roami-teal-light: #E8F5F2;
+  --roami-coral: #FF6B5B;
+  --roami-amber: #F5A623;
+  --roami-navy: #1A2B3C;
+  --bg: #F7F8FA;
+  --surface: #FFFFFF;
+  --border: #E5E7EB;
+  --text-primary: #1A2B3C;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+  --text-on-teal: #FFFFFF;
+  --score-excellent: #10B981;
+  --score-good: #F5A623;
+  --score-challenging: #F97316;
+  --score-difficult: #EF4444;
+  --timeline-line: #D1D5DB;
+  --timeline-dot: var(--roami-teal);
+  --max-width: 480px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+}
+html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg); color: var(--text-primary); line-height: 1.5;
+  min-height: 100vh; min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom, 0); overflow-x: hidden;
+}
+.app { max-width: var(--max-width); margin: 0 auto; position: relative; }
+/* Header */
+.header {
+  background: var(--roami-teal); color: var(--text-on-teal);
+  padding: 16px 20px; padding-top: calc(16px + env(safe-area-inset-top, 0));
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 8px rgba(11, 122, 107, 0.3);
+}
+.header-top { display: flex; align-items: center; justify-content: space-between; }
+.logo { font-weight: 700; font-size: 20px; letter-spacing: -0.5px; display: flex; align-items: center; gap: 6px; }
+.logo-icon { width: 28px; height: 28px; }
+.header-actions { display: flex; gap: 12px; }
+.header-btn {
+  background: rgba(255,255,255,0.15); border: none; color: white;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s;
+}
+.header-btn:hover { background: rgba(255,255,255,0.25); }
+.weather-bar {
+  display: flex; align-items: center; gap: 8px; margin-top: 12px;
+  padding: 8px 12px; background: rgba(255,255,255,0.12); border-radius: var(--radius-sm); font-size: 13px;
+}
+.weather-icon { font-size: 20px; }
+.weather-temp { font-weight: 600; }
+.weather-desc { opacity: 0.9; }
+.weather-sep { opacity: 0.4; margin: 0 2px; }
+/* Day Tabs */
+.day-tabs {
+  display: flex; background: var(--surface); border-bottom: 1px solid var(--border);
+  overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.day-tabs::-webkit-scrollbar { display: none; }
+.day-tab {
+  flex: 1; min-width: 0; padding: 14px 16px; text-align: center;
+  border: none; background: none; font-family: inherit; font-size: 13px; font-weight: 500;
+  color: var(--text-secondary); cursor: pointer; position: relative; transition: color 0.2s; white-space: nowrap;
+}
+.day-tab.active { color: var(--roami-teal); font-weight: 600; }
+.day-tab.active::after {
+  content: ''; position: absolute; bottom: 0; left: 20%; right: 20%;
+  height: 3px; background: var(--roami-teal); border-radius: 3px 3px 0 0;
+}
+.day-tab-label { display: block; font-size: 11px; color: var(--text-tertiary); margin-top: 2px; font-weight: 400; }
+.day-tab.active .day-tab-label { color: var(--roami-teal); opacity: 0.8; }
+/* Timeline */
+.timeline { padding: 20px 20px 40px; }
+.timeline-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.timeline-title { font-size: 18px; font-weight: 700; }
+.timeline-stops { font-size: 13px; color: var(--text-secondary); background: var(--roami-teal-light); padding: 4px 10px; border-radius: 12px; font-weight: 500; }
+.timeline-item { position: relative; padding-left: 36px; padding-bottom: 28px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: ''; position: absolute; left: 11px; top: 28px; bottom: 0; width: 2px; background: var(--timeline-line);
+}
+.timeline-item:last-child::before { display: none; }
+.timeline-dot {
+  position: absolute; left: 4px; top: 8px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--timeline-dot); border: 3px solid var(--roami-teal-light); z-index: 1;
+}
+.timeline-dot.past { background: var(--text-tertiary); border-color: #F3F4F6; }
+.timeline-dot.current { background: var(--roami-teal); border-color: var(--roami-teal-light); box-shadow: 0 0 0 4px rgba(11, 122, 107, 0.2); }
+.timeline-time { font-size: 12px; font-weight: 600; color: var(--roami-teal); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 6px; }
+.timeline-time.past { color: var(--text-tertiary); }
+/* POI Card */
+.poi-card { background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border); transition: box-shadow 0.2s; }
+.poi-card:hover { box-shadow: var(--shadow-md); }
+.poi-card.completed { opacity: 0.7; }
+.poi-photo-badge { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.6); color: white; font-size: 11px; padding: 3px 8px; border-radius: 12px; backdrop-filter: blur(4px); }
+.poi-ffs-badge { position: absolute; top: 10px; left: 10px; padding: 4px 8px; border-radius: 12px; font-size: 11px; font-weight: 700; color: white; backdrop-filter: blur(4px); }
+.poi-ffs-badge.excellent { background: var(--score-excellent); }
+.poi-ffs-badge.good { background: var(--score-good); }
+.poi-ffs-badge.challenging { background: var(--score-challenging); }
+.poi-ffs-badge.difficult { background: var(--score-difficult); }
+.poi-body { padding: 14px 16px; }
+.poi-name-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.poi-name-en { font-size: 16px; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
+.poi-name-zh { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; }
+.poi-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; }
+.poi-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 12px; font-size: 12px; color: var(--text-secondary); }
+.poi-meta-item { display: flex; align-items: center; gap: 4px; }
+.poi-meta-item svg { width: 14px; height: 14px; opacity: 0.6; }
+.poi-address { display: flex; align-items: flex-start; gap: 8px; padding: 10px 12px; background: #F9FAFB; border-radius: var(--radius-sm); margin-bottom: 12px; }
+.poi-address-text { flex: 1; font-size: 13px; line-height: 1.5; }
+.poi-address-zh { font-weight: 500; color: var(--text-primary); display: block; }
+.poi-address-en { color: var(--text-secondary); font-size: 12px; display: block; margin-top: 2px; }
+.poi-copy-btn { flex-shrink: 0; background: var(--roami-teal); color: white; border: none; padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: background 0.2s; }
+.poi-copy-btn:hover { background: var(--roami-teal-dark); }
+.poi-copy-btn svg { width: 12px; height: 12px; }
+.poi-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.poi-action-btn {
+  flex: 1; min-width: 0; padding: 10px 8px; border-radius: var(--radius-sm); border: 1px solid var(--border);
+  background: var(--surface); font-family: inherit; font-size: 11px; font-weight: 600; color: var(--text-primary);
+  cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; text-decoration: none; transition: all 0.2s;
+}
+.poi-action-btn:hover { border-color: var(--roami-teal); color: var(--roami-teal); background: var(--roami-teal-light); }
+.poi-action-btn svg { width: 14px; height: 14px; }
+.poi-action-btn.primary { background: var(--roami-teal); color: white; border-color: var(--roami-teal); }
+.poi-action-btn.primary:hover { background: var(--roami-teal-dark); color: white; }
+.poi-highlight { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; background: #FEF3C7; color: #92400E; border-radius: 12px; font-size: 11px; font-weight: 500; margin-bottom: 10px; }
+.poi-order-tip { display: flex; align-items: flex-start; gap: 6px; padding: 8px 12px; background: #FFF7ED; border-radius: var(--radius-sm); margin-bottom: 12px; font-size: 12px; color: #9A3412; line-height: 1.4; }
+.poi-order-tip-icon { flex-shrink: 0; }
+.poi-payment { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.payment-badge { display: inline-flex; align-items: center; gap: 3px; padding: 2px 7px; border-radius: 4px; font-size: 10px; font-weight: 600; }
+.payment-badge.supported { background: #D1FAE5; color: #065F46; }
+.payment-badge.unsupported { background: #FEE2E2; color: #991B1B; }
+/* Emergency */
+.emergency-bar { margin: 0 20px 20px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; }
+.emergency-toggle { width: 100%; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; background: none; border: none; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--roami-coral); cursor: pointer; }
+.emergency-toggle-left { display: flex; align-items: center; gap: 8px; }
+.emergency-toggle svg { width: 18px; height: 18px; }
+.emergency-toggle-arrow { transition: transform 0.3s; }
+.emergency-bar.open .emergency-toggle-arrow { transform: rotate(180deg); }
+.emergency-content { display: none; padding: 0 16px 16px; }
+.emergency-bar.open .emergency-content { display: block; }
+.emergency-section { margin-bottom: 16px; }
+.emergency-section:last-child { margin-bottom: 0; }
+.emergency-section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-bottom: 8px; }
+.concierge-qr { display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--roami-teal-light); border-radius: var(--radius-sm); }
+.qr-placeholder { width: 80px; height: 80px; background: white; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 2px dashed var(--roami-teal); flex-shrink: 0; }
+.qr-placeholder svg { width: 32px; height: 32px; color: var(--roami-teal); opacity: 0.5; }
+.qr-info { font-size: 13px; line-height: 1.5; }
+.qr-info strong { display: block; color: var(--roami-teal-dark); margin-bottom: 2px; }
+.qr-info span { color: var(--text-secondary); font-size: 12px; }
+.emergency-phones { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.emergency-phone { display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #FEF2F2; border-radius: var(--radius-sm); text-decoration: none; color: var(--text-primary); font-size: 13px; transition: background 0.2s; }
+.emergency-phone:hover { background: #FEE2E2; }
+.emergency-phone-icon { width: 28px; height: 28px; background: var(--roami-coral); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; }
+.emergency-phone-icon svg { width: 14px; height: 14px; }
+.emergency-phone-label { font-size: 11px; color: var(--text-secondary); display: block; }
+.emergency-phone-number { font-weight: 600; font-size: 14px; }
+.phrases-grid { display: grid; grid-template-columns: 1fr; gap: 6px; }
+.phrase-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: #F9FAFB; border-radius: var(--radius-sm); cursor: pointer; transition: background 0.2s; border: none; width: 100%; font-family: inherit; text-align: left; }
+.phrase-item:hover { background: #F3F4F6; }
+.phrase-item:active { background: #E5E7EB; }
+.phrase-text { flex: 1; }
+.phrase-zh { font-size: 14px; font-weight: 500; display: block; margin-bottom: 1px; }
+.phrase-pinyin { font-size: 11px; color: var(--text-secondary); display: block; }
+.phrase-en { font-size: 11px; color: var(--text-tertiary); display: block; }
+.phrase-copy-icon { flex-shrink: 0; width: 20px; height: 20px; color: var(--text-tertiary); }
+/* Driver Modal */
+.driver-modal { display: none; position: fixed; inset: 0; z-index: 1000; background: var(--surface); padding: 20px; padding-top: calc(20px + env(safe-area-inset-top, 0)); flex-direction: column; }
+.driver-modal.open { display: flex; }
+.driver-modal-close { align-self: flex-end; background: none; border: none; font-size: 24px; cursor: pointer; padding: 8px; color: var(--text-secondary); }
+.driver-modal-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.driver-modal-poi-name { font-size: 18px; font-weight: 600; margin-bottom: 16px; color: var(--text-secondary); }
+.driver-modal-address { font-size: 32px; font-weight: 700; line-height: 1.4; color: var(--text-primary); margin-bottom: 24px; padding: 24px; background: var(--bg); border-radius: var(--radius); width: 100%; }
+.driver-modal-hint { font-size: 14px; color: var(--text-secondary); }
+/* Toast */
+.toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--roami-navy); color: white; padding: 10px 20px; border-radius: 24px; font-size: 13px; font-weight: 500; opacity: 0; transition: all 0.3s ease; z-index: 2000; pointer-events: none; }
+.toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+/* Footer */
+.footer { padding: 20px; text-align: center; font-size: 12px; color: var(--text-tertiary); border-top: 1px solid var(--border); }
+.footer-brand { font-weight: 600; color: var(--roami-teal); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.offline-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; background: rgba(255,255,255,0.2); border-radius: 10px; font-size: 10px; color: rgba(255,255,255,0.9); margin-left: 8px; }
+.offline-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; }
+/* Phrase & DiDi Overlays */
+.overlay-fullscreen { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.95); flex-direction: column; align-items: center; justify-content: center; padding: 40px; cursor: pointer; }
+.overlay-fullscreen.open { display: flex; }
+.overlay-close-hint { position: absolute; top: 20px; right: 20px; color: rgba(255,255,255,0.5); font-size: 14px; }
+.overlay-chinese { font-size: 64px; font-weight: 700; color: white; text-align: center; line-height: 1.3; margin-bottom: 24px; }
+.overlay-pinyin { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+.overlay-english { font-size: 20px; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+.overlay-copy-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 12px 24px; border-radius: 8px; font-size: 14px; cursor: pointer; }
+.overlay-copy-btn:hover { background: rgba(255,255,255,0.2); }
+/* POI Image Container */
+.poi-img { height: 140px; background: linear-gradient(135deg, var(--roami-teal-light) 0%, #D1FAE5 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.poi-img svg { width: 100%; height: 100%; }
+.poi-img[data-img]::after { content: ''; position: absolute; inset: 0; background-size: cover; background-position: center; }
+@media (min-width: 481px) { body { padding: 20px; } .app { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); } }
+.day-content { display: none; }
+.day-content.active { display: block; }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-top">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="13" stroke="white" stroke-width="2"/>
+          <path d="M8 14 L14 8 L20 14 L14 20 Z" fill="white" opacity="0.9"/>
+          <circle cx="14" cy="14" r="3" fill="#0B7A6B"/>
+        </svg>
+        Roami
+        <span class="offline-badge">
+          <span class="offline-badge-dot"></span>
+          Offline Ready
+        </span>
+      </div>
+      <div class="header-actions">
+        <button class="header-btn" aria-label="Settings" onclick="showToast('Settings coming soon')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="weather-bar" id="weatherBar"></div>
+  </header>
+
+  <!-- Day Tabs -->
+  <nav class="day-tabs" id="dayTabs" role="tablist" aria-label="Trip days"></nav>
+
+  <!-- Day content (rendered by JS) -->
+  <div id="dayContentContainer"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><span class="footer-brand">Roami</span> · <span id="footerLocation"></span> Live Itinerary</p>
+    <p style="margin-top: 4px;">Made with ❤️ for travelers · Prepared for <span id="footerClient"></span></p>
+    <p style="margin-top: 4px;">Questions? Reply on WeChat</p>
+  </footer>
+</div>
+
+<!-- Driver Modal -->
+<div class="driver-modal" id="driverModal">
+  <button class="driver-modal-close" onclick="closeDriverModal()">✕</button>
+  <div class="driver-modal-content">
+    <div class="driver-modal-poi-name" id="driverModalName"></div>
+    <div class="driver-modal-address" id="driverModalAddress"></div>
+    <div class="driver-modal-hint">Show this screen to the driver</div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Phrase Large Display Overlay -->
+<div class="overlay-fullscreen" id="phraseOverlay" onclick="closePhraseOverlay()">
+  <span class="overlay-close-hint">Tap anywhere to close</span>
+  <div class="overlay-chinese" id="phraseOverlayZh"></div>
+  <div class="overlay-pinyin" id="phraseOverlayPinyin"></div>
+  <div class="overlay-english" id="phraseOverlayEn"></div>
+  <button class="overlay-copy-btn" id="phraseOverlayCopy" onclick="event.stopPropagation(); copyPhraseFromOverlay();">Copy</button>
+</div>
+
+<!-- DiDi Copy Overlay (Show address full-screen for taxi app) -->
+<div class="overlay-fullscreen" id="didiOverlay" onclick="closeDiDiOverlay()">
+  <span class="overlay-close-hint">Tap anywhere to close</span>
+  <div class="overlay-chinese" id="didiOverlayAddr" style="font-size:48px; max-width:90vw; word-break:break-all;"></div>
+  <div class="overlay-english" style="margin-top:16px;">Open DiDi app → paste destination</div>
+  <button class="overlay-copy-btn" id="didiOverlayCopy" onclick="event.stopPropagation(); copyFromDiDiOverlay();">Copy Address</button>
+</div>
+
+<!-- ========== ITINERARY DATA ========== -->
+<script type="application/json" id="itineraryData">
+{"client":{"name":"Alex Johnson","groupSize":2,"dates":{"start":"2026-09-18","end":"2026-09-20"},"nationality":"American"},"trip":{"title":"Shenzhen Tech Safari","location":"Shenzhen, China","weather":{"icon":"⛅","temp":"29°C","condition":"Partly cloudy, low rain"}},"days":[{"id":"day1","label":"Day 1","date":"2026-09-18","title":"Huaqiangbei Tech Safari","stops":[{"time":"10:00 AM","poi":{"nameEn":"SEG Electronics Market","nameZh":"赛格电子市场","description":"7 floors of gadgets, drones, components, and tech accessories. Shenzhen's most famous electronics building.","address":{"zh":"深圳市福田区华强北路赛格广场","en":"SEG Plaza, Huaqiangbei Rd, Futian"},"coordinates":{"lat":22.5468,"lng":114.0882},"fsfScore":5.8,"fsfLevel":"challenging","openHours":"10:00–21:00","priceRange":"¥50–500","duration":"60–90 min","transport":"🚇 Line 1, Exit B · 2 min walk","highlight":"⭐ Robot delivery on floor 5","paymentMethods":["alipay","wechat","cash"],"visaSupported":false,"orderTip":"Try drone accessories on F5, custom phone cases on F1. Bargain from 50% of asking price.","photoBadge":"📍 Futian"},"status":"past"},{"time":"11:30 AM","poi":{"nameEn":"Huaqiangbei Pedestrian Street","nameZh":"华强北步行街","description":"Wide tree-lined boulevard with underground shopping city, street food stalls, and the famous neon sign.","address":{"zh":"深圳市福田区华强北路步行街","en":"Huaqiangbei Pedestrian St, Futian"},"coordinates":{"lat":22.5497,"lng":114.0889},"fsfScore":7.2,"fsfLevel":"good","openHours":"All day","priceRange":"¥10–50","duration":"30–45 min","transport":"🚶 5 min walk from SEG","paymentMethods":["alipay","wechat"],"visaSupported":false,"photoBadge":"🚶 5 min walk"},"status":"past"},{"time":"12:15 PM","poi":{"nameEn":"Yuanling Xitong Creative Park","nameZh":"源岭西通创意园","description":"Repurposed factory with indie coffee shops, maker spaces, and street art. A chill contrast to the market chaos.","address":{"zh":"深圳市福田区振华路","en":"Zhenhua Rd, Futian District"},"coordinates":{"lat":22.548,"lng":114.092},"fsfScore":8.2,"fsfLevel":"excellent","openHours":"09:00–22:00","priceRange":"¥25–45","duration":"45–60 min","transport":"🚶 5 min walk from St. 2","highlight":"⭐ Specialty pour-over coffee ¥28–45","paymentMethods":["alipay","wechat","visa"],"visaSupported":true,"photoBadge":"☕ Coffee break"},"status":"current"},{"time":"1:30 PM","poi":{"nameEn":"Yuanwang Digital Mall","nameZh":"远望数码商城","description":"Focused on smartphones, tablets, and accessories. Brand demos, used phones, and quick screen repairs.","address":{"zh":"深圳市福田区华强北路远望数码商城","en":"Yuanwang Digital Mall, Huaqiangbei Rd"},"coordinates":{"lat":22.5510,"lng":114.0876},"fsfScore":5.5,"fsfLevel":"challenging","openHours":"10:00–21:00","priceRange":"¥100–2000","duration":"45–60 min","transport":"🚶 3 min walk","paymentMethods":["alipay","wechat"],"visaSupported":false,"photoBadge":"📱 Smartphones"},"status":"future"},{"time":"2:30 PM","poi":{"nameEn":"Robot Coffee & Drone Zone","nameZh":"华强北机器人咖啡 / 无人机体验区","description":"Order coffee from a robot arm. Watch drone demos and maybe spot a Meituan delivery drone landing nearby.","address":{"zh":"深圳市福田区华强北（步行街附近）","en":"Near Huaqiangbei Pedestrian St"},"coordinates":{"lat":22.546,"lng":114.0895},"fsfScore":7,"fsfLevel":"good","openHours":"10:00–20:00","priceRange":"¥20–100","duration":"30–45 min","transport":"🚶 5 min walk","highlight":"⭐ Robot barista — Instagram gold","paymentMethods":["alipay","wechat"],"visaSupported":false,"photoBadge":"🤖 Must-see"},"status":"future"},{"time":"3:30 PM","poi":{"nameEn":"Longsheng Accessories Market","nameZh":"龙胜配件城","description":"Cheapest electronics accessories — cables ¥5, cases ¥5–30, screen protectors installed while you wait.","address":{"zh":"深圳市福田区华强北龙胜配件城","en":"Longsheng Accessories Market, Huaqiangbei"},"coordinates":{"lat":22.55,"lng":114.085},"fsfScore":4.8,"fsfLevel":"challenging","openHours":"10:00–20:00","priceRange":"¥5–200","duration":"60–90 min","transport":"🚶 5 min walk NW","orderTip":"Bargain from 30% of asking price. Test everything before buying. Packed and chaotic — keep bags zipped.","paymentMethods":["alipay","wechat","cash"],"visaSupported":false,"photoBadge":"💰 Cheapest"},"status":"future"},{"time":"5:30 PM","poi":{"nameEn":"Haitian Road Food Street","nameZh":"海天路美食街","description":"Multiple food stalls and restaurants popular with market workers — authentic, cheap, delicious.","address":{"zh":"深圳市福田区海天路","en":"Haitian Rd, Futian District"},"coordinates":{"lat":22.544,"lng":114.087},"fsfScore":7.5,"fsfLevel":"good","openHours":"17:00–23:00","priceRange":"¥30–80/person","duration":"60–90 min","transport":"🚶 5 min walk S","orderTip":"Show the waiter: 我们有2个人，请推荐你们的招牌菜。 (We have 2 people, please recommend your signature dishes.)","paymentMethods":["alipay","wechat"],"visaSupported":false,"photoBadge":"🍜 Dinner"},"status":"future"}]},{"id":"day2","label":"Day 2","date":"2026-09-19","title":"Futian City & Civic Center","stops":[{"time":"9:00 AM","poi":{"nameEn":"Shenzhen Civic Center","nameZh":"深圳市民中心","description":"Iconic architecture and city planning exhibition hall.","address":{"zh":"深圳市福田区福中三路","en":"Fuzhong 3rd Rd, Futian"},"coordinates":{"lat":22.543,"lng":114.058},"fsfScore":6.5,"fsfLevel":"good","openHours":"09:00–17:00","priceRange":"Free","duration":"60–90 min","transport":"🚇 Line 2/4, Civic Center Stn","paymentMethods":["alipay","wechat"],"visaSupported":false},"status":"future"},{"time":"11:00 AM","poi":{"nameEn":"Lianhuashan Park","nameZh":"莲花山公园","description":"Hilltop view of Shenzhen skyline and Deng Xiaoping statue.","address":{"zh":"深圳市福田区莲花街道","en":"Lianhua St, Futian District"},"coordinates":{"lat":22.5589,"lng":114.0637},"fsfScore":8.5,"fsfLevel":"excellent","openHours":"06:00–22:00","priceRange":"Free","duration":"60–120 min","transport":"🚶 10 min walk from Civic Center","paymentMethods":["alipay","wechat"],"visaSupported":false},"status":"future"}]},{"id":"day3","label":"Day 3","date":"2026-09-20","title":"Nanshan & Sea World","stops":[{"time":"10:00 AM","poi":{"nameEn":"Shenzhen Bay Park","nameZh":"深圳湾公园","description":"Seaside promenade with views of Hong Kong.","address":{"zh":"深圳市南山区滨海大道","en":"Binhai Ave, Nanshan District"},"coordinates":{"lat":22.5176,"lng":113.9553},"fsfScore":9,"fsfLevel":"excellent","openHours":"All day","priceRange":"Free","duration":"90–120 min","transport":"🚇 Line 9, Shenzhen Bay Park Stn","paymentMethods":["alipay","wechat"],"visaSupported":false},"status":"future"},{"time":"2:00 PM","poi":{"nameEn":"Sea World","nameZh":"海上世界","description":"Waterfront dining and entertainment district with the Minghua ship.","address":{"zh":"深圳市南山区海上世界","en":"Sea World, Nanshan District"},"coordinates":{"lat":22.4811,"lng":113.9142},"fsfScore":8,"fsfLevel":"excellent","openHours":"10:00–23:00","priceRange":"¥100–300","duration":"120–180 min","transport":"🚇 Line 2, Sea World Stn","paymentMethods":["alipay","wechat","visa"],"visaSupported":true},"status":"future"}]}],"emergency":{"concierge":{"qrPlaceholder":"Scan to add Concierge","description":"Photo Rescue · Ask anything · 30 min response"},"phones":[{"label":"Police 报警","number":"110","icon":"shield"},{"label":"Ambulance 急救","number":"120","icon":"medical"},{"label":"Fire 火警","number":"119","icon":"fire"},{"label":"Hotline 热线","number":"12345","icon":"phone"}],"phrases":[{"zh":"请帮帮我","pinyin":"qǐng bāng bāng wǒ","en":"Please help me"},{"zh":"洗手间在哪里？","pinyin":"xǐ shǒu jiān zài nǎ lǐ?","en":"Where is the toilet?"},{"zh":"多少钱？","pinyin":"duō shǎo qián?","en":"How much?"},{"zh":"便宜一点","pinyin":"pián yi yī diǎn","en":"A little cheaper?"},{"zh":"我要去这个地方","pinyin":"wǒ yào qù zhè ge dì fāng","en":"I want to go here (show address)"},{"zh":"不要辣","pinyin":"bù yào là","en":"No spicy"}]}}
+</script>
+
+<!-- ========== RENDER ENGINE ========== -->
+<script>
+(function() {
+  // Load data from embedded JSON
+  var dataEl = document.getElementById('itineraryData');
+  var data;
+  try {
+    data = JSON.parse(dataEl.textContent);
+  } catch(e) {
+    document.body.innerHTML = '<div style="padding:40px;text-align:center;color:#EF4444;"><h2>Data Load Error</h2><p>Itinerary data is invalid.</p></div>';
+    return;
+  }
+
+  // === Render Weather Bar ===
+  var wb = document.getElementById('weatherBar');
+  if (data.trip && data.trip.weather) {
+    var w = data.trip.weather;
+    wb.innerHTML = '<span class="weather-icon">' + (w.icon||'☀️') + '</span>' +
+      '<span class="weather-temp">' + (w.temp||'') + '</span>' +
+      '<span class="weather-sep">•</span>' +
+      '<span class="weather-desc">' + (w.condition||'') + '</span>' +
+      '<span class="weather-sep">•</span>' +
+      '<span class="weather-desc">' + (data.trip.location||'') + '</span>';
+  }
+
+  // === Render Footer ===
+  document.getElementById('footerLocation').textContent = data.trip ? (data.trip.location||'') : '';
+  document.getElementById('footerClient').textContent = data.client ? (data.client.name||'') : '';
+
+  // === Render Day Tabs ===
+  var tabsContainer = document.getElementById('dayTabs');
+  var contentContainer = document.getElementById('dayContentContainer');
+  var days = data.days || [];
+
+  days.forEach(function(day, idx) {
+    // Tab
+    var tab = document.createElement('button');
+    tab.className = 'day-tab' + (idx === 0 ? ' active' : '');
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+    tab.setAttribute('data-day', day.id);
+    tab.onclick = (function(id) { return function() { switchDay(id); }; })(day.id);
+    var dateLabel = formatDate(day.date);
+    tab.innerHTML = day.label + '<span class="day-tab-label">' + dateLabel + '</span>';
+    tabsContainer.appendChild(tab);
+
+    // Day content
+    var dayMain = document.createElement('main');
+    dayMain.className = 'day-content' + (idx === 0 ? ' active' : '');
+    dayMain.id = day.id;
+
+    var stops = day.stops || [];
+    var html = '<div class="timeline">';
+    html += '<div class="timeline-header">';
+    html += '<h2 class="timeline-title">' + escapeHtml(day.title || '') + '</h2>';
+    html += '<span class="timeline-stops">' + stops.length + ' stop' + (stops.length !== 1 ? 's' : '') + '</span>';
+    html += '</div>';
+
+    stops.forEach(function(stop, sIdx) {
+      var poi = stop.poi || {};
+      var status = stop.status || 'future';
+      var dotClass = status === 'past' ? 'past' : (status === 'current' ? 'current' : '');
+      var timeClass = status === 'past' ? 'past' : '';
+      var timeLabel = stop.time || '';
+      if (status === 'current') timeLabel += ' · NOW';
+      var cardClass = status === 'past' ? 'completed' : '';
+
+      html += '<div class="timeline-item">';
+      html += '<div class="timeline-dot ' + dotClass + '"></div>';
+      html += '<div class="timeline-time ' + timeClass + '">' + escapeHtml(timeLabel) + '</div>';
+      html += '<article class="poi-card ' + cardClass + '">';
+
+      // Photo area — inline SVG scene illustrations
+      var poiSvg = getPoiSvg(poi);
+      html += '<div class="poi-img" data-img="">';
+      html += poiSvg;
+      if (poi.photoBadge) html += '<span class="poi-photo-badge">' + escapeHtml(poi.photoBadge) + '</span>';
+      if (poi.fsfScore) html += '<span class="poi-ffs-badge ' + (poi.fsfLevel||'good') + '" title="FFS ' + poi.fsfScore + '">FFS ' + poi.fsfScore + '</span>';
+      html += '</div>';
+
+      // Body
+      html += '<div class="poi-body">';
+      html += '<div class="poi-name-row"><div>';
+      html += '<div class="poi-name-en">' + escapeHtml(poi.nameEn || '') + '</div>';
+      html += '<div class="poi-name-zh">' + escapeHtml(poi.nameZh || '') + '</div>';
+      html += '</div></div>';
+
+      if (poi.description) html += '<p class="poi-desc">' + escapeHtml(poi.description) + '</p>';
+      if (poi.highlight) html += '<div class="poi-highlight">' + escapeHtml(poi.highlight) + '</div>';
+
+      // Meta
+      html += '<div class="poi-meta">';
+      if (poi.openHours) html += '<div class="poi-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>' + escapeHtml(poi.openHours) + '</div>';
+      if (poi.priceRange) html += '<div class="poi-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>' + escapeHtml(poi.priceRange) + '</div>';
+      if (poi.duration) html += '<div class="poi-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>' + escapeHtml(poi.duration) + '</div>';
+      if (poi.transport) html += '<div class="poi-meta-item">' + escapeHtml(poi.transport) + '</div>';
+      html += '</div>';
+
+      // Payment
+      if (poi.paymentMethods && poi.paymentMethods.length > 0) {
+        html += '<div class="poi-payment">';
+        poi.paymentMethods.forEach(function(m) {
+          var label = m === 'alipay' ? '✓ Alipay' : m === 'wechat' ? '✓ WeChat Pay' : m === 'cash' ? '✓ Cash' : m === 'visa' ? '✓ Visa' : '✓ ' + m;
+          html += '<span class="payment-badge supported">' + label + '</span>';
+        });
+        if (poi.visaSupported === false && poi.paymentMethods.indexOf('visa') < 0) {
+          html += '<span class="payment-badge unsupported">✗ Visa</span>';
+        }
+        html += '</div>';
+      }
+
+      // Order tip
+      if (poi.orderTip) html += '<div class="poi-order-tip"><span class="poi-order-tip-icon">💡</span><span>' + escapeHtml(poi.orderTip) + '</span></div>';
+
+      // Address
+      if (poi.address) {
+        var addrZh = poi.address.zh || '';
+        var addrEn = poi.address.en || '';
+        html += '<div class="poi-address"><div class="poi-address-text">';
+        if (addrZh) html += '<span class="poi-address-zh">' + escapeHtml(addrZh) + '</span>';
+        if (addrEn) html += '<span class="poi-address-en">' + escapeHtml(addrEn) + '</span>';
+        html += '</div>';
+        html += '<button class="poi-copy-btn" data-addr="' + escapeAttr(addrZh) + '" onclick="copyAddress(this.getAttribute(\'data-addr\'))">';
+        html += '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy</button>';
+        html += '</div>';
+      }
+
+      // Actions
+      html += '<div class="poi-actions">';
+      if (poi.coordinates) {
+        // Amap URI API: callnative=1 tries to open Amap app on mobile, falls back to web
+        var mapUrl = 'https://uri.amap.com/marker?position=' + poi.coordinates.lng + ',' + poi.coordinates.lat + '&name=' + encodeURIComponent(poi.nameZh || poi.nameEn || '') + '&src=roami&coordinate=gaode&callnative=1';
+        html += '<a href="' + mapUrl + '" target="_blank" rel="noopener" class="poi-action-btn primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Navigate</a>';
+      }
+      if (poi.address && poi.address.zh) {
+        html += '<button class="poi-action-btn" onclick="openDriverModal(\'' + escapeJs(poi.nameZh || poi.nameEn || '') + '\', \'' + escapeJs(poi.address.zh) + '\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>Show Driver</button>';
+      }
+      // DiDi: show address overlay for manual copy
+      if (poi.address && poi.address.zh) {
+        html += '<button class="poi-action-btn" onclick="showDiDiOverlay(\'' + escapeJs(poi.address.zh) + '\')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M5 17a2 2 0 01-2-2V7a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2M5 17l-1 3h16l-1-3"/></svg>Copy for DiDi</button>';
+      } else {
+        html += '<span class="poi-action-btn" style="opacity:0.4;cursor:not-allowed;">DiDi N/A</span>';
+      }
+      html += '</div>';
+
+      html += '</div>'; // poi-body
+      html += '</article>';
+      html += '</div>'; // timeline-item
+    });
+
+    html += '</div>'; // timeline
+
+    // Emergency bar (only on first day)
+    if (idx === 0 && data.emergency) {
+      html += renderEmergency(data.emergency);
+    }
+
+    dayMain.innerHTML = html;
+    contentContainer.appendChild(dayMain);
+  });
+
+  // === Render Emergency Block ===
+  function renderEmergency(em) {
+    var html = '<section class="emergency-bar" id="emergencyBar">';
+    html += '<button class="emergency-toggle" onclick="toggleEmergency()">';
+    html += '<span class="emergency-toggle-left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v2m0 4h.01M4.93 19h14.14c1.54 0 2.5-1.67 1.73-3L13.73 4c-.77-1.33-2.69-1.33-3.46 0L3.2 16c-.77 1.33.19 3 1.73 3z"/></svg>Emergency & Help</span>';
+    html += '<svg class="emergency-toggle-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+    html += '</button>';
+    html += '<div class="emergency-content">';
+
+    // Concierge QR
+    if (em.concierge) {
+      html += '<div class="emergency-section"><div class="emergency-section-title">Your Concierge (WeChat)</div>';
+      html += '<div class="concierge-qr"><div class="qr-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="3" height="3"/><path d="M20 14h-3v3h3v-3zM17 17h4v4h-4v-4z"/></svg></div>';
+      html += '<div class="qr-info"><strong>' + escapeHtml(em.concierge.qrPlaceholder || 'Scan to add Concierge') + '</strong><span>' + escapeHtml(em.concierge.description || '') + '</span></div>';
+      html += '</div></div>';
+    }
+
+    // Emergency phones
+    if (em.phones && em.phones.length > 0) {
+      html += '<div class="emergency-section"><div class="emergency-section-title">Emergency Numbers</div>';
+      html += '<div class="emergency-phones">';
+      em.phones.forEach(function(ph) {
+        var iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>';
+        if (ph.icon === 'medical') iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>';
+        else if (ph.icon === 'fire') iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c.5 4-2 6-2 10a4 4 0 008 0c0-4-2.5-6-2-10M12 18v4"/></svg>';
+        else if (ph.icon === 'phone') iconSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>';
+        var iconBg = ph.icon === 'fire' ? ' style="background:#F97316;"' : (ph.icon === 'phone' ? ' style="background:#6366F1;"' : '');
+        html += '<a href="tel:' + (ph.number || '') + '" class="emergency-phone"><div class="emergency-phone-icon"' + iconBg + '>' + iconSvg + '</div><div><span class="emergency-phone-label">' + escapeHtml(ph.label || '') + '</span><span class="emergency-phone-number">' + escapeHtml(ph.number || '') + '</span></div></a>';
+      });
+      html += '</div></div>';
+    }
+
+    // Phrases
+    if (em.phrases && em.phrases.length > 0) {
+      html += '<div class="emergency-section"><div class="emergency-section-title">Useful Chinese Phrases (tap to show big)</div>';
+      html += '<div class="phrases-grid">';
+      em.phrases.forEach(function(ph) {
+        html += '<button class="phrase-item" onclick="showPhraseOverlay(\'' + escapeJs(ph.zh || '') + '\', \'' + escapeJs(ph.pinyin || '') + '\', \'' + escapeJs(ph.en || '') + '\')"><div class="phrase-text">';
+        html += '<span class="phrase-zh">' + escapeHtml(ph.zh || '') + '</span>';
+        html += '<span class="phrase-pinyin">' + escapeHtml(ph.pinyin || '') + '</span>';
+        html += '<span class="phrase-en">' + escapeHtml(ph.en || '') + '</span>';
+        html += '</div><svg class="phrase-copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button>';
+      });
+      html += '</div></div>';
+    }
+
+    html += '</div></section>';
+    return html;
+  }
+
+  // === Helpers ===
+  function escapeHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function escapeAttr(s) { return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function escapeJs(s) { return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,'\\n'); }
+
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    var d = new Date(dateStr + 'T00:00:00');
+    if (isNaN(d.getTime())) return dateStr;
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    return months[d.getMonth()] + ' ' + d.getDate() + ' · ' + days[d.getDay()];
+  }
+
+  // === POI SVG Illustrations ===
+  function getPoiSvg(poi) {
+    var name = (poi.nameZh || poi.nameEn || '').toLowerCase();
+    var badge = (poi.photoBadge || '').toLowerCase();
+    
+    // Electronics market
+    if (name.indexOf('赛格') >= 0 || name.indexOf('seg') >= 0 || name.indexOf('明通') >= 0 || name.indexOf('远望') >= 0) {
+      return '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect fill="#e6f4f1" width="200" height="120"/><g stroke="#0b7a6b" stroke-width="1" fill="none"><rect x="60" y="25" width="80" height="70" rx="4"/><rect x="70" y="35" width="12" height="16"/><rect x="88" y="35" width="12" height="16"/><rect x="106" y="35" width="12" height="16"/><rect x="124" y="35" width="12" height="16"/><rect x="70" y="57" width="12" height="16"/><rect x="88" y="57" width="12" height="16"/><rect x="106" y="57" width="12" height="16"/><rect x="124" y="57" width="12" height="16"/><rect x="70" y="79" width="12" height="16"/><rect x="88" y="79" width="12" height="16"/><rect x="106" y="79" width="12" height="16"/><rect x="124" y="79" width="12" height="16"/></g><circle cx="100" cy="60" r="8" fill="#0b7a6b" opacity="0.2"/></svg>';
+    }
+    // Sea World / ship
+    if (name.indexOf('海上世界') >= 0 || badge.indexOf('ship') >= 0) {
+      return '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect fill="#e6f4f1" width="200" height="120"/><path d="M60 80 Q100 70 140 80 L130 90 L70 90 Z" fill="#0b7a6b" opacity="0.3"/><rect x="95" y="50" width="10" height="30" fill="#0b7a6b" opacity="0.5"/><path d="M105 50 L130 65 L105 70 Z" fill="#14b8a6" opacity="0.6"/><path d="M40 85 Q60 82 80 85 Q100 88 120 85 Q140 82 160 85" stroke="#0b7a6b" stroke-width="2" fill="none" opacity="0.4"/></svg>';
+    }
+    // Shenzhen Bay / coast
+    if (name.indexOf('深圳湾') >= 0) {
+      return '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect fill="#e6f4f1" width="200" height="120"/><path d="M0 90 Q50 85 100 88 Q150 91 200 88 L200 120 L0 120 Z" fill="#0b7a6b" opacity="0.2"/><path d="M0 95 Q50 92 100 94 Q150 96 200 94" stroke="#0b7a6b" stroke-width="1.5" fill="none" opacity="0.5"/><circle cx="150" cy="50" r="25" fill="#14b8a6" opacity="0.15"/><circle cx="150" cy="50" r="20" fill="none" stroke="#0b7a6b" stroke-width="1.5" opacity="0.4"/><path d="M140 45 Q150 35 160 45" stroke="#0b7a6b" stroke-width="1.5" fill="none" opacity="0.6"/></svg>';
+    }
+    // Lianhuashan / mountain
+    if (name.indexOf('莲花山') >= 0) {
+      return '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect fill="#e6f4f1" width="200" height="120"/><path d="M40 100 L100 40 L160 100 Z" fill="#0b7a6b" opacity="0.3"/><path d="M60 100 L100 55 L140 100 Z" fill="#14b8a6" opacity="0.2"/><circle cx="100" cy="35" r="6" fill="#0b7a6b" opacity="0.5"/><path d="M85 100 L85 80 M115 100 L115 85" stroke="#0b7a6b" stroke-width="2" opacity="0.4"/></svg>';
+    }
+    // Food / restaurant
+    if (name.indexOf('美食') >= 0 || badge.indexOf('dinner') >= 0 || badge.indexOf('food') >= 0) {
+      return '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect fill="#e6f4f1" width="200" height="120"/><ellipse cx="100" cy="75" rx="45" ry="25" fill="#0b7a6b" opacity="0.3"/><ellipse cx="100" cy="70" rx="40" ry="20" fill="#14b8a6" opacity="0.2"/><path d="M70 65 Q75 55 80 65" stroke="#0b7a6b" stroke-width="2" fill="none" opacity="0.6"/><path d="M100 60 Q105 50 110 60" stroke="#0b7a6b" stroke-width="2" fill="none" opacity="0.6"/><path d="M130 65 Q135 55 140 65" stroke="#0b7a6b" stroke-width="2" fill="none" opacity="0.6"/></svg>';
+    }
+    // Default: location pin
+    return '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"><rect fill="#e6f4f1" width="200" height="120"/><path d="M100 30 Q100 30 110 50 Q120 70 100 90 Q80 70 90 50 Q100 30 100 30" fill="#0b7a6b" opacity="0.3"/><circle cx="100" cy="50" r="12" fill="#14b8a6" opacity="0.4"/><circle cx="100" cy="50" r="6" fill="#0b7a6b" opacity="0.6"/></svg>';
+  }
+
+  // === Interactive Functions (global) ===
+  window.switchDay = function(dayId) {
+    document.querySelectorAll('.day-tab').forEach(function(tab) { tab.classList.remove('active'); tab.setAttribute('aria-selected', 'false'); });
+    document.querySelectorAll('.day-content').forEach(function(c) { c.classList.remove('active'); });
+    var activeTab = document.querySelector('.day-tab[data-day="' + dayId + '"]');
+    var activeContent = document.getElementById(dayId);
+    if (activeTab) { activeTab.classList.add('active'); activeTab.setAttribute('aria-selected', 'true'); }
+    if (activeContent) activeContent.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  window.copyAddress = function(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() { showToast('Address copied! Show to driver'); });
+    } else {
+      var el = document.createElement('textarea'); el.value = text; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
+      showToast('Address copied!');
+    }
+  };
+
+  window.copyPhrase = function(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function() { showToast('Copied: ' + text); });
+    } else {
+      var el = document.createElement('textarea'); el.value = text; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
+      showToast('Copied: ' + text);
+    }
+  };
+
+  window.openDriverModal = function(name, address) {
+    document.getElementById('driverModalName').textContent = name;
+    document.getElementById('driverModalAddress').textContent = address;
+    document.getElementById('driverModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeDriverModal = function() {
+    document.getElementById('driverModal').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  window.toggleEmergency = function() {
+    var el = document.getElementById('emergencyBar');
+    if (el) el.classList.toggle('open');
+  };
+
+  window.showToast = function(message) {
+    var toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 2000);
+  };
+
+  // Phrase overlay (large display)
+  window.showPhraseOverlay = function(zh, pinyin, en) {
+    document.getElementById('phraseOverlayZh').textContent = zh;
+    document.getElementById('phraseOverlayPinyin').textContent = pinyin;
+    document.getElementById('phraseOverlayEn').textContent = en;
+    document.getElementById('phraseOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closePhraseOverlay = function() {
+    document.getElementById('phraseOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  window.copyPhraseFromOverlay = function() {
+    var text = document.getElementById('phraseOverlayZh').textContent;
+    copyPhrase(text);
+  };
+
+  // DiDi overlay (address for taxi app)
+  var currentDiDiAddress = '';
+  window.showDiDiOverlay = function(address) {
+    currentDiDiAddress = address;
+    document.getElementById('didiOverlayAddr').textContent = address;
+    document.getElementById('didiOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeDiDiOverlay = function() {
+    document.getElementById('didiOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+    currentDiDiAddress = '';
+  };
+
+  window.copyFromDiDiOverlay = function() {
+    if (currentDiDiAddress) {
+      copyAddress(currentDiDiAddress);
+    }
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeDriverModal();
+      closePhraseOverlay();
+      closeDiDiOverlay();
+    }
+  });
+  document.getElementById('driverModal').addEventListener('click', function(e) { if (e.target === e.currentTarget) closeDriverModal(); });
+})();
+</script>
+</body>
+</html>

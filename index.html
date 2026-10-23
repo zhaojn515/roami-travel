@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roami — Shenzhen Travel Guide for Foreigners | Free Starter Kit + Paid Itineraries</title>
+<meta name="description" content="Free China travel prep guide for foreigners: WeChat Pay, Alipay, eSIM, essential apps. Paid personalized Shenzhen itineraries delivered in 24 hours.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18518352623"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18518352623');
+</script>
+<meta name="keywords" content="China travel, Shenzhen travel, AI itinerary, travel concierge, China trip planner, foreigner China travel">
+<!-- Open Graph -->
+<meta property="og:title" content="Roami — Shenzhen Travel Guide for Foreigners">
+<meta property="og:description" content="Free China travel prep guide + personalized Shenzhen itineraries. WeChat Pay setup, verified POIs, 24h delivery.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roamitravel.com">
+<meta property="og:site_name" content="Roami Travel">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roami — Shenzhen Travel Guide for Foreigners">
+<meta name="twitter:description" content="Free China travel prep guide + personalized Shenzhen itineraries. 24h delivery or full refund.">
+<!-- Favicon (inline SVG) -->
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%230f766e' stroke-width='2'/><path d='M16 0.5 L17.6 4.2 L14.4 4.2 Z' fill='%23fbbf24'/><path fill='%230f766e' d='M10.2 8.2h6.6c2.5 0 4.1 1.5 4.1 3.6 0 1.7-1.0 3.0-2.6 3.4L22.4 24h-3.3l-4.1-9.1H12.6V24h-2.4V8.2zm2.4 2.2v5.8h3.8c1.4 0 2.1-.85 2.1-1.9 0-1.05-.7-1.9-2.1-1.9h-3.8z'/></svg>">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-bg-dark: #0a0e1a;
+  --color-bg-darker: #060810;
+  --color-bg-light: #f8f9fc;
+  --color-bg-card: #ffffff;
+  --color-bg-card-dark: rgba(255,255,255,0.04);
+  --color-teal: #0f766e;
+  --color-teal-light: #14b8a6;
+  --color-teal-glow: rgba(20, 184, 166, 0.15);
+  --color-accent: #6366f1;
+  --color-accent-glow: rgba(99, 102, 241, 0.12);
+  --color-text: #1a1a2e;
+  --color-text-secondary: #64748b;
+  --color-text-light: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-border-dark: rgba(255,255,255,0.08);
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+  --max-w: 1200px;
+}
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font);
+  color: var(--color-text);
+  background: var(--color-bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ===== UTILITIES ===== */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--color-teal-light); margin-bottom: 16px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2;
+  letter-spacing: -0.5px; margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: clamp(16px, 2vw, 19px); color: var(--color-text-secondary);
+  max-width: 600px; line-height: 1.7;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 15px;
+  transition: all 0.2s ease; white-space: nowrap;
+}
+.btn-primary {
+  background: var(--color-teal); color: white;
+  box-shadow: 0 2px 12px rgba(15, 118, 110, 0.3);
+}
+.btn-primary:hover { background: #0d6b63; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(15, 118, 110, 0.4); }
+.btn-secondary {
+  background: transparent; color: var(--color-text-light);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.3); }
+.btn-outline {
+  background: transparent; color: var(--color-teal); border: 1.5px solid var(--color-teal);
+}
+.btn-outline:hover { background: var(--color-teal); color: white; }
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.3s ease;
+}
+.nav.scrolled {
+  background: rgba(10, 14, 26, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border-dark);
+  padding: 12px 0;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+}
+.nav-logo {
+  font-size: 22px; font-weight: 800; color: white;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-logo-icon {
+  width: 32px; height: 32px; background: var(--color-teal);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { color: var(--color-text-muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+.nav-cta {
+  padding: 10px 20px; background: var(--color-teal); color: white;
+  border-radius: 8px; font-size: 14px; font-weight: 600; transition: all 0.2s;
+}
+.nav-cta:hover { background: #0d6b63; }
+.nav-mobile-toggle {
+  display: none; color: white; font-size: 24px; padding: 4px;
+}
+.nav-mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--color-bg-dark); z-index: 999;
+  flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a { color: white; font-size: 20px; font-weight: 500; }
+.nav-mobile-close { position: absolute; top: 20px; right: 24px; color: white; font-size: 28px; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-cta.desktop { display: none; }
+  .nav-mobile-toggle { display: block; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-bg-dark);
+  overflow: hidden;
+  padding: 110px 24px 56px;
+}
+/* Animated gradient orbs */
+.hero::before {
+  content: '';
+  position: absolute; top: -30%; left: -10%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--color-teal-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float1 8s ease-in-out infinite;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -20%; right: -10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float2 10s ease-in-out infinite;
+}
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.1); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -40px) scale(1.05); }
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+.hero-content {
+  position: relative; z-index: 10;
+  text-align: center; max-width: 800px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border-radius: 100px;
+  background: rgba(15, 118, 110, 0.12);
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  color: var(--color-teal-light); font-size: 13px; font-weight: 500;
+  margin-bottom: 32px;
+}
+.hero-badge-dot {
+  width: 6px; height: 6px; background: var(--color-teal-light);
+  border-radius: 50%; animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.hero-title {
+  font-size: clamp(40px, 7vw, 72px);
+  font-weight: 800; line-height: 1.08;
+  letter-spacing: -2px; color: white;
+  margin-bottom: 24px;
+}
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, var(--color-teal-light) 0%, #818cf8 50%, var(--color-teal-light) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+.hero-subtitle {
+  font-size: clamp(17px, 2.5vw, 20px);
+  color: var(--color-text-muted);
+  line-height: 1.7; max-width: 580px; margin: 0 auto 40px;
+}
+.hero-actions { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.hero-guarantee {
+  margin-top: 24px; font-size: 13px; color: var(--color-text-muted);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+
+/* ===== CHINA CAROUSEL ===== */
+.china-carousel {
+  position: relative;
+  background: var(--color-bg-dark);
+  padding: 0;
+  overflow: hidden;
+}
+.china-carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+.china-carousel-slide {
+  flex: 0 0 100%;
+  position: relative;
+  aspect-ratio: 16/9;
+  max-height: 520px;
+  overflow: hidden;
+}
+.china-carousel-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.china-carousel-slide::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(10,14,26,0.7) 0%, transparent 100%);
+  pointer-events: none;
+}
+.china-carousel-caption {
+  position: absolute; bottom: 24px; left: 24px; right: 24px;
+  z-index: 5;
+  color: white; font-size: 15px; font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  letter-spacing: 0.3px;
+}
+.china-carousel-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 10;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 18px; font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.china-carousel-arrow:hover { background: rgba(255,255,255,0.25); }
+.china-carousel-arrow.prev { left: 16px; }
+.china-carousel-arrow.next { right: 16px; }
+.china-carousel-dots {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  z-index: 10;
+  display: flex; gap: 8px;
+}
+.china-carousel-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none; cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.china-carousel-dot.active {
+  background: white;
+  transform: scale(1.3);
+}
+@media (max-width: 640px) {
+  .china-carousel-slide { aspect-ratio: 4/3; max-height: 400px; }
+  .china-carousel-arrow { width: 36px; height: 36px; font-size: 14px; }
+  .china-carousel-caption { font-size: 13px; bottom: 20px; left: 16px; right: 16px; }
+}
+
+/* ===== FEATURES ===== */
+.features {
+  padding: 100px 24px;
+  background: var(--color-bg-light);
+}
+.features-header { text-align: center; margin-bottom: 64px; }
+.features-header .section-subtitle { margin: 0 auto; }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: var(--max-w); margin: 0 auto;
+}
+.feature-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative; overflow: hidden;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-teal);
+}
+.feature-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--color-teal), var(--color-accent));
+  opacity: 0; transition: opacity 0.3s;
+}
+.feature-card:hover::before { opacity: 1; }
+.feature-icon-wrap {
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, var(--color-teal-glow), var(--color-accent-glow));
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 24px;
+  color: var(--color-teal);
+}
+.feature-icon-wrap svg {
+  width: 28px; height: 28px;
+  stroke: var(--color-teal);
+  stroke-width: 1.75;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.feature-card h3 { font-size: 18px; font-weight: 650; margin-bottom: 10px; }
+.feature-card p { font-size: 14px; color: var(--color-text-secondary); line-height: 1.7; }
+
+@media (max-width: 1024px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .features-grid { grid-template-columns: 1fr; } }
+
+/* ===== HOW IT WORKS ===== */
+.how-it-works {
+  padding: 100px 24px;
+  background: var(--color-bg-dark);
+  position: relative; overflow: hidden;
+}
+.how-it-works::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, var(--color-teal-glow) 0%, transparent 60%);
+  border-radius: 50%;
+}
+.how-header { text-align: center; margin-bottom: 72px; position: relative; z-index: 2; }
+.how-header .section-title { color: white; }
+.how-header .section-subtitle { color: var(--color-text-muted); margin: 0 auto; }
+.steps {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+  max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 2;
+}
+.step { text-align: center; }
+.step-number {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, var(--color-teal), var(--color-teal-light));
+  border-radius: 16px; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 800; color: white;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 20px rgba(15, 118, 110, 0.3);
+}
+.step h3 { font-size: 18px; font-weight: 650; color: white; margin-bottom: 10px; }
+.step p { font-size: 14px; color: var(--color-text-muted); line-height: 1.7; }
+.step-tag {
+  display: inline-block; margin-top: 12px;
+  padding: 4px 12px; border-radius: 100px;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--color-border-dark);
+  font-size: 12px; color: var(--color-teal-light); font-weight: 500;
+}
+
+@media (max-width: 768px) { .steps { grid-template-columns: 1fr; gap: 48px; } }
+
+/* ===== PRODUCT PREVIEW ===== */
+.preview {
+  padding: 100px 24px;
+  background: var(--color-bg-light);
+  text-align: center;
+}
+.preview-header { margin-bottom: 56px; }
+.preview-header .section-subtitle { margin: 0 auto; }
+.phone-container {
+  position: relative; display: inline-block;
+  max-width: 320px; margin: 0 auto;
+}
+.phone-frame {
+  position: relative;
+  background: #1a1a2e;
+  border-radius: 40px;
+  padding: 16px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.2), inset 0 0 0 2px rgba(255,255,255,0.1);
+}
+.phone-notch {
+  position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 28px;
+  background: #1a1a2e; border-radius: 0 0 16px 16px; z-index: 10;
+}
+.phone-screen {
+  background: #0f172a;
+  border-radius: 28px;
+  overflow: hidden;
+  aspect-ratio: 9/17;
+  display: flex; flex-direction: column;
+}
+.phone-status-bar {
+  padding: 12px 20px 8px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; color: white; font-weight: 600;
+}
+.phone-app-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.phone-app-header .app-name { font-size: 13px; color: var(--color-teal-light); font-weight: 600; }
+.phone-app-header .app-title { font-size: 16px; color: white; font-weight: 700; margin-top: 4px; }
+.phone-itinerary {
+  flex: 1; padding: 16px 20px; overflow: hidden;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.itin-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 12px;
+  display: flex; gap: 12px; align-items: flex-start;
+}
+.itin-time {
+  font-size: 11px; color: var(--color-teal-light); font-weight: 600;
+  white-space: nowrap; min-width: 44px;
+}
+.itin-detail { flex: 1; }
+.itin-detail .itin-name { font-size: 12px; color: white; font-weight: 600; }
+.itin-detail .itin-desc { font-size: 10px; color: var(--color-text-muted); margin-top: 2px; }
+.phone-cta {
+  margin-top: 40px;
+}
+@media (max-width: 480px) {
+  .phone-container { max-width: 280px; }
+}
+
+/* ===== WHAT'S HAPPENING (events) ===== */
+.events {
+  padding: 100px 24px;
+  background: var(--color-bg-light);
+  border-top: 1px solid var(--color-border);
+}
+.events-header { text-align: center; margin-bottom: 56px; }
+.events-header .section-subtitle { margin: 0 auto; }
+.events-grid {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 24px;
+  max-width: var(--max-w); margin: 0 auto;
+}
+.event-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: flex; flex-direction: column;
+  flex: 0 1 360px; min-width: 300px;
+  transition: all 0.3s ease;
+}
+.event-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--color-teal); }
+.event-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.event-badge {
+  display: inline-flex; align-items: center;
+  padding: 4px 12px; border-radius: 100px;
+  background: var(--color-teal-glow); border: 1px solid rgba(15, 118, 110, 0.25);
+  color: var(--color-teal); font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+}
+.event-countdown { font-size: 13px; color: var(--color-text-secondary); font-weight: 500; }
+.event-card-title { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 6px; }
+.event-card-meta { font-size: 13px; color: var(--color-teal); font-weight: 600; margin-bottom: 14px; }
+.event-card-desc { font-size: 14px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+.event-card-link { font-size: 14px; font-weight: 600; color: var(--color-teal); transition: color 0.2s; }
+.event-card-link:hover { color: #0d6b63; }
+.event-card-note { margin-top: 14px; font-size: 11px; color: var(--color-text-muted); }
+
+@media (max-width: 480px) { .events-grid .event-card { flex: 1 1 100%; min-width: 0; } }
+
+/* ===== PRICING ===== */
+.pricing {
+  padding: 100px 24px;
+  background: var(--color-bg-light);
+}
+.pricing-header { text-align: center; margin-bottom: 64px; }
+.pricing-header .section-subtitle { margin: 0 auto; }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  max-width: var(--max-w); margin: 0 auto;
+}
+.pricing-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  display: flex; flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.pricing-card.featured {
+  border-color: var(--color-teal);
+  box-shadow: 0 0 0 1px var(--color-teal), var(--shadow-md);
+}
+.pricing-card.featured::before {
+  content: 'Most Popular';
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  padding: 4px 14px; border-radius: 100px;
+  background: var(--color-teal); color: white;
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.pricing-name { font-size: 16px; font-weight: 650; margin-bottom: 8px; }
+.pricing-price {
+  font-size: 36px; font-weight: 800; letter-spacing: -1px; margin-bottom: 4px;
+}
+.pricing-price span { font-size: 15px; font-weight: 400; color: var(--color-text-secondary); }
+.pricing-desc { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 24px; line-height: 1.6; }
+.pricing-features {
+  list-style: none; margin-bottom: 32px; flex: 1;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.pricing-features li {
+  font-size: 13px; color: var(--color-text-secondary);
+  display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
+}
+.pricing-features li::before {
+  content: '✓'; color: var(--color-teal); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+.pricing-cta {
+  width: 100%; padding: 12px; border-radius: 10px;
+  font-size: 14px; font-weight: 600; text-align: center;
+  transition: all 0.2s;
+}
+.pricing-cta-primary { background: var(--color-teal); color: white; }
+.pricing-cta-primary:hover { background: #0d6b63; }
+.pricing-cta-outline { background: transparent; color: var(--color-teal); border: 1.5px solid var(--color-border); }
+.pricing-cta-outline:hover { border-color: var(--color-teal); background: var(--color-teal-glow); }
+.pricing-refund {
+  text-align: center; margin-top: 40px;
+  font-size: 14px; color: var(--color-text-secondary);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+@media (max-width: 1024px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; } }
+
+/* ===== FAQ ===== */
+.faq {
+  padding: 100px 24px;
+  background: var(--color-bg-light);
+}
+.faq-header { text-align: center; margin-bottom: 64px; }
+.faq-header .section-subtitle { margin: 0 auto; }
+.faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.faq-item:hover { border-color: var(--color-teal); }
+.faq-question {
+  width: 100%; padding: 20px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  font-size: 15px; font-weight: 600; text-align: left;
+  color: var(--color-text); transition: color 0.2s;
+}
+.faq-question:hover { color: var(--color-teal); }
+.faq-toggle {
+  width: 24px; height: 24px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--color-text-muted);
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-answer-inner {
+  padding: 0 24px 20px;
+  font-size: 14px; color: var(--color-text-secondary); line-height: 1.8;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--color-bg-darker);
+  border-top: 1px solid var(--color-border-dark);
+  padding: 64px 24px 32px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  max-width: var(--max-w); margin: 0 auto 48px;
+}
+.footer-brand p { font-size: 14px; color: var(--color-text-muted); line-height: 1.7; margin-top: 16px; max-width: 300px; }
+.footer-col h4 { font-size: 13px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 14px; color: var(--color-text-muted); transition: color 0.2s; }
+.footer-col a:hover { color: white; }
+.footer-bottom {
+  max-width: var(--max-w); margin: 0 auto;
+  padding-top: 32px; border-top: 1px solid var(--color-border-dark);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-bottom p { font-size: 13px; color: var(--color-text-muted); }
+.footer-social { display: flex; gap: 16px; }
+.footer-social a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--color-border-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; transition: all 0.2s;
+}
+.footer-social a:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand { grid-column: span 2; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: span 1; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+<script>
+// Centralized CTA links - easy to replace with MoR payment links later
+window.ROAMI_ORDER_CTAs = {
+  'starter-kit': { sku: 'China Starter Kit', price: 'Free', action: 'Download', subject: '[Download] China Starter Kit', href: '/starter-kit/' },
+  'playbook-19': { sku: 'Shenzhen Playbook', price: '$19', action: 'Order', subject: '[Order] Shenzhen Playbook - $19', href: 'https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl' },
+  'personalized-69': { sku: 'Personalized Shenzhen', price: '$69', action: 'Order', href: '/order/personalized/' },
+  'companion-129': { sku: 'Shenzhen Companion', price: '$129', action: 'Order', href: '/order/companion/' },
+  'nav-cta': { sku: null, price: null, action: 'Start', subject: 'Roami Itinerary Request', href: 'mailto:hello@roamitravel.com?subject=Roami%20Itinerary%20Request' },
+  'hero': { sku: null, price: null, action: 'Start', subject: 'Roami Itinerary Request', href: 'mailto:hello@roamitravel.com?subject=Roami%20Itinerary%20Request' }
+};
+// To switch to MoR/Stripe links later: update the href values above, or loop:
+// document.querySelectorAll('[data-order-id]').forEach(el => { const cta = ROAMI_ORDER_CTAs[el.dataset.orderId]; if (cta && cta.href) el.href = cta.href; });
+</script>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-icon"><svg viewBox="0 0 32 32" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14.5" stroke="white" stroke-width="1.6"/><path d="M16 0.5 L17.6 4.2 L14.4 4.2 Z" fill="#fbbf24"/><path d="M16 31.5 L17.2 28.4 L14.8 28.4 Z M0.5 16 L4.2 14.4 L4.2 17.6 Z M31.5 16 L27.8 14.4 L27.8 17.6 Z" fill="white" opacity="0.55"/><path fill="white" d="M10.2 8.2h6.6c2.5 0 4.1 1.5 4.1 3.6 0 1.7-1.0 3.0-2.6 3.4L22.4 24h-3.3l-4.1-9.1H12.6V24h-2.4V8.2zm2.4 2.2v5.8h3.8c1.4 0 2.1-.85 2.1-1.9 0-1.05-.7-1.9-2.1-1.9h-3.8z"/></svg></span>
+      Roami
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="/starter-kit/" class="nav-cta desktop" data-order-id="nav-cta">Free Guide</a>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <button class="nav-mobile-close" onclick="toggleMobileMenu()" aria-label="Close menu">✕</button>
+  <a href="#features" onclick="toggleMobileMenu()">Features</a>
+  <a href="#how-it-works" onclick="toggleMobileMenu()">How It Works</a>
+  <a href="#pricing" onclick="toggleMobileMenu()">Pricing</a>
+  <a href="#faq" onclick="toggleMobileMenu()">FAQ</a>
+  <a href="/starter-kit/" class="btn btn-primary" data-order-id="nav-cta">Free Guide</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Now serving Shenzhen · Beta pricing
+    </div>
+    <h1 class="hero-title">
+      Navigate China's travel<br>
+      <span class="gradient-text">rules with confidence</span>
+    </h1>
+    <p class="hero-subtitle">
+      WeChat Pay setup · Mobile data · Verified itineraries<br>
+      Everything a foreigner needs to travel Shenzhen — done right.
+    </p>
+    <div class="hero-actions">
+      <a href="/starter-kit/" class="btn btn-primary">Get Free Starter Kit</a>
+      <a href="#pricing" class="btn btn-secondary">View Paid Guides</a>
+    </div>
+  </div>
+</section>
+
+<!-- Carousel removed -->
+
+<!-- ===== FEATURES ===== -->
+<section class="features" id="features">
+  <div class="features-header fade-in">
+    <div class="section-label">✦ Core Features</div>
+    <h2 class="section-title">Everything you need to travel China with confidence</h2>
+    <p class="section-subtitle">We combine AI planning with on-the-ground local knowledge — so you spend less time researching and more time exploring.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card fade-in">
+      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+      <h3>Live Itinerary</h3>
+      <p>A dynamic, mobile-first itinerary page with navigation links, copy-paste addresses for drivers, opening hours, and real-time updates — accessible offline.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <h3>Photo Rescue</h3>
+      <p>Snap a photo of any Chinese screen — menus, ticket machines, transit apps — and get clear, step-by-step instructions on what to do next.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h3>Ask a Local</h3>
+      <p>Stuck in a situation? Message your concierge on WeChat for instant help from a real local or AI assistant — translation, recommendations, or troubleshooting.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <h3>Researched POIs</h3>
+      <p>Our curated database of foreigner-friendly locations — researched by our team; our on-the-ground verification program is in progress. Accurate addresses in Chinese + English, hours, and access tips.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+      <h3>China Starter Kit</h3>
+      <p>Pre-departure prep pack covering Alipay/WeChat Pay setup, VPN options, SIM cards, essential apps, and cultural tips — so you land ready.</p>
+    </div>
+    <div class="feature-card fade-in">
+      <div class="feature-icon-wrap"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+      <h3>Unlimited Revisions*</h3>
+      <p>Your trip changes? No problem. Get adjustments to your Live Itinerary so it always matches your plans. (*1 round included in Personalized tier, more in Companion.)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-it-works" id="how-it-works">
+  <div class="how-header fade-in">
+    <div class="section-label">✦ How It Works</div>
+    <h2 class="section-title">From zero to travel-ready in 3 steps</h2>
+    <p class="section-subtitle">No apps to download. No lengthy forms. Just tell us about your trip and we handle the rest.</p>
+  </div>
+  <div class="steps">
+    <div class="step fade-in">
+      <div class="step-number">1</div>
+      <h3>Tell Us Your Trip</h3>
+      <p>Fill a quick 2-minute questionnaire about your dates, interests, budget, and travel style. We'll ask what kind of experiences you love.</p>
+      <span class="step-tag">⏱ 2 minutes</span>
+    </div>
+    <div class="step fade-in">
+      <div class="step-number">2</div>
+      <h3>Get Your Live Itinerary</h3>
+      <p>Within 24 hours, receive a personalized mobile itinerary — with navigation, Chinese addresses for drivers, and curated local tips. Not a generic PDF.</p>
+      <span class="step-tag">⚡ 24h delivery</span>
+    </div>
+    <div class="step fade-in">
+      <div class="step-number">3</div>
+      <h3>Travel with a Local in Your Pocket</h3>
+      <p>During your trip, access your WeChat concierge for real-time help — photo translations, last-minute changes, or just asking "what should I eat tonight?"</p>
+      <span class="step-tag">💬 WeChat support</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCT PREVIEW ===== -->
+<section class="preview" id="preview">
+  <div class="preview-header fade-in">
+    <div class="section-label">✦ Product Preview</div>
+    <h2 class="section-title">See what a Live Itinerary looks like</h2>
+    <p class="section-subtitle">This is the actual format you'll receive — a mobile-optimized page with everything you need in one place.</p>
+  </div>
+  <div class="phone-container fade-in">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-status-bar">
+          <span>9:41</span>
+          <span>⚡ 📶</span>
+        </div>
+        <div class="phone-app-header">
+          <div class="app-name" style="display:flex;align-items:center;gap:6px;"><svg viewBox="0 0 32 32" width="16" height="16" fill="none" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14.5" stroke="white" stroke-width="1.6"/><path d="M16 0.5 L17.6 4.2 L14.4 4.2 Z" fill="#fbbf24"/><path d="M16 31.5 L17.2 28.4 L14.8 28.4 Z M0.5 16 L4.2 14.4 L4.2 17.6 Z M31.5 16 L27.8 14.4 L27.8 17.6 Z" fill="white" opacity="0.55"/><path fill="white" d="M10.2 8.2h6.6c2.5 0 4.1 1.5 4.1 3.6 0 1.7-1.0 3.0-2.6 3.4L22.4 24h-3.3l-4.1-9.1H12.6V24h-2.4V8.2zm2.4 2.2v5.8h3.8c1.4 0 2.1-.85 2.1-1.9 0-1.05-.7-1.9-2.1-1.9h-3.8z"/></svg> Roami Live Itinerary</div>
+          <div class="app-title">Shenzhen · 3 Days</div>
+        </div>
+        <div class="phone-itinerary">
+          <div class="itin-item">
+            <div class="itin-time">09:00</div>
+            <div class="itin-detail">
+              <div class="itin-name">☕ Breakfast at Oct Coffee</div>
+              <div class="itin-desc">Nanshan · Specialty pour-over · ¥35</div>
+            </div>
+          </div>
+          <div class="itin-item">
+            <div class="itin-time">10:30</div>
+            <div class="itin-detail">
+              <div class="itin-name">🏛️ OCAT Contemporary Art</div>
+              <div class="itin-desc">Free entry · 1.5h recommended</div>
+            </div>
+          </div>
+          <div class="itin-item">
+            <div class="itin-time">12:30</div>
+            <div class="itin-detail">
+              <div class="itin-name">🍜 Lunch: Hakkabun</div>
+              <div class="itin-desc">Hakka cuisine · English menu · ¥60</div>
+            </div>
+          </div>
+          <div class="itin-item">
+            <div class="itin-time">14:00</div>
+            <div class="itin-detail">
+              <div class="itin-name">🌿 OCT Loft Creative Park</div>
+              <div class="itin-desc">Art galleries + cafes · Free</div>
+            </div>
+          </div>
+          <div class="itin-item">
+            <div class="itin-time">17:00</div>
+            <div class="itin-detail">
+              <div class="itin-name">🌅 Sunset at Shenzhen Bay</div>
+              <div class="itin-desc">Park trail · View of HK</div>
+            </div>
+          </div>
+          <div class="itin-item">
+            <div class="itin-time">19:00</div>
+            <div class="itin-detail">
+              <div class="itin-name">🥘 Dinner: Beef Hotpot</div>
+              <div class="itin-desc">Chaoshan style · Photo menu available</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="phone-cta fade-in">
+    <a href="/i/demo-alex/" class="btn btn-primary">View a live sample itinerary →</a>
+  </div>
+</section>
+
+<!-- Events section removed -->
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div class="pricing-header fade-in">
+    <div class="section-label">✦ Pricing</div>
+    <h2 class="section-title">Simple pricing, no surprises</h2>
+    <p class="section-subtitle">Start free or go all-in. Every paid tier includes our 24h delivery guarantee — or your money back.</p>
+  </div>
+  <div class="pricing-grid">
+    <!-- Starter Kit -->
+    <div class="pricing-card fade-in">
+      <div class="pricing-name">China Starter Kit</div>
+      <div class="pricing-price">Free</div>
+      <div class="pricing-desc">Essential pre-departure prep for your China trip.</div>
+      <ul class="pricing-features">
+        <li>Digital handbook (PDF)</li>
+        <li>Payment setup guide (Alipay/WeChat)</li>
+        <li>VPN & SIM recommendations</li>
+        <li>Essential apps checklist</li>
+        <li>Cultural tips & etiquette</li>
+      </ul>
+      <div data-order-id="starter-kit"><a href="/starter-kit/" class="pricing-cta pricing-cta-outline">Download Free</a><small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Get your free China travel guide instantly</small></div>
+    </div>
+    <!-- Shenzhen Playbook -->
+    <div class="pricing-card fade-in">
+      <div class="pricing-name">Shenzhen Playbook</div>
+      <div class="pricing-price">$19</div>
+      <div class="pricing-desc">Curated guide to the best of Shenzhen for foreigners.</div>
+      <ul class="pricing-features">
+        <li>50+ researched POIs with addresses</li>
+        <li>Neighborhood guides</li>
+        <li>Restaurant picks (English-friendly)</li>
+        <li>Transport & navigation tips</li>
+        <li>Regular updates</li>
+      </ul>
+      <div data-order-id="playbook-19">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <a href="https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl" target="_blank" rel="noopener" class="pricing-cta pricing-cta-outline">Get Playbook</a>
+          <a href="https://playbook.roamitravel.com/sample/" class="pricing-cta pricing-cta-sample" style="background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);padding:8px 16px;font-size:13px;">Sample Routes</a>
+        </div>
+        <small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Secure checkout · Instant confirmation</small>
+        <small style="display:block;margin-top:6px;font-size:12px;font-weight:500;"><a href="https://playbook.roamitravel.com/access/" style="color:var(--color-accent);text-decoration:underline;">Already purchased? Enter code →</a></small>
+      </div>
+    </div>
+    <!-- Personalized -->
+    <div class="pricing-card fade-in">
+      <div class="pricing-name">Personalized Shenzhen</div>
+      <div class="pricing-price">$69</div>
+      <div class="pricing-desc">Your custom Live Itinerary, built for you in 24 hours.</div>
+      <ul class="pricing-features">
+        <li>2-min trip questionnaire</li>
+        <li>Personalized Live Itinerary (mobile page)</li>
+        <li>24h delivery guaranteed</li>
+        <li>1 round of revisions included</li>
+        <li>Copy-paste addresses for drivers</li>
+        <li>Researched POIs matched to your interests</li>
+        <li>Not satisfied? Full refund</li>
+      </ul>
+      <div data-order-id="personalized-69"><a href="/order/personalized/" class="pricing-cta pricing-cta-primary">Get My Itinerary →</a><small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Tell us about your trip · Delivered within 24h</small></div>
+    </div>
+    <!-- Companion -->
+    <div class="pricing-card fade-in" id="companion">
+      <div class="pricing-name">Shenzhen Companion</div>
+      <div class="pricing-price">$129</div>
+      <div class="pricing-desc">Full-service: itinerary + 7 days of concierge support.</div>
+      <ul class="pricing-features">
+        <li>Everything in Personalized</li>
+        <li>7-day WeChat Concierge access</li>
+        <li>Ask a Local (AI + human backup)</li>
+        <li>Photo Rescue (unlimited)</li>
+        <li>5 Local Actions (bookings, calls, etc.)</li>
+        <li>Priority revision rounds</li>
+      </ul>
+      <div data-order-id="companion-129"><a href="/order/companion/" class="pricing-cta pricing-cta-outline">Get Companion</a><small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Tell us about your trip · Delivered within 24h</small></div>
+    </div>
+  </div>
+  <div class="pricing-refund fade-in">
+    🛡️ All paid tiers: 24h delivery or full refund. No questions asked.
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="faq-header fade-in">
+    <div class="section-label">✦ FAQ</div>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <p class="section-subtitle">Everything you need to know before getting started.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item fade-in">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What exactly is a "Live Itinerary"?
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          It's a mobile-optimized web page (not a PDF or app) that contains your full day-by-day plan. It includes navigation links, Chinese addresses for drivers, opening hours, tips, and more. It works offline after first load and can be updated in real-time if your plans change.
+        </div>
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How does the 24h delivery guarantee work?
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Once you submit your questionnaire, we deliver your personalized Live Itinerary within 24 hours. If we miss that deadline for any reason, you get a full refund — no questions asked. We've never missed it, but the guarantee is there for your peace of mind.
+        </div>
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do I need to install any apps?
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          No Roami app needed — your itinerary works in any mobile browser. However, we do recommend installing WeChat (for concierge communication) and Alipay (for payments in China). Our Starter Kit covers setup for both.
+        </div>
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What if I'm not going to Shenzhen?
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Currently we're focused on Shenzhen (our MVP city). If you're visiting other Chinese cities, join our waitlist — we're expanding soon. The China Starter Kit is useful for any destination in China.
+        </div>
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What's the refund policy?
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Simple: if we don't deliver your itinerary within 24 hours, you get a full refund. For the Personalized and Companion tiers, if you're genuinely not satisfied after revisions, we'll refund you — we want you to have a great trip, not a bad experience.
+        </div>
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        How is this different from a travel blog or guidebook?
+        <span class="faq-toggle">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          Guidebooks are generic and static. Roami builds your itinerary from your specific preferences — travel style, budget, interests, group size. Plus, it's dynamic (can be updated), includes real-time navigation, and comes with human/AI support during your trip.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-icon"><svg viewBox="0 0 32 32" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14.5" stroke="white" stroke-width="1.6"/><path d="M16 0.5 L17.6 4.2 L14.4 4.2 Z" fill="#fbbf24"/><path d="M16 31.5 L17.2 28.4 L14.8 28.4 Z M0.5 16 L4.2 14.4 L4.2 17.6 Z M31.5 16 L27.8 14.4 L27.8 17.6 Z" fill="white" opacity="0.55"/><path fill="white" d="M10.2 8.2h6.6c2.5 0 4.1 1.5 4.1 3.6 0 1.7-1.0 3.0-2.6 3.4L22.4 24h-3.3l-4.1-9.1H12.6V24h-2.4V8.2zm2.4 2.2v5.8h3.8c1.4 0 2.1-.85 2.1-1.9 0-1.05-.7-1.9-2.1-1.9h-3.8z"/></svg></span>
+        Roami
+      </a>
+      <p>Your AI travel concierge for China. Personalized itineraries, local support, and researched places — all in your pocket.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="/i/demo-alex/">Sample Itinerary</a></li>
+        <li><a href="/starter-kit/" data-order-id="starter-kit">Free Starter Kit</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@roamitravel.com">hello@roamitravel.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Roami Travel Technologies · Shenzhen, China</p>
+  </div>
+</footer>
+
+<script>
+// Sticky nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+}
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  // Toggle clicked
+  if (!wasOpen) item.classList.add('open');
+}
+
+// IntersectionObserver for fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Event countdowns (data-driven; static fallback text is in the HTML)
+document.querySelectorAll('[data-event-start]').forEach(el => {
+  const start = new Date(el.getAttribute('data-event-start') + 'T00:00:00+08:00');
+  const days = Math.ceil((start - new Date()) / 86400000);
+  if (days > 1) el.textContent = 'Starts in ' + days + ' days';
+  else if (days === 1) el.textContent = 'Starts tomorrow';
+  else if (days === 0) el.textContent = 'Happening today';
+  else el.textContent = 'Recently concluded';
+});
+
+// ===== China Carousel =====
+(function() {
+  const carousel = document.getElementById('chinaCarousel');
+  if (!carousel) return;
+  const track = document.getElementById('carouselTrack');
+  const dotsContainer = document.getElementById('carouselDots');
+  const slides = track.querySelectorAll('.china-carousel-slide');
+  const total = slides.length;
+  let current = 0;
+  let autoplayTimer = null;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Create dots
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'china-carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+  const dots = dotsContainer.querySelectorAll('.china-carousel-dot');
+
+  function goTo(index) {
+    current = ((index % total) + total) % total;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  window.carouselNext = function() { goTo(current + 1); resetAutoplay(); };
+  window.carouselPrev = function() { goTo(current - 1); resetAutoplay(); };
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(() => goTo(current + 1), 5000);
+  }
+  function stopAutoplay() {
+    clearInterval(autoplayTimer);
+  }
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // Hover pause
+  carousel.addEventListener('mouseenter', stopAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+
+  // Touch swipe
+  carousel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoplay();
+  }, { passive: true });
+  carousel.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goTo(current + 1);
+      else goTo(current - 1);
+    }
+    startAutoplay();
+  }, { passive: true });
+
+  startAutoplay();
+})();
+
+</script>
+</body>
+</html>

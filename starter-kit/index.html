@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>China Travel Starter Kit — Free Guide | Roami Travel</title>
+<meta name="description" content="Free essential guide for traveling in China: Alipay setup, WeChat Pay, eSIM, and must-have apps. Get it delivered to your inbox.">
+<meta name="robots" content="index, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--teal:#0f766e;--teal-dark:#0d6b63;--teal-glow:rgba(15,118,110,0.08);--gray-900:#1a1a1a;--gray-600:#666;--gray-400:#999;--border:#e5e7eb}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--gray-900);background:#f8f9fa;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.container{max-width:640px;width:100%;background:white;border-radius:16px;padding:48px 32px;box-shadow:0 4px 24px rgba(0,0,0,0.06)}
+.icon{width:64px;height:64px;background:var(--teal-glow);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px}
+h1{font-size:28px;font-weight:700;margin-bottom:12px;color:var(--gray-900);text-align:center}
+.subtitle{text-align:center;font-size:16px;color:var(--gray-600);line-height:1.6;margin-bottom:32px}
+.benefits{margin-bottom:32px}
+.benefit{display:flex;align-items:start;gap:12px;margin-bottom:16px;padding:16px;background:var(--teal-glow);border-radius:12px}
+.benefit-icon{font-size:24px;flex-shrink:0}
+.benefit-content{flex:1}
+.benefit-title{font-weight:600;font-size:15px;margin-bottom:4px;color:var(--gray-900)}
+.benefit-desc{font-size:14px;color:var(--gray-600);line-height:1.5}
+.form{display:flex;flex-direction:column;gap:16px}
+input[type="email"]{padding:14px 16px;font-size:16px;border:2px solid var(--border);border-radius:10px;outline:none;transition:border-color 0.2s}
+input[type="email"]:focus{border-color:var(--teal)}
+button{padding:14px 32px;font-size:16px;font-weight:600;background:var(--teal);color:white;border:none;border-radius:10px;cursor:pointer;transition:background 0.2s}
+button:hover:not(:disabled){background:var(--teal-dark)}
+button:disabled{opacity:0.6;cursor:not-allowed}
+.footer{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--gray-400);text-align:center}
+.footer a{color:var(--teal);text-decoration:none}
+@media(max-width:640px){
+.container{padding:32px 20px}
+h1{font-size:24px}
+.subtitle{font-size:15px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="icon">📦</div>
+<h1>China Travel Starter Kit</h1>
+<p class="subtitle">Everything you need to travel in China — free guide, instant download.</p>
+
+<div class="benefits">
+<div class="benefit">
+<div class="benefit-icon">💳</div>
+<div class="benefit-content">
+<div class="benefit-title">Alipay & WeChat Pay Setup</div>
+<div class="benefit-desc">Step-by-step guide to set up mobile payments (essential in China)</div>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">📱</div>
+<div class="benefit-content">
+<div class="benefit-title">eSIM & Connectivity</div>
+<div class="benefit-desc">How to stay connected with mobile data throughout your trip</div>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🗺️</div>
+<div class="benefit-content">
+<div class="benefit-title">Must-Have Apps</div>
+<div class="benefit-desc">Essential apps for navigation, translation, and local services</div>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">🔐</div>
+<div class="benefit-content">
+<div class="benefit-title">Account Setup Guide</div>
+<div class="benefit-desc">How to register for services without a Chinese phone number</div>
+</div>
+</div>
+</div>
+
+<form class="form" id="starterKitForm">
+<input type="email" id="email" placeholder="Your email address" required>
+<button type="submit" id="submitBtn">Download My Free Starter Kit</button>
+</form>
+
+<div class="footer">
+No spam, ever. Unsubscribe anytime.<br>
+Questions? <a href="mailto:hello@roamitravel.com">hello@roamitravel.com</a>
+</div>
+</div>
+
+<script>
+document.getElementById('starterKitForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  const submitBtn = document.getElementById('submitBtn');
+  
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Processing...';
+  
+  try {
+    // 调用后端 API 保存邮箱
+    const response = await fetch('/api/send-starter-kit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email })
+    });
+    
+    if (response.ok) {
+      const result = await response.json();
+      
+      // 触发下载
+      const link = document.createElement('a');
+      link.href = result.downloadUrl;
+      link.download = 'Roami-China-Starter-Kit.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // 显示成功消息
+      document.querySelector('.icon').textContent = '✓';
+      document.querySelector('h1').textContent = 'Download Started!';
+      document.querySelector('.subtitle').innerHTML = `
+        Your China Travel Starter Kit is downloading now.<br>
+        <span style="color: var(--teal); font-weight: 600;">Check your downloads folder.</span>
+      `;
+      document.querySelector('.benefits').style.display = 'none';
+      document.querySelector('.form').style.display = 'none';
+      
+      // 发送转化事件到 Google Ads
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18518352623/REPLACE_WITH_CONVERSION_LABEL',
+          'value': 0.0,
+          'currency': 'CNY'
+        });
+      }
+    } else {
+      const error = await response.json();
+      console.error('API error:', error);
+      alert(error.error || 'Something went wrong. Please try again or contact hello@roamitravel.com');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Download My Free Starter Kit';
+    }
+  } catch (error) {
+    console.error('Network error:', error);
+    alert('Network error. Please check your connection and try again.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Download My Free Starter Kit';
+  }
+});
+</script>
+</body>
+</html>
