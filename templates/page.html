@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta (replace per page) -->
+  <title>{{TITLE}} | Roami Travel</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <link rel="canonical" href="{{CANONICAL_URL}}">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{TITLE}} | Roami Travel">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{CANONICAL_URL}}">
+  <meta property="og:site_name" content="Roami Travel">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{TITLE}} | Roami Travel">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/main.css">
+  
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Roami Travel",
+    "url": "https://roamitravel.com",
+    "email": "hello@roamitravel.com",
+    "description": "Your personal Shenzhen travel guide. Free China travel prep + personalized itineraries."
+  }
+  </script>
+  
+  <!-- Structured Data: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Roami Travel",
+    "url": "https://roamitravel.com"
+  }
+  </script>
+  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18518352623"></script>
+  <script src="/scripts/ga4.js"></script>
+</head>
+<body>
+  {{CONTENT}}
+  
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

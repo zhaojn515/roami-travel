@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personalized Itinerary · Roami</title>
+<meta name="robots" content="noindex, follow">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --color-teal: #0f766e; --color-teal-light: #14b8a6;
+  --color-teal-glow: rgba(20,184,166,0.15);
+  --color-bg-dark: #0a0e1a; --color-bg-light: #f8f9fc;
+  --color-text: #1a1a2e; --color-text-secondary: #64748b;
+  --color-text-muted: #94a3b8; --color-border: #e2e8f0;
+  --color-bg-card: #ffffff; --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --radius: 12px; --max-w: 640px;
+}
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--color-text); background: var(--color-bg-light); line-height: 1.6; min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+
+.nav { background: var(--color-bg-dark); padding: 14px 24px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.nav-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.nav-back { color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.nav-back:hover { color: white; }
+.nav-brand { color: white; font-weight: 700; font-size: 16px; }
+
+.header { background: var(--color-bg-dark); padding: 40px 24px 32px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.header h1 { color: white; font-size: clamp(24px, 5vw, 32px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+.header p { color: var(--color-text-muted); font-size: 15px; max-width: 440px; margin: 0 auto; }
+.price-badge { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; padding: 6px 14px; border-radius: 100px; background: rgba(20,184,166,0.12); border: 1px solid rgba(20,184,166,0.25); color: var(--color-teal-light); font-size: 13px; font-weight: 600; }
+
+.progress-bar { padding: 24px 24px 0; }
+.progress-track { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; gap: 4px; }
+.progress-step { flex: 1; height: 4px; background: var(--color-border); border-radius: 4px; transition: background 0.3s; }
+.progress-step.active { background: var(--color-teal); }
+.progress-labels { max-width: var(--max-w); margin: 8px auto 0; display: flex; justify-content: space-between; font-size: 11px; color: var(--color-text-muted); font-weight: 500; }
+
+.form-container { max-width: var(--max-w); margin: 0 auto; padding: 24px; }
+.form-step { display: none; }
+.form-step.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+.step-title { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.step-desc { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 24px; }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--color-text); }
+.field label .required { color: #ef4444; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 12px 14px; border: 1.5px solid var(--color-border);
+  border-radius: 10px; font-size: 15px; font-family: var(--font);
+  background: white; color: var(--color-text); transition: border-color 0.2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--color-teal); box-shadow: 0 0 0 3px var(--color-teal-glow);
+}
+.field input.error, .field select.error { border-color: #ef4444; }
+.field .hint { font-size: 12px; color: var(--color-text-muted); margin-top: 4px; }
+.field textarea { min-height: 80px; resize: vertical; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } }
+
+.chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 8px 16px; border: 1.5px solid var(--color-border); border-radius: 100px;
+  font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
+  cursor: pointer; transition: all 0.2s; user-select: none;
+  background: white;
+}
+.chip:hover { border-color: var(--color-teal); color: var(--color-teal); }
+.chip.selected { background: var(--color-teal); color: white; border-color: var(--color-teal); }
+
+.btn-row { display: flex; gap: 12px; margin-top: 28px; }
+.btn {
+  flex: 1; padding: 14px 24px; border-radius: 10px; font-size: 15px;
+  font-weight: 600; border: none; cursor: pointer; transition: all 0.2s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-primary { background: var(--color-teal); color: white; }
+.btn-primary:hover { background: #0d6b63; }
+.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-secondary { background: white; color: var(--color-text-secondary); border: 1.5px solid var(--color-border); }
+.btn-secondary:hover { border-color: var(--color-teal); color: var(--color-teal); }
+
+.trust-footer { text-align: center; padding: 20px 24px 32px; font-size: 13px; color: var(--color-text-muted); }
+.trust-footer span { display: flex; align-items: center; justify-content: center; gap: 6px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-back">← Back to Roami</a>
+    <span class="nav-brand" style="display:inline-flex;align-items:center;gap:8px;"><svg viewBox="0 0 32 32" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14.5" stroke="white" stroke-width="1.6"/><path d="M16 0.5 L17.6 4.2 L14.4 4.2 Z" fill="#fbbf24"/><path d="M16 31.5 L17.2 28.4 L14.8 28.4 Z M0.5 16 L4.2 14.4 L4.2 17.6 Z M31.5 16 L27.8 14.4 L27.8 17.6 Z" fill="white" opacity="0.55"/><path fill="white" d="M10.2 8.2h6.6c2.5 0 4.1 1.5 4.1 3.6 0 1.7-1.0 3.0-2.6 3.4L22.4 24h-3.3l-4.1-9.1H12.6V24h-2.4V8.2zm2.4 2.2v5.8h3.8c1.4 0 2.1-.85 2.1-1.9 0-1.05-.7-1.9-2.1-1.9h-3.8z"/></svg> Roami</span>
+  </div>
+</nav>
+
+<div class="header">
+  <h1>Personalized Itinerary</h1>
+  <p>Tell us about your trip and we'll craft your custom Live Itinerary within 24 hours.</p>
+  <div class="price-badge">✦ $69 · 24h delivery guarantee</div>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-track">
+    <div class="progress-step active" id="ps1"></div>
+    <div class="progress-step" id="ps2"></div>
+    <div class="progress-step" id="ps3"></div>
+  </div>
+  <div class="progress-labels">
+    <span>Your Info</span>
+    <span>Trip Details</span>
+    <span>Preferences</span>
+  </div>
+</div>
+
+<form id="orderForm" class="form-container" novalidate>
+
+  <!-- Step 1: Basic Info -->
+  <div class="form-step active" id="step1">
+    <div class="step-title">About You</div>
+    <div class="step-desc">We'll use this to send your itinerary and stay in touch.</div>
+
+    <div class="field">
+      <label>Name <span class="required">*</span></label>
+      <input type="text" name="name" required placeholder="Your full name">
+    </div>
+    <div class="field">
+      <label>Email <span class="required">*</span></label>
+      <input type="email" name="email" required placeholder="you@example.com">
+    </div>
+    <div class="field">
+      <label>WhatsApp or WeChat <span class="required">*</span></label>
+      <input type="text" name="contact" required placeholder="We'll use this for itinerary delivery & support">
+      <div class="hint">At least one contact method so we can reach you during your trip</div>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="btn btn-primary" onclick="nextStep(1)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Trip Details -->
+  <div class="form-step" id="step2">
+    <div class="step-title">Trip Details</div>
+    <div class="step-desc">When and how you'll travel.</div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Arrival Date <span class="required">*</span></label>
+        <input type="date" name="arrival_date" required>
+      </div>
+      <div class="field">
+        <label>Departure Date <span class="required">*</span></label>
+        <input type="date" name="departure_date" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Traveling as <span class="required">*</span></label>
+      <div class="chip-group" data-name="group_type" data-single="true">
+        <span class="chip" data-value="solo">Solo</span>
+        <span class="chip" data-value="couple">Couple</span>
+        <span class="chip" data-value="family">Family</span>
+        <span class="chip" data-value="friends">Friends</span>
+      </div>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label>Adults <span class="required">*</span></label>
+        <select name="adults" required>
+          <option value="">Select</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Children</label>
+        <select name="children">
+          <option value="0">0</option><option>1</option><option>2</option><option>3</option><option>4+</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Accommodation area (optional)</label>
+      <input type="text" name="accommodation" placeholder="e.g. Nanshan, Futian, near Shenzhen Bay">
+      <div class="hint">Helps us recommend POIs closer to where you'll stay</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
+      <button type="button" class="btn btn-primary" onclick="nextStep(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Preferences -->
+  <div class="form-step" id="step3">
+    <div class="step-title">Your Preferences</div>
+    <div class="step-desc">Help us match POIs to what you love.</div>
+
+    <div class="field">
+      <label>Travel style <span class="required">*</span> (select all that apply)</label>
+      <div class="chip-group" data-name="travel_style">
+        <span class="chip" data-value="food">🍜 Food</span>
+        <span class="chip" data-value="culture">🏛️ Culture</span>
+        <span class="chip" data-value="shopping">🛍️ Shopping</span>
+        <span class="chip" data-value="nature">🌿 Nature</span>
+        <span class="chip" data-value="nightlife">🌃 Nightlife</span>
+        <span class="chip" data-value="tech">💻 Tech</span>
+        <span class="chip" data-value="photography">📸 Photography</span>
+        <span class="chip" data-value="family-fun">👨‍👩‍👧 Family-friendly</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Per-meal budget <span class="required">*</span></label>
+      <div class="chip-group" data-name="meal_budget" data-single="true">
+        <span class="chip" data-value="street food">Street food (¥20-50)</span>
+        <span class="chip" data-value="casual">Casual (¥50-150)</span>
+        <span class="chip" data-value="nice">Nice restaurant (¥150+)</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Special requests or notes</label>
+      <textarea name="special_requests" placeholder="Dietary restrictions, accessibility needs, must-see places, or anything else we should know..."></textarea>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary" onclick="prevStep(3)">← Back</button>
+      <button type="submit" class="btn btn-primary" id="submitBtn">Submit & Continue to Payment →</button>
+    </div>
+  </div>
+
+</form>
+
+<div class="trust-footer">
+  <span>🛡️ 24h delivery or full refund</span>
+</div>
+
+<script>
+const FORM_KEY = 'roami_order_draft_personalized';
+const CREEM_URL = 'https://www.creem.io/payment/prod_HZmCamFXaG2nfzWVVBBB7';
+let currentStep = 1;
+
+// Chip selection
+document.querySelectorAll('.chip-group').forEach(group => {
+  const single = group.dataset.single === 'true';
+  group.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (single) {
+        group.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      }
+      chip.classList.toggle('selected');
+    });
+  });
+});
+
+function showStep(n) {
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('ps' + i).classList.toggle('active', i <= n);
+  }
+  currentStep = n;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function validateStep(n) {
+  const step = document.getElementById('step' + n);
+  const requiredInputs = step.querySelectorAll('[required]');
+  let valid = true;
+  requiredInputs.forEach(input => {
+    if (!input.value.trim()) {
+      input.classList.add('error');
+      valid = false;
+    } else {
+      input.classList.remove('error');
+    }
+  });
+  // Check chip groups with required-like behavior
+  if (n === 2) {
+    const groupType = document.querySelector('[data-name="group_type"] .selected');
+    if (!groupType) valid = false;
+  }
+  if (n === 3) {
+    const styles = document.querySelectorAll('[data-name="travel_style"] .selected');
+    const budget = document.querySelector('[data-name="meal_budget"] .selected');
+    if (styles.length === 0 || !budget) valid = false;
+  }
+  return valid;
+}
+
+function nextStep(from) {
+  if (validateStep(from)) showStep(from + 1);
+}
+function prevStep(from) { showStep(from - 1); }
+
+function collectData() {
+  const form = document.getElementById('orderForm');
+  const data = {};
+  // Text/select inputs
+  form.querySelectorAll('input, select, textarea').forEach(el => {
+    if (el.name) data[el.name] = el.value;
+  });
+  // Chip groups
+  form.querySelectorAll('.chip-group').forEach(group => {
+    const name = group.dataset.name;
+    const selected = Array.from(group.querySelectorAll('.chip.selected')).map(c => c.dataset.value);
+    data[name] = group.dataset.single === 'true' ? (selected[0] || '') : selected;
+  });
+  data._product = 'Personalized Itinerary';
+  data._price = '$69';
+  data._timestamp = new Date().toISOString();
+  return data;
+}
+
+document.getElementById('orderForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  if (!validateStep(3)) return;
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  const data = collectData();
+
+  // Save to localStorage
+  try { localStorage.setItem(FORM_KEY, JSON.stringify(data)); } catch(err) {}
+
+  // Submit to FormSubmit (AJAX) - don't block on result
+  try {
+    await fetch('https://formsubmit.co/ajax/hello@roamitravel.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(err) { /* FormSubmit may fail, redirect anyway */ }
+
+  // Always redirect to Creem payment
+  window.location.href = CREEM_URL;
+});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a50e830ecc604f9d',t:'MTc5MzA3MDY3MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
