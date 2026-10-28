@@ -1,0 +1,110 @@
+{
+  "R01": {
+    "file": "R01.jpg",
+    "theme_en": "Civic buildings + parks + culture",
+    "source_url": "https://unsplash.com/photos/modern-building-with-a-flag-pole-in-front-T4H81URk11U",
+    "photo_id": "1767540885885-13c84203f2c9",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R02": {
+    "file": "R02.jpg",
+    "theme_en": "Modern observation deck views",
+    "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+    "photo_id": "1787565766110-a0d80f634c14",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R03": {
+    "file": "R03.jpg",
+    "theme_en": "Electronics markets and technology",
+    "source_url": "https://unsplash.com/photos/red-and-blue-building-Aw3I6YsS9pw",
+    "photo_id": "1564514186755-212b99a8d9f7",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R04": {
+    "file": "R04.jpg",
+    "theme_en": "Nature reserve and wetland",
+    "source_url": "https://unsplash.com/photos/mangrove-trees-with-their-distinctive-roots-growing-in-calm-water-JFh2p1iy27I",
+    "photo_id": "1779399642977-7c6bfd7bc472",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R05": {
+    "file": "R05.jpg",
+    "theme_en": "Sea World Shekou waterfront",
+    "source_url": "https://www.pexels.com/photo/sunset-view-over-shenzhen-waterfront-31811378",
+    "photo_id": "31811378",
+    "license": "Pexels",
+    "fallback": false,
+    "swap_note": "R05 was missing from routes_pool.json, sourced from Pexels search"
+  },
+  "R06": {
+    "file": "R06.jpg",
+    "theme_en": "Tech headquarters and coastal views",
+    "source_url": "https://unsplash.com/photos/a-view-of-a-city-at-night-from-the-top-of-a-hill-RDhNHPc5O3g",
+    "photo_id": "1725001203046-5e4803b78622",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R07": {
+    "file": "R07.jpg",
+    "theme_en": "Route R07",
+    "source_url": "https://unsplash.com/photos/a-woman-sits-in-a-red-chair-by-a-window-IYrEiIfdA54",
+    "photo_id": "1777959843581-3001bb23c3ed",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R08": {
+    "file": "R08.jpg",
+    "theme_en": "Oil painting village and heritage",
+    "source_url": "https://unsplash.com/photos/abstract-painting-AP-29z0BTmA",
+    "photo_id": "1562447141-5ab151b2638f",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R09": {
+    "file": "R09.jpg",
+    "theme_en": "Ancient town and fortress",
+    "source_url": "https://unsplash.com/photos/people-line-up-outside-ancient-red-walled-imperial-palace-QDHKrLekxRs",
+    "photo_id": "1773135138039-9a55c89affd5",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R10": {
+    "file": "R10.jpg",
+    "theme_en": "Beach and coastal recreation",
+    "source_url": "https://unsplash.com/photos/waterfront-city-with-buildings-and-mountains-LPX_l1SzZKc",
+    "photo_id": "1741570448983-ff0d3aa0ca4f",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R11": {
+    "file": "R11.jpg",
+    "theme_en": "Route R11",
+    "source_url": "https://unsplash.com/photos/an-amusement-park-with-a-ferris-wheel-and-rides-ws20t-sUujg",
+    "photo_id": "1634299569402-4c0018a050be",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  },
+  "R12": {
+    "file": "R12.jpg",
+    "theme_en": "Shopping mall and urban life",
+    "source_url": "https://unsplash.com/photos/narrow-street-with-lanterns-in-an-ancient-town-D2UDpTxV1QI",
+    "photo_id": "1751160979821-aafaa425cad7",
+    "license": "Unsplash",
+    "fallback": false,
+    "swap_note": ""
+  }
+}
