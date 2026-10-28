@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Route — Futian Cultural Loop | Roami Playbook</title>
+<meta name="description" content="Preview a complete walking route in Shenzhen with detailed POI info, distances, dining recommendations, and local tips.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#111827;background:#f9fafb;line-height:1.6}
+.container{max-width:900px;margin:0 auto;padding:24px}
+.back-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:white;border-radius:999px;font-size:14px;font-weight:500;color:#374151;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,0.06);margin-bottom:24px;transition:box-shadow 0.15s}
+.back-link:hover{box-shadow:0 4px 12px rgba(0,0,0,0.1);text-decoration:none}
+
+/* Header */
+.route-header{background:linear-gradient(135deg,#0f766e 0%,#0d6b63 100%);color:white;border-radius:16px;padding:32px;margin-bottom:32px;box-shadow:0 4px 12px rgba(15,118,110,0.2)}
+.route-header h1{font-size:32px;font-weight:700;margin-bottom:8px}
+.route-header .subtitle{font-size:18px;opacity:0.9;margin-bottom:20px}
+.route-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+.meta-item{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);padding:12px 20px;border-radius:12px;display:flex;align-items:center;gap:8px;font-size:15px}
+.meta-item .icon{font-size:20px}
+.route-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:20px}
+.info-card{background:rgba(255,255,255,0.1);padding:16px;border-radius:12px}
+.info-card h3{font-size:14px;font-weight:600;opacity:0.8;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
+.info-card p{font-size:16px;font-weight:500}
+
+/* Route Progress */
+.route-progress{background:white;border-radius:12px;padding:20px;margin-bottom:32px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.progress-title{font-size:18px;font-weight:700;margin-bottom:16px;color:#0f766e}
+.progress-bar{display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.progress-dot{width:12px;height:12px;border-radius:50%;background:#0f766e;flex-shrink:0}
+.progress-line{flex:1;height:2px;background:#ccfbf1}
+.progress-labels{display:flex;justify-content:space-between;font-size:12px;color:#6b7280}
+
+/* Stop Card */
+.stop-card{background:white;border-radius:16px;padding:24px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid #0f766e}
+.stop-header{display:flex;justify-content:space-between;align-items:start;margin-bottom:16px}
+.stop-number{background:#0f766e;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0}
+.stop-title{flex:1;margin-left:16px}
+.stop-title h2{font-size:22px;font-weight:700;color:#111827;margin-bottom:4px}
+.stop-title .chinese{font-size:16px;color:#6b7280;margin-bottom:8px}
+.stop-category{display:inline-block;background:#f0fdfa;color:#0f766e;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:500}
+.stop-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
+.detail-item{display:flex;align-items:start;gap:8px}
+.detail-item .label{font-size:13px;color:#6b7280;font-weight:500}
+.detail-item .value{font-size:14px;color:#111827}
+.highlight-box{background:#f0fdfa;border:1px solid #ccfbf1;border-radius:12px;padding:16px;margin:16px 0}
+.highlight-box h4{font-size:14px;font-weight:600;color:#0f766e;margin-bottom:8px}
+.highlight-box p{font-size:14px;color:#374151}
+.avoid-box{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:16px;margin:16px 0}
+.avoid-box h4{font-size:14px;font-weight:600;color:#dc2626;margin-bottom:8px}
+.avoid-box p{font-size:14px;color:#374151}
+.order-box{background:#fef3c7;border:1px solid #fde68a;border-radius:12px;padding:16px;margin:16px 0}
+.order-box h4{font-size:14px;font-weight:600;color:#d97706;margin-bottom:8px}
+.order-box p{font-size:14px;color:#374151}
+
+/* Walking Segment */
+.walking-segment{background:#f3f4f6;border-radius:12px;padding:16px;margin:16px 0;display:flex;align-items:center;gap:12px}
+.walking-icon{font-size:24px}
+.walking-info{flex:1}
+.walking-info .distance{font-size:16px;font-weight:700;color:#0f766e}
+.walking-info .duration{font-size:13px;color:#6b7280}
+
+/* Dining Section */
+.dining-section{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:20px;margin-top:16px}
+.dining-section h3{font-size:16px;font-weight:700;color:#d97706;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.dining-card{background:white;border-radius:8px;padding:12px;margin-bottom:8px}
+.dining-name{font-size:15px;font-weight:600;color:#111827;margin-bottom:4px}
+.dining-details{display:flex;gap:16px;font-size:13px;color:#6b7280}
+.dining-details span{display:flex;align-items:center;gap:4px}
+
+/* CTA */
+.cta-card{background:linear-gradient(135deg,#0f766e,#0d6b63);color:white;border-radius:16px;padding:40px;text-align:center;margin-top:40px;box-shadow:0 4px 16px rgba(15,118,110,0.3)}
+.cta-card h2{font-size:28px;font-weight:700;margin-bottom:12px}
+.cta-card p{font-size:16px;opacity:0.9;margin-bottom:24px}
+.cta-btn{display:inline-block;padding:16px 40px;background:white;color:#0f766e;border-radius:12px;font-weight:700;font-size:18px;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.25);text-decoration:none}
+.cta-note{font-size:14px;opacity:0.7;margin-top:16px}
+
+@media(max-width:640px){
+.route-header h1{font-size:24px}
+.route-header .subtitle{font-size:16px}
+.stop-title h2{font-size:18px}
+.container{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="https://roamitravel.com" class="back-link">← Back to Roami Travel</a>
+
+<div class="route-header">
+<h1>🏛️ Futian Civic Center Cultural Loop</h1>
+<div class="subtitle">Experience Shenzhen's civic architecture, history, and panoramic views in one perfect loop</div>
+<div class="route-meta">
+<div class="meta-item"><span class="icon">⏱️</span><span>1.5 hours</span></div>
+<div class="meta-item"><span class="icon">🚶</span><span>2.1 km total</span></div>
+<div class="meta-item"><span class="icon">📍</span><span>4 stops</span></div>
+<div class="meta-item"><span class="icon">🚇</span><span>Civic Center Station</span></div>
+</div>
+<div class="route-info">
+<div class="info-card">
+<h3>Theme</h3>
+<p>Civic architecture + museum + books + hilltop panorama</p>
+</div>
+<div class="info-card">
+<h3>Best Time</h3>
+<p>Morning (10:00-13:00)</p>
+</div>
+<div class="info-card">
+<h3>Avoid</h3>
+<p>Mondays (museum closed)</p>
+</div>
+</div>
+</div>
+
+<div class="route-progress">
+<div class="progress-title">Route Overview</div>
+<div class="progress-bar">
+<div class="progress-dot"></div>
+<div class="progress-line"></div>
+<div class="progress-dot"></div>
+<div class="progress-line"></div>
+<div class="progress-dot"></div>
+<div class="progress-line"></div>
+<div class="progress-dot"></div>
+</div>
+<div class="progress-labels">
+<span>Civic Center</span>
+<span>Museum</span>
+<span>Book City</span>
+<span>Lianhua Hill</span>
+</div>
+</div>
+
+<!-- Stop 1 -->
+<div class="stop-card">
+<div class="stop-header">
+<div class="stop-number">1</div>
+<div class="stop-title">
+<h2>Shenzhen Civic Center</h2>
+<div class="chinese">深圳市民中心</div>
+<div class="stop-category">Architecture</div>
+</div>
+</div>
+
+<div class="stop-details">
+<div class="detail-item">
+<div>
+<div class="label">📍 Address</div>
+<div class="value">Fuzhong Road, Civic Center Area</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🚇 Metro</div>
+<div class="value">Civic Center Station, ~3-min walk</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🕐 Hours</div>
+<div class="value">Open 24 hours (exterior)</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">💰 Ticket</div>
+<div class="value">Free (exterior)</div>
+</div>
+</div>
+</div>
+
+<div class="highlight-box">
+<h4>✨ Highlights</h4>
+<p>Iconic undulating roof design inspired by a flying phoenix. The building's dramatic curves and massive scale make it one of Shenzhen's most photographed landmarks. Best viewed from multiple angles—front, side, and especially from Lianhua Hill across the street.</p>
+</div>
+
+<div class="dining-section">
+<h3>🍜 Nearby Dining Options</h3>
+<div class="dining-card">
+<div class="dining-name">Tonkatsu Restaurant (堂本家·二代目)</div>
+<div class="dining-details">
+<span>⭐ 4.5</span>
+<span>💰 ¥95/person</span>
+<span>📍 224m</span>
+<span>🍱 Japanese cuisine</span>
+</div>
+</div>
+<div class="dining-card">
+<div class="dining-name">Local Chinese Cuisine</div>
+<div class="dining-details">
+<span>⭐ 4.4</span>
+<span>💰 ¥63/person</span>
+<span>📍 118m</span>
+<span>🥢 Regional Chinese</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="walking-segment">
+<div class="walking-icon">🚶</div>
+<div class="walking-info">
+<div class="distance">332m</div>
+<div class="duration">~4 min walk to next stop</div>
+</div>
+</div>
+
+<!-- Stop 2 -->
+<div class="stop-card">
+<div class="stop-header">
+<div class="stop-number">2</div>
+<div class="stop-title">
+<h2>Shenzhen Museum</h2>
+<div class="chinese">深圳博物馆</div>
+<div class="stop-category">Museum</div>
+</div>
+</div>
+
+<div class="stop-details">
+<div class="detail-item">
+<div>
+<div class="label">📍 Address</div>
+<div class="value">Fuzhong Road, Civic Center Area (350m from Civic Center Metro Station Exit B)</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🚇 Metro</div>
+<div class="value">Civic Center Station, ~3-min walk</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🕐 Hours</div>
+<div class="value">Tue-Sun 10:00-18:00</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">💰 Ticket</div>
+<div class="value">Free</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">📞 Phone</div>
+<div class="value">0755-88125550</div>
+</div>
+</div>
+</div>
+
+<div class="highlight-box">
+<h4>✨ Highlights</h4>
+<p>Learn Shenzhen's remarkable transformation from a small fishing village to a megacity of 17+ million people. The museum's permanent exhibitions cover local history, culture, and the economic reforms that created modern Shenzhen. Excellent English signage and interactive displays.</p>
+</div>
+
+<div class="avoid-box">
+<h4>⚠️ What to Avoid</h4>
+<p>Closed on Mondays. Allow at least 60 minutes for a proper visit. Photography is allowed but no flash.</p>
+</div>
+</div>
+
+<div class="walking-segment">
+<div class="walking-icon">🚶</div>
+<div class="walking-info">
+<div class="distance">566m</div>
+<div class="duration">~8 min walk to next stop</div>
+</div>
+</div>
+
+<!-- Stop 3 -->
+<div class="stop-card">
+<div class="stop-header">
+<div class="stop-number">3</div>
+<div class="stop-title">
+<h2>Central Book City</h2>
+<div class="chinese">中心书城</div>
+<div class="stop-category">Shopping</div>
+</div>
+</div>
+
+<div class="stop-details">
+<div class="detail-item">
+<div>
+<div class="label">📍 Address</div>
+<div class="value">Fuzhong Yi Road 2010, Civic Center (near Civic Center Metro Station)</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🚇 Metro</div>
+<div class="value">Civic Center Station, direct access</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🕐 Hours</div>
+<div class="value">Daily 10:00-22:00</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">💰 Ticket</div>
+<div class="value">Free entry</div>
+</div>
+</div>
+</div>
+
+<div class="highlight-box">
+<h4>✨ Highlights</h4>
+<p>One of China's largest bookstores with an impressive multi-story layout. Perfect for browsing English books, picking up souvenirs, or escaping the heat/rain. The bookstore has a cozy café area and regular cultural events. Great place to spend 30 minutes browsing or picking up unique gifts.</p>
+</div>
+</div>
+
+<div class="walking-segment">
+<div class="walking-icon">🚶</div>
+<div class="walking-info">
+<div class="distance">1.15 km</div>
+<div class="duration">~15 min walk to next stop</div>
+</div>
+</div>
+
+<!-- Stop 4 -->
+<div class="stop-card">
+<div class="stop-header">
+<div class="stop-number">4</div>
+<div class="stop-title">
+<h2>Lianhua Hill Park</h2>
+<div class="chinese">莲花山公园</div>
+<div class="stop-category">Park</div>
+</div>
+</div>
+
+<div class="stop-details">
+<div class="detail-item">
+<div>
+<div class="label">📍 Address</div>
+<div class="value">Hongli Road, Futian District (600m from Civic Center Metro Station)</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🚇 Metro</div>
+<div class="value">Civic Center Station or Lianhua North Station</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">🕐 Hours</div>
+<div class="value">Open 24 hours</div>
+</div>
+</div>
+<div class="detail-item">
+<div>
+<div class="label">💰 Ticket</div>
+<div class="value">Free</div>
+</div>
+</div>
+</div>
+
+<div class="highlight-box">
+<h4>✨ Highlights</h4>
+<p>The crown jewel of this route. Hike to the hilltop plaza (easy 15-minute climb) for the best panoramic view of Shenzhen's CBD skyline. You'll see the Civic Center's iconic roof from above, the Ping An Tower (one of the world's tallest buildings), and the sprawling cityscape. Perfect spot for photos, especially in the morning light or at sunset.</p>
+</div>
+
+<div class="avoid-box">
+<h4>⚠️ What to Avoid</h4>
+<p>Not rain-friendly (no covered areas). Wear comfortable shoes for the hill climb. Bring water on hot days. The hilltop has no shade—visit in the morning or late afternoon to avoid midday heat.</p>
+</div>
+</div>
+
+<div class="cta-card">
+<h2>🔓 Get All 12 Curated Routes</h2>
+<p>Unlock complete walking routes with detailed POI info, navigation tips, restaurant recommendations, offline maps, and local secrets for just $19.</p>
+<a href="https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl" class="cta-btn" target="_blank" rel="noopener">Get Full Access — $19</a>
+<div class="cta-note">Instant digital delivery · No subscription · Works offline</div>
+</div>
+</div>
+</body>
+</html>
