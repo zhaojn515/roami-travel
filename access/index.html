@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roami Playbook - 输入访问码</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 480px;
+      width: 100%;
+      padding: 40px;
+    }
+    
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .logo-icon svg {
+      width: 36px;
+      height: 36px;
+      fill: white;
+    }
+    
+    h1 {
+      font-size: 24px;
+      color: #1a202c;
+      margin-bottom: 10px;
+    }
+    
+    .subtitle {
+      color: #718096;
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2d3748;
+      margin-bottom: 8px;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      transition: all 0.2s;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    
+    input[type="text"]::placeholder {
+      color: #a0aec0;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    button:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    }
+    
+    button:active:not(:disabled) {
+      transform: translateY(0);
+    }
+    
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    .message {
+      margin-top: 20px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      display: none;
+    }
+    
+    .message.show {
+      display: block;
+    }
+    
+    .message.error {
+      background: #fee;
+      color: #c53030;
+      border: 1px solid #fcc;
+    }
+    
+    .message.success {
+      background: #f0fff4;
+      color: #22543d;
+      border: 1px solid #9ae6b4;
+    }
+    
+    .help-text {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 13px;
+      color: #718096;
+      line-height: 1.6;
+    }
+    
+    .help-text strong {
+      color: #2d3748;
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+      </div>
+      <h1>Roami Playbook</h1>
+      <p class="subtitle">深圳深度游览指南</p>
+    </div>
+    
+    <form id="accessForm">
+      <div class="form-group">
+        <label for="accessCode">访问码</label>
+        <input 
+          type="text" 
+          id="accessCode" 
+          name="accessCode" 
+          placeholder="ROAMI-XXXXXXXXX"
+          required
+          autocomplete="off"
+          spellcheck="false"
+        >
+      </div>
+      
+      <button type="submit" id="submitBtn">
+        验证并进入
+      </button>
+      
+      <div id="message" class="message"></div>
+    </form>
+    
+    <div class="help-text">
+      <strong>没有访问码？</strong><br>
+      访问码在你购买后通过邮件发送。请检查你的收件箱，或联系 <a href="mailto:hello@roami.xyz" style="color: #667eea;">hello@roami.xyz</a>
+    </div>
+  </div>
+  
+  <script>
+    const form = document.getElementById('accessForm');
+    const codeInput = document.getElementById('accessCode');
+    const submitBtn = document.getElementById('submitBtn');
+    const messageDiv = document.getElementById('message');
+    
+    // Auto-format input as user types (add hyphen after ROAMI)
+    codeInput.addEventListener('input', (e) => {
+      let value = e.target.value.toUpperCase().replace(/[^A-Z0-9-]/g, '');
+      
+      // If starts with ROAMI and no hyphen yet, add it
+      if (value.startsWith('ROAMI') && !value.includes('-') && value.length > 5) {
+        value = value.slice(0, 5) + '-' + value.slice(5);
+      }
+      
+      // Limit to ROAMI-XXXXXXXXX format (15 chars max)
+      if (value.length > 15) {
+        value = value.slice(0, 15);
+      }
+      
+      e.target.value = value;
+    });
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const code = codeInput.value.trim();
+      
+      if (!code) {
+        showMessage('请输入访问码', 'error');
+        return;
+      }
+      
+      // Validate format
+      if (!/^ROAMI-[A-Z0-9]{9}$/.test(code)) {
+        showMessage('访问码格式不正确，应为 ROAMI-XXXXXXXXX', 'error');
+        return;
+      }
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = '验证中...';
+      
+      try {
+        const response = await fetch('/api/verify', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ code }),
+        });
+        
+        const result = await response.json();
+        
+        if (result.valid) {
+          showMessage('✓ 验证成功！正在跳转...', 'success');
+          
+          // Save to localStorage
+          localStorage.setItem('roami_playbook_unlocked', code);
+          localStorage.setItem('roami_access_time', new Date().toISOString());
+          
+          // Redirect to playbook after 1 second
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 1000);
+          
+        } else {
+          showMessage(result.error || '访问码无效或已过期', 'error');
+          submitBtn.disabled = false;
+          submitBtn.textContent = '验证并进入';
+        }
+        
+      } catch (err) {
+        console.error('Verify error:', err);
+        showMessage('验证服务暂时不可用，请稍后重试', 'error');
+        submitBtn.disabled = false;
+        submitBtn.textContent = '验证并进入';
+      }
+    });
+    
+    function showMessage(text, type) {
+      messageDiv.textContent = text;
+      messageDiv.className = `message show ${type}`;
+    }
+    
+    // Check if already has access
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedCode = localStorage.getItem('roami_playbook_unlocked');
+      if (savedCode) {
+        // Already has access, redirect to playbook
+        window.location.href = '/';
+      }
+    });
+  </script>
+</body>
+</html>
