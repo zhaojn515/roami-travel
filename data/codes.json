@@ -1,0 +1,32 @@
+{
+  "codes": [
+    {
+      "code": "RM-A1B2-C3D4-E5F6",
+      "created": "2026-10-16T12:00:00Z",
+      "status": "unused",
+      "note": "Sample unused code for QA"
+    },
+    {
+      "code": "RM-TEST-1234-5678",
+      "created": "2026-10-16T12:00:00Z",
+      "status": "unused",
+      "note": "Test code for QA"
+    },
+    {
+      "code": "RM-REV-OKED-DEMO",
+      "created": "2026-10-16T12:00:00Z",
+      "status": "revoked",
+      "note": "Sample revoked code (should fail validation)"
+    },
+    {
+      "code": "RM-JPPD-FWRV-7TVD",
+      "created": "2026-10-16T15:24:03.918Z",
+      "status": "unused"
+    },
+    {
+      "code": "RM-MM58-RAR6-D894",
+      "created": "2026-10-16T15:25:18.906Z",
+      "status": "unused"
+    }
+  ]
+}
