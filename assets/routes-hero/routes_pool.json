@@ -1,0 +1,289 @@
+{
+  "R01": {
+    "name": "Civic buildings + parks + culture",
+    "query": "Shenzhen Civic Center building",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/modern-building-with-a-flag-pole-in-front-T4H81URk11U",
+        "image_url": "https://images.unsplash.com/photo-1767540885885-13c84203f2c9?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1767540885885-13c84203f2c9"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/monumental-sculptures-and-building-facade-in-daylight-c1Sy612-Srs",
+        "image_url": "https://images.unsplash.com/photo-1772617614140-d7326da8a807?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1772617614140-d7326da8a807"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-couple-of-people-looking-at-a-city-skyline-uosZi-1WROI",
+        "image_url": "https://images.unsplash.com/photo-1668711288658-96fb99eaeaad?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1668711288658-96fb99eaeaad"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/4PXPqiB2apA",
+        "image_url": "https://images.unsplash.com/photo-1576826631324-45b4a8585f6b?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1576826631324-45b4a8585f6b"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/modern-building-with-curved-roof-and-surrounding-trees-prBurzughnE",
+        "image_url": "https://images.unsplash.com/photo-1770829330611-43d222feab24?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1770829330611-43d222feab24"
+      }
+    ]
+  },
+  "R02": {
+    "name": "Modern observation deck views",
+    "query": "Ping An tower observation deck",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+        "image_url": "https://images.unsplash.com/photo-1787565766110-a0d80f634c14?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1787565766110-a0d80f634c14"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-large-city-with-tall-buildings-in-the-background-4IYjxFlvvhY",
+        "image_url": "https://images.unsplash.com/photo-1656658577043-025a85b3f0a9?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1656658577043-025a85b3f0a9"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/tall-skyscraper-against-a-blue-sky-with-clouds-GKVIuTvZdbY",
+        "image_url": "https://images.unsplash.com/photo-1777990646698-b358b6c8749a?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1777990646698-b358b6c8749a"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/gray-curtain-wall-building-ZP5dDL3-wnI",
+        "image_url": "https://images.unsplash.com/photo-1519274334830-ca1c3bd6bfd3?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1519274334830-ca1c3bd6bfd3"
+      }
+    ]
+  },
+  "R03": {
+    "name": "Electronics markets and technology",
+    "query": "Huaqiangbei electronics market",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/red-and-blue-building-Aw3I6YsS9pw",
+        "image_url": "https://images.unsplash.com/photo-1564514186755-212b99a8d9f7?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1564514186755-212b99a8d9f7"
+      }
+    ]
+  },
+  "R04": {
+    "name": "Nature reserve and wetland",
+    "query": "Futian mangrove wetland reserve",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/mangrove-trees-with-their-distinctive-roots-growing-in-calm-water-JFh2p1iy27I",
+        "image_url": "https://images.unsplash.com/photo-1779399642977-7c6bfd7bc472?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1779399642977-7c6bfd7bc472"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/aerial-view-of-a-lush-mangrove-forest-with-winding-waterways-52pmg6vJoU0",
+        "image_url": "https://images.unsplash.com/photo-1767917920879-dca2df5f1868?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1767917920879-dca2df5f1868"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/aerial-view-of-a-lush-mangrove-forest-with-winding-waterways-B4LYBuKB7wU",
+        "image_url": "https://images.unsplash.com/photo-1767917920887-3020b6b6d80c?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1767917920887-3020b6b6d80c"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/an-underwater-view-of-a-mangrove-forest-i5kMNyhiw6c",
+        "image_url": "https://images.unsplash.com/photo-1717292741426-d050f4f25503?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1717292741426-d050f4f25503"
+      }
+    ]
+  },
+  "R05": {
+    "name": "Maritime culture and art district",
+    "query": "Sea World Shekou waterfront",
+    "images": []
+  },
+  "R06": {
+    "name": "Tech headquarters and coastal views",
+    "query": "Shenzhen Bay skyline Tencent",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-view-of-a-city-at-night-from-the-top-of-a-hill-RDhNHPc5O3g",
+        "image_url": "https://images.unsplash.com/photo-1725001203046-5e4803b78622?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1725001203046-5e4803b78622"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/cctv-headquarters-building-in-beijing-rE0lWRBXvw4",
+        "image_url": "https://images.unsplash.com/photo-1748485668635-d683df8defe2?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1748485668635-d683df8defe2"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/modern-illuminated-skyscraper-at-night-in-a-city-nf8enEBumEs",
+        "image_url": "https://images.unsplash.com/photo-1765047149138-ea7d62a7cc04?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1765047149138-ea7d62a7cc04"
+      }
+    ]
+  },
+  "R07": {
+    "name": "Route R07",
+    "query": "creative industry park",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-woman-sits-in-a-red-chair-by-a-window-IYrEiIfdA54",
+        "image_url": "https://images.unsplash.com/photo-1777959843581-3001bb23c3ed?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1777959843581-3001bb23c3ed"
+      }
+    ]
+  },
+  "R08": {
+    "name": "Oil painting village and heritage",
+    "query": "Dafen oil painting village",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/abstract-painting-AP-29z0BTmA",
+        "image_url": "https://images.unsplash.com/photo-1562447141-5ab151b2638f?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1562447141-5ab151b2638f"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/assortment-of-paintings-and-artwork-displayed-indoors-fXTyvVmfOIY",
+        "image_url": "https://images.unsplash.com/photo-1769210041685-6feffad9c0e0?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1769210041685-6feffad9c0e0"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/numerous-paintings-including-buddha-faces-displayed-for-sale-outdoors-wePjmX97jPY",
+        "image_url": "https://images.unsplash.com/photo-1785637407121-efa48dff9905?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1785637407121-efa48dff9905"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/collection-of-impressionist-paintings-of-european-city-streets-lTkzf8c5fvs",
+        "image_url": "https://images.unsplash.com/photo-1769116325451-2f116531d9ca?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1769116325451-2f116531d9ca"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/colorful-paintings-of-animals-landscapes-and-portraits-displayed-in-rows-RcwcLat-OBE",
+        "image_url": "https://images.unsplash.com/photo-1781514049464-e7fe974cf54b?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1781514049464-e7fe974cf54b"
+      }
+    ]
+  },
+  "R09": {
+    "name": "Ancient town and fortress",
+    "query": "Dapeng ancient walled town",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/people-line-up-outside-ancient-red-walled-imperial-palace-QDHKrLekxRs",
+        "image_url": "https://images.unsplash.com/photo-1773135138039-9a55c89affd5?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1773135138039-9a55c89affd5"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/traditional-chinese-water-town-with-boats-and-ancient-buildings-tAhTLyqJKno",
+        "image_url": "https://images.unsplash.com/photo-1783949483219-88baa09c1286?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1783949483219-88baa09c1286"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-narrow-street-in-an-ancient-chinese-village-O9phsAr2IHg",
+        "image_url": "https://images.unsplash.com/photo-1750384258378-6b20a19be445?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1750384258378-6b20a19be445"
+      }
+    ]
+  },
+  "R10": {
+    "name": "Beach and coastal recreation",
+    "query": "Dameisha beach coastal",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/waterfront-city-with-buildings-and-mountains-LPX_l1SzZKc",
+        "image_url": "https://images.unsplash.com/photo-1741570448983-ff0d3aa0ca4f?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1741570448983-ff0d3aa0ca4f"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-large-body-of-water-next-to-a-large-city-jHRVyVG0p9U",
+        "image_url": "https://images.unsplash.com/photo-1627716526399-56c4b9bad735?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1627716526399-56c4b9bad735"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/crowded-beach-with-city-buildings-and-mountains-in-background-3NpaPkq8Jjo",
+        "image_url": "https://images.unsplash.com/photo-1776585080616-bef10beddc21?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1776585080616-bef10beddc21"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/two-people-standing-on-a-beach-with-their-feet-in-the-sand-Fezd2aRXUwk",
+        "image_url": "https://images.unsplash.com/photo-1681384323095-ab21ecb5b959?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1681384323095-ab21ecb5b959"
+      }
+    ]
+  },
+  "R11": {
+    "name": "Route R11",
+    "query": "ferris wheel amusement park",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/an-amusement-park-with-a-ferris-wheel-and-rides-ws20t-sUujg",
+        "image_url": "https://images.unsplash.com/photo-1634299569402-4c0018a050be?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1634299569402-4c0018a050be"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/amusement-park-arcade-with-ferris-wheel-ef_GXG3d7bI",
+        "image_url": "https://images.unsplash.com/photo-1790207504527-0dd91be5d7f5?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1790207504527-0dd91be5d7f5"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ferris-wheel-and-amusement-park-by-the-water-at-dusk-TGjbFKYuWA0",
+        "image_url": "https://images.unsplash.com/photo-1771152777607-f7779808c7e0?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1771152777607-f7779808c7e0"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ferris-wheel-and-amusement-park-rides-at-sunset-fykkZ9Kgu8U",
+        "image_url": "https://images.unsplash.com/photo-1759193591273-537529acfd6a?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1759193591273-537529acfd6a"
+      }
+    ]
+  },
+  "R12": {
+    "name": "Shopping mall and urban life",
+    "query": "Nantou ancient town market",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/narrow-street-with-lanterns-in-an-ancient-town-D2UDpTxV1QI",
+        "image_url": "https://images.unsplash.com/photo-1751160979821-aafaa425cad7?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1751160979821-aafaa425cad7"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/traditional-chinese-water-town-with-boats-and-ancient-buildings-tAhTLyqJKno",
+        "image_url": "https://images.unsplash.com/photo-1783949483219-88baa09c1286?w=1200&q=75&fm=jpg",
+        "platform": "unsplash",
+        "photo_id": "1783949483219-88baa09c1286"
+      }
+    ]
+  }
+}
