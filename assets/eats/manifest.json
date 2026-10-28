@@ -1,0 +1,100 @@
+{
+  "hotpot": {
+    "file": "hotpot.jpg",
+    "alt": "Chinese hotpot meal with various ingredients",
+    "source": "https://unsplash.com/photos/a-table-topped-with-lots-of-different-types-of-food-zy92yz3sW0E",
+    "photo_id": "zy92yz3sW0E",
+    "license": "Unsplash License"
+  },
+  "cantonese-dimsum": {
+    "file": "cantonese-dimsum.jpg",
+    "alt": "Steaming dim sum dumplings being served with tongs",
+    "source": "https://unsplash.com/photos/steaming-dumplings-are-being-served-with-tongs-ptUBOI5QouA",
+    "photo_id": "ptUBOI5QouA",
+    "license": "Unsplash License"
+  },
+  "seafood": {
+    "file": "seafood.jpg",
+    "alt": "Close-up of a plate of cooked seafood fish",
+    "source": "https://unsplash.com/photos/a-close-up-of-a-plate-of-food-with-fish-WaFaLcxXfLM",
+    "photo_id": "WaFaLcxXfLM",
+    "license": "Unsplash License"
+  },
+  "beef-noodles": {
+    "file": "beef-noodles.jpg",
+    "alt": "Bowl of beef noodle soup with scallions",
+    "source": "https://unsplash.com/photos/beef-noodle-soup-with-scallions-03qObKAK9B0",
+    "photo_id": "03qObKAK9B0",
+    "license": "Unsplash License"
+  },
+  "bbq-skewers": {
+    "file": "bbq-skewers.jpg",
+    "alt": "Assorted grilled meat and vegetable skewers",
+    "source": "https://unsplash.com/photos/assorted-grilled-skewers-rice-and-flatbread-on-a-unique-stand-XwwoKoCns9s",
+    "photo_id": "XwwoKoCns9s",
+    "license": "Unsplash License"
+  },
+  "cafe": {
+    "file": "cafe.jpg",
+    "alt": "Barista preparing coffee with espresso machine",
+    "source": "https://unsplash.com/photos/barista-preparing-coffee-with-espresso-machine-in-cafe-vCtvn_xqoyA",
+    "photo_id": "vCtvn_xqoyA",
+    "license": "Unsplash License"
+  },
+  "bakery-dessert": {
+    "file": "bakery-dessert.jpg",
+    "alt": "Golden brown flaky pastry dessert",
+    "source": "https://unsplash.com/photos/golden-brown-pastry-with-flaky-layers-on-white-plate-2s0-roiQ24A",
+    "photo_id": "2s0-roiQ24A",
+    "license": "Unsplash License"
+  },
+  "fast-food": {
+    "file": "fast-food.jpg",
+    "alt": "Fast food trays with burgers and fries",
+    "source": "https://unsplash.com/photos/two-fast-food-trays-with-burgers-fries-and-chicken-nuggets-VcGCO5_eFxg",
+    "photo_id": "VcGCO5_eFxg",
+    "license": "Unsplash License"
+  },
+  "western": {
+    "file": "western.jpg",
+    "alt": "Western cuisine steak dish with sauce",
+    "source": "https://unsplash.com/photos/a-white-plate-topped-with-a-piece-of-steak-covered-in-sauce-LaKzL7zDTrY",
+    "photo_id": "LaKzL7zDTrY",
+    "license": "Unsplash License"
+  },
+  "japanese": {
+    "file": "japanese.jpg",
+    "alt": "Japanese cuisine dish on table",
+    "source": "https://unsplash.com/photos/a-close-up-of-a-plate-of-food-on-a-table-0uBCJPlGKVM",
+    "photo_id": "0uBCJPlGKVM",
+    "license": "Unsplash License"
+  },
+  "teahouse": {
+    "file": "teahouse.jpg",
+    "alt": "Traditional Chinese tea set with cups",
+    "source": "https://unsplash.com/photos/a-tray-that-has-some-cups-on-it-PNSM0O3Nu5s",
+    "photo_id": "PNSM0O3Nu5s",
+    "license": "Unsplash License"
+  },
+  "street-food": {
+    "file": "street-food.jpg",
+    "alt": "People eating at Asian street food stall",
+    "source": "https://unsplash.com/photos/people-eating-at-a-street-food-stall-in-asia-kRM3_n87Mhc",
+    "photo_id": "kRM3_n87Mhc",
+    "license": "Unsplash License"
+  },
+  "vegetarian": {
+    "file": "vegetarian.jpg",
+    "alt": "Vegetarian food bowl with spoon",
+    "source": "https://unsplash.com/photos/a-bowl-of-food-with-a-spoon-in-it-nFkC9zJv0pk",
+    "photo_id": "nFkC9zJv0pk",
+    "license": "Unsplash License"
+  },
+  "regional-chinese": {
+    "file": "regional-chinese.jpg",
+    "alt": "Chinese food dishes on wooden table",
+    "source": "https://unsplash.com/photos/aAnJsjLdXuM",
+    "photo_id": "aAnJsjLdXuM",
+    "license": "Unsplash License"
+  }
+}
