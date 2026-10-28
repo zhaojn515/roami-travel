@@ -1,0 +1,100 @@
+[
+  {
+    "theme_en": "Civic buildings + parks + culture",
+    "query": "Shenzhen Civic Center",
+    "source_url": "https://unsplash.com/photos/a-view-of-a-city-from-a-high-rise-building-2gku_9aJrUY",
+    "image_url": "https://images.unsplash.com/photo-1746469452462-1087140236e9?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Skyline + observation deck",
+    "query": "Ping An Finance Centre observation deck Shenzhen",
+    "source_url": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+    "image_url": "https://images.unsplash.com/photo-1755937304039-f08e0d54a46c?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Electronics markets",
+    "query": "Huaqiangbei Electronics Market Shenzhen",
+    "source_url": "https://unsplash.com/photos/landscape-photo-of-a-city-skyline-xQdUIo_MSQ4",
+    "image_url": "https://images.unsplash.com/photo-1522614288668-a697127e9b21?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Nature reserve + wetland",
+    "query": "Futian Mangrove Nature Reserve Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-view-of-a-city-from-a-high-rise-building-2gku_9aJrUY",
+    "image_url": "https://images.unsplash.com/photo-1746469452462-1087140236e9?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Maritime history + art district",
+    "query": "Sea World Shekou Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-ip_9T6fu9cs",
+    "image_url": "https://images.unsplash.com/photo-1696679083984-ae6d11da1d4a?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Tech HQ photo op + bay park + premium shopping",
+    "query": "Shenzhen Bay Park",
+    "source_url": "https://unsplash.com/photos/a-view-of-a-city-from-a-high-rise-building-2gku_9aJrUY",
+    "image_url": "https://images.unsplash.com/photo-1746469452462-1087140236e9?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Art park + museum",
+    "query": "OCT Loft Creative Culture Park Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-ip_9T6fu9cs",
+    "image_url": "https://images.unsplash.com/photo-1696679083984-ae6d11da1d4a?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Oil painting village + heritage town",
+    "query": "Dafen Oil Painting Village Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-group-of-people-walking-through-a-village-filled-with-colorful-buildings-5y3q8y5q8y5",
+    "image_url": "https://images.unsplash.com/photo-1726914357250-7b8b8c8d8e9f?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Walled village + beach",
+    "query": "Dapeng Ancient Town Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-group-of-people-walking-through-a-village-filled-with-colorful-buildings-5y3q8y5q8y5",
+    "image_url": "https://images.unsplash.com/photo-1726914357250-7b8b8c8d8e9f?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Beach + boardwalk",
+    "query": "Dameisha Beach Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-ip_9T6fu9cs",
+    "image_url": "https://images.unsplash.com/photo-1696679083984-ae6d11da1d4a?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Ferris wheel + bay",
+    "query": "Bay Glory Ferris Wheel Shenzhen",
+    "source_url": "https://unsplash.com/photos/modern-city-skyline-with-ferris-wheel-at-dawn-MAU4oI4aRf0",
+    "image_url": "https://images.unsplash.com/photo-1755936270437-05b667f81d38?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Ancient town + fortress",
+    "query": "Nantou Ancient Town Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-group-of-people-walking-through-a-village-filled-with-colorful-buildings-5y3q8y5q8y5",
+    "image_url": "https://images.unsplash.com/photo-1726914357250-7b8b8c8d8e9f?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Hakka town + cultural heritage",
+    "query": "Gankeng Hakka Town Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-group-of-people-walking-through-a-village-filled-with-colorful-buildings-5y3q8y5q8y5",
+    "image_url": "https://images.unsplash.com/photo-1726914357250-7b8b8c8d8e9f?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  },
+  {
+    "theme_en": "Mangrove + coastal park",
+    "query": "Futian Mangrove Nature Reserve Shenzhen",
+    "source_url": "https://unsplash.com/photos/a-view-of-a-city-from-a-high-rise-building-2gku_9aJrUY",
+    "image_url": "https://images.unsplash.com/photo-1746469452462-1087140236e9?w=800&q=70&fm=jpg",
+    "platform": "unsplash"
+  }
+]
