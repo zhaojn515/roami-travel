@@ -1,0 +1,255 @@
+{
+  "SZ-FT-017": {
+    "file": "SZ-FT-017.jpg",
+    "source": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-022": {
+    "file": "SZ-FT-022.jpg",
+    "source": "https://unsplash.com/photos/a-building-with-a-sign-that-says-central-government-offices-r5s0VQnG-Hc",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-018": {
+    "file": "SZ-FT-018.jpg",
+    "source": "https://unsplash.com/photos/skyscrapers-above-residential-buildings-in-shenzhen-f62P29CwpRM",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-006": {
+    "file": "SZ-FT-006.jpg",
+    "source": "https://unsplash.com/photos/griffith-observatory-atop-a-lush-green-hill-Xz4dw5wqBWY",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-001": {
+    "file": "SZ-FT-001.jpg",
+    "source": "https://unsplash.com/photos/red-and-blue-building-Aw3I6YsS9pw",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-003": {
+    "file": "SZ-NS-003.jpg",
+    "source": "https://unsplash.com/photos/a-large-white-building-with-people-standing-outside-of-it-M7QgN-_Kroo",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-007": {
+    "file": "SZ-NS-007.jpg",
+    "source": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-028": {
+    "file": "SZ-NS-028.jpg",
+    "source": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-005": {
+    "file": "SZ-NS-005.jpg",
+    "source": "https://unsplash.com/photos/traditional-chinese-water-town-with-boats-and-ancient-buildings-tAhTLyqJKno",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LG-035": {
+    "file": "SZ-LG-035.jpg",
+    "source": "https://unsplash.com/photos/abstract-painting-AP-29z0BTmA",
+    "platform": "unsplash",
+    "kind": "category",
+    "fallback": false
+  },
+  "SZ-YT-037": {
+    "file": "SZ-YT-037.jpg",
+    "source": "https://unsplash.com/photos/two-young-girls-playing-in-the-sand-on-a-beach-Ib8QnHHtxUs",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-DP-041": {
+    "file": "SZ-DP-041.jpg",
+    "source": "https://unsplash.com/photos/ornate-chinese-city-gate-with-stone-wall-and-archway-hhPikZaZsi0",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-BA-033": {
+    "file": "SZ-BA-033.jpg",
+    "source": "https://unsplash.com/photos/london-eye-at-night-1513635269975-59663e0ac1ad",
+    "platform": "unsplash",
+    "kind": "category",
+    "fallback": false,
+    "note": "Replaced generic ferris wheel night shot (original was Singapore skyline, misleading for Shenzhen POI)"
+  },
+  "SZ-NS-004": {
+    "file": "SZ-NS-004.jpg",
+    "source": "https://unsplash.com/photos/city-skyline-silhouette-over-water-4ShEFaSeqcY",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-047": {
+    "file": "SZ-FT-047.jpg",
+    "source": "https://unsplash.com/photos/muji-store-with-illuminated-signage-YYrpgWECSbM",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-010": {
+    "file": "SZ-FT-010.jpg",
+    "source": "https://unsplash.com/photos/man-in-black-jacket-sitting-on-train-station-u2lrg_fZ2Ro",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-021": {
+    "file": "SZ-FT-021.jpg",
+    "source": "https://unsplash.com/photos/a-bright-modern-shopping-mall-interior-mAUeTdaU93Q",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-027": {
+    "file": "SZ-NS-027.jpg",
+    "source": "https://unsplash.com/photos/skyline-at-night-8jJlYMVU4Tg",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-030": {
+    "file": "SZ-NS-030.jpg",
+    "source": "https://unsplash.com/photos/teardrop-skylight-with-glass-dome-dAkskMwhXM8",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LH-049": {
+    "file": "SZ-LH-049.jpg",
+    "source": "https://unsplash.com/photos/shopping-mall-interior-with-clothing-racks-gs3ZqZaTpfU",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-BA-011": {
+    "file": "SZ-BA-011.jpg",
+    "source": "https://unsplash.com/photos/interior-view-of-a-bookstore-with-shelves-full-of-books-lUVOWdpPEW4",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-009": {
+    "file": "SZ-NS-009.jpg",
+    "source": "https://unsplash.com/photos/fresh-seafood-is-displayed-at-a-market-stall-Z4u1bD4Gb9Q",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LH-008": {
+    "file": "SZ-LH-008.jpg",
+    "source": "https://unsplash.com/photos/people-walk-with-umbrellas-on-a-wet-city-street-gV6yDWJ5Yvc",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LG-002": {
+    "file": "SZ-LG-002.jpg",
+    "source": "https://unsplash.com/photos/a-robot-arm-works-in-a-factory-setting-nM71nHjH4Vk",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-026": {
+    "file": "SZ-NS-026.jpg",
+    "source": "https://unsplash.com/photos/a-large-white-building-with-people-standing-outside-of-it-M7QgN-_Kroo",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-029": {
+    "file": "SZ-NS-029.jpg",
+    "source": "https://unsplash.com/photos/traditional-chinese-landscape-painting-with-a-pavilion-VKagibOTZRY",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LG-036": {
+    "file": "SZ-LG-036.jpg",
+    "source": "https://unsplash.com/photos/a-group-of-people-standing-around-a-store-5i3XtQAvW3o",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-FT-023": {
+    "file": "SZ-FT-023.jpg",
+    "source": "https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-ip_9T6fu9cs",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-048": {
+    "file": "SZ-NS-048.jpg",
+    "source": "https://unsplash.com/photos/a-building-with-a-red-roof-aTvX4RTHuac",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LH-014": {
+    "file": "SZ-LH-014.jpg",
+    "source": "https://unsplash.com/photos/black-and-brown-road-sign-at-night-iDOZ8eMvU0A",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LH-016": {
+    "file": "SZ-LH-016.jpg",
+    "source": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-YT-038": {
+    "file": "SZ-YT-038.jpg",
+    "source": "https://unsplash.com/photos/green-grass-in-front-of-a-calm-blue-ocean-s7Fd4wK5fww",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-DP-042": {
+    "file": "SZ-DP-042.jpg",
+    "source": "https://unsplash.com/photos/a-lifeguard-tower-on-the-beach-with-a-life-preserver-wixXScIDrIw",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-031": {
+    "file": "SZ-NS-031.jpg",
+    "source": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-LH-012": {
+    "file": "SZ-LH-012.jpg",
+    "source": "https://unsplash.com/photos/a-group-of-people-standing-around-a-store-5i3XtQAvW3o",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  },
+  "SZ-NS-025": {
+    "file": "SZ-NS-025.jpg",
+    "source": "https://unsplash.com/photos/traditional-chinese-village-with-a-canal-bridge-and-white-buildings-qgovnp8Bvss",
+    "platform": "unsplash",
+    "kind": "landmark",
+    "fallback": false
+  }
+}
