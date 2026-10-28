@@ -1,0 +1,251 @@
+{
+  "SZ-FT-017": {
+    "status": "success",
+    "file": "SZ-FT-017.jpg",
+    "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+    "image_url": "https://images.unsplash.com/photo-1787565766110-a0d80f634c14?w=800&q=70&fm=jpg",
+    "photo_id": "1787565766110"
+  },
+  "SZ-FT-022": {
+    "status": "success",
+    "file": "SZ-FT-022.jpg",
+    "source_url": "https://unsplash.com/photos/a-building-with-a-sign-that-says-central-government-offices-r5s0VQnG-Hc",
+    "image_url": "https://images.unsplash.com/photo-1698917469776-bd761d0d66f2?w=800&q=70&fm=jpg",
+    "photo_id": "1698917469776"
+  },
+  "SZ-FT-018": {
+    "status": "success",
+    "file": "SZ-FT-018.jpg",
+    "source_url": "https://unsplash.com/photos/skyscrapers-above-residential-buildings-in-shenzhen-f62P29CwpRM",
+    "image_url": "https://images.unsplash.com/photo-1787453228502-75dc638ea4f4?w=800&q=70&fm=jpg",
+    "photo_id": "1787453228502"
+  },
+  "SZ-FT-006": {
+    "status": "success",
+    "file": "SZ-FT-006.jpg",
+    "source_url": "https://unsplash.com/photos/griffith-observatory-atop-a-lush-green-hill-Xz4dw5wqBWY",
+    "image_url": "https://images.unsplash.com/photo-1768201796127-9c11ec9dd5da?w=800&q=70&fm=jpg",
+    "photo_id": "1768201796127"
+  },
+  "SZ-FT-001": {
+    "status": "failed",
+    "reason": "all download attempts failed"
+  },
+  "SZ-NS-003": {
+    "status": "success",
+    "file": "SZ-NS-003.jpg",
+    "source_url": "https://unsplash.com/photos/a-large-white-building-with-people-standing-outside-of-it-M7QgN-_Kroo",
+    "image_url": "https://images.unsplash.com/photo-1634016920849-e81a39594688?w=800&q=70&fm=jpg",
+    "photo_id": "1634016920849"
+  },
+  "SZ-NS-007": {
+    "status": "success",
+    "file": "SZ-NS-007.jpg",
+    "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+    "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+    "photo_id": "1787565715042"
+  },
+  "SZ-NS-028": {
+    "status": "success",
+    "file": "SZ-NS-028.jpg",
+    "source_url": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+    "image_url": "https://images.unsplash.com/photo-1786397980399-0d2752eb0b72?w=800&q=70&fm=jpg",
+    "photo_id": "1786397980399"
+  },
+  "SZ-NS-005": {
+    "status": "success",
+    "file": "SZ-NS-005.jpg",
+    "source_url": "https://unsplash.com/photos/traditional-chinese-village-with-people-by-the-water-Am3CJW76F9U",
+    "image_url": "https://images.unsplash.com/photo-1757102455225-677174ad2fc2?w=800&q=70&fm=jpg",
+    "photo_id": "1757102455225"
+  },
+  "SZ-LG-035": {
+    "status": "success",
+    "file": "SZ-LG-035.jpg",
+    "source_url": "https://unsplash.com/photos/abstract-painting-AP-29z0BTmA",
+    "image_url": "https://images.unsplash.com/photo-1562447141-5ab151b2638f?w=800&q=70&fm=jpg",
+    "photo_id": "1562447141"
+  },
+  "SZ-YT-037": {
+    "status": "success",
+    "file": "SZ-YT-037.jpg",
+    "source_url": "https://unsplash.com/photos/two-young-girls-playing-in-the-sand-on-a-beach-Ib8QnHHtxUs",
+    "image_url": "https://images.unsplash.com/photo-1704628080017-2747c156206d?w=800&q=70&fm=jpg",
+    "photo_id": "1704628080017"
+  },
+  "SZ-DP-041": {
+    "status": "success",
+    "file": "SZ-DP-041.jpg",
+    "source_url": "https://unsplash.com/photos/ornate-chinese-city-gate-with-stone-wall-and-archway-hhPikZaZsi0",
+    "image_url": "https://images.unsplash.com/photo-1783249376554-0afc9656c199?w=800&q=70&fm=jpg",
+    "photo_id": "1783249376554"
+  },
+  "SZ-BA-033": {
+    "status": "success",
+    "file": "SZ-BA-033.jpg",
+    "source_url": "https://unsplash.com/photos/singapore-skyline-with-marina-bay-sands-and-ferris-wheel-3GRENNknIsw",
+    "image_url": "https://images.unsplash.com/photo-1774075884764-be7319c06e08?w=800&q=70&fm=jpg",
+    "photo_id": "1774075884764"
+  },
+  "SZ-NS-004": {
+    "status": "success",
+    "file": "SZ-NS-004.jpg",
+    "source_url": "https://unsplash.com/photos/city-skyline-silhouette-over-water-4ShEFaSeqcY",
+    "image_url": "https://images.unsplash.com/photo-1786625059950-00529301397c?w=800&q=70&fm=jpg",
+    "photo_id": "1786625059950"
+  },
+  "SZ-FT-047": {
+    "status": "success",
+    "file": "SZ-FT-047.jpg",
+    "source_url": "https://unsplash.com/photos/muji-store-with-illuminated-signage-YYrpgWECSbM",
+    "image_url": "https://images.unsplash.com/photo-1786114475619-1a90dc4f3758?w=800&q=70&fm=jpg",
+    "photo_id": "1786114475619"
+  },
+  "SZ-FT-010": {
+    "status": "success",
+    "file": "SZ-FT-010.jpg",
+    "source_url": "https://unsplash.com/photos/man-in-black-jacket-sitting-on-train-station-u2lrg_fZ2Ro",
+    "image_url": "https://images.unsplash.com/photo-1585356907062-83a982f9be38?w=800&q=70&fm=jpg",
+    "photo_id": "1585356907062"
+  },
+  "SZ-FT-021": {
+    "status": "success",
+    "file": "SZ-FT-021.jpg",
+    "source_url": "https://unsplash.com/photos/a-bright-modern-shopping-mall-interior-mAUeTdaU93Q",
+    "image_url": "https://images.unsplash.com/photo-1747358351862-0b3168d4a0ef?w=800&q=70&fm=jpg",
+    "photo_id": "1747358351862"
+  },
+  "SZ-NS-027": {
+    "status": "success",
+    "file": "SZ-NS-027.jpg",
+    "source_url": "https://unsplash.com/photos/skyline-at-night-8jJlYMVU4Tg",
+    "image_url": "https://images.unsplash.com/photo-1575301236982-2857a6daf71a?w=800&q=70&fm=jpg",
+    "photo_id": "1575301236982"
+  },
+  "SZ-NS-030": {
+    "status": "success",
+    "file": "SZ-NS-030.jpg",
+    "source_url": "https://unsplash.com/photos/teardrop-skylight-with-glass-dome-dAkskMwhXM8",
+    "image_url": "https://images.unsplash.com/photo-1787492616871-87ed7bdde8e9?w=800&q=70&fm=jpg",
+    "photo_id": "1787492616871"
+  },
+  "SZ-LH-049": {
+    "status": "success",
+    "file": "SZ-LH-049.jpg",
+    "source_url": "https://unsplash.com/photos/shopping-mall-interior-with-clothing-racks-gs3ZqZaTpfU",
+    "image_url": "https://images.unsplash.com/photo-1786456629213-d087d121044f?w=800&q=70&fm=jpg",
+    "photo_id": "1786456629213"
+  },
+  "SZ-BA-011": {
+    "status": "success",
+    "file": "SZ-BA-011.jpg",
+    "source_url": "https://unsplash.com/photos/interior-view-of-a-bookstore-with-shelves-full-of-books-lUVOWdpPEW4",
+    "image_url": "https://images.unsplash.com/photo-1774070231417-4bf4d2025878?w=800&q=70&fm=jpg",
+    "photo_id": "1774070231417"
+  },
+  "SZ-NS-009": {
+    "status": "success",
+    "file": "SZ-NS-009.jpg",
+    "source_url": "https://unsplash.com/photos/fresh-seafood-is-displayed-at-a-market-stall-Z4u1bD4Gb9Q",
+    "image_url": "https://images.unsplash.com/photo-1748341302229-cf78497b9b6b?w=800&q=70&fm=jpg",
+    "photo_id": "1748341302229"
+  },
+  "SZ-LH-008": {
+    "status": "success",
+    "file": "SZ-LH-008.jpg",
+    "source_url": "https://unsplash.com/photos/people-walk-with-umbrellas-on-a-wet-city-street-gV6yDWJ5Yvc",
+    "image_url": "https://images.unsplash.com/photo-1778824127272-ec36c41727ef?w=800&q=70&fm=jpg",
+    "photo_id": "1778824127272"
+  },
+  "SZ-LG-002": {
+    "status": "success",
+    "file": "SZ-LG-002.jpg",
+    "source_url": "https://unsplash.com/photos/a-robot-arm-works-in-a-factory-setting-nM71nHjH4Vk",
+    "image_url": "https://images.unsplash.com/photo-1752614671052-92e18f534db1?w=800&q=70&fm=jpg",
+    "photo_id": "1752614671052"
+  },
+  "SZ-NS-026": {
+    "status": "success",
+    "file": "SZ-NS-026.jpg",
+    "source_url": "https://unsplash.com/photos/a-large-white-building-with-people-standing-outside-of-it-M7QgN-_Kroo",
+    "image_url": "https://images.unsplash.com/photo-1634016920849-e81a39594688?w=800&q=70&fm=jpg",
+    "photo_id": "1634016920849"
+  },
+  "SZ-NS-029": {
+    "status": "success",
+    "file": "SZ-NS-029.jpg",
+    "source_url": "https://unsplash.com/photos/traditional-chinese-landscape-painting-with-a-pavilion-VKagibOTZRY",
+    "image_url": "https://images.unsplash.com/photo-1762115839625-8f793c491f54?w=800&q=70&fm=jpg",
+    "photo_id": "1762115839625"
+  },
+  "SZ-NS-025": {
+    "status": "success",
+    "file": "SZ-NS-025.jpg",
+    "source_url": "https://unsplash.com/photos/traditional-chinese-village-with-a-canal-bridge-and-white-buildings-qgovnp8Bvss",
+    "image_url": "https://images.unsplash.com/photo-1780279405611-ebee442554f0?w=800&q=70&fm=jpg",
+    "photo_id": "1780279405611"
+  },
+  "SZ-LG-036": {
+    "status": "success",
+    "file": "SZ-LG-036.jpg",
+    "source_url": "https://unsplash.com/photos/a-group-of-people-standing-around-a-store-5i3XtQAvW3o",
+    "image_url": "https://images.unsplash.com/photo-1648168984747-567d0f90d315?w=800&q=70&fm=jpg",
+    "photo_id": "1648168984747"
+  },
+  "SZ-FT-023": {
+    "status": "success",
+    "file": "SZ-FT-023.jpg",
+    "source_url": "https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-ip_9T6fu9cs",
+    "image_url": "https://images.unsplash.com/photo-1696679083984-ae6d11da1d4a?w=800&q=70&fm=jpg",
+    "photo_id": "1696679083984"
+  },
+  "SZ-NS-048": {
+    "status": "success",
+    "file": "SZ-NS-048.jpg",
+    "source_url": "https://unsplash.com/photos/a-building-with-a-red-roof-aTvX4RTHuac",
+    "image_url": "https://images.unsplash.com/photo-1668010424618-4a9656fd1a96?w=800&q=70&fm=jpg",
+    "photo_id": "1668010424618"
+  },
+  "SZ-LH-014": {
+    "status": "success",
+    "file": "SZ-LH-014.jpg",
+    "source_url": "https://unsplash.com/photos/black-and-brown-road-sign-at-night-iDOZ8eMvU0A",
+    "image_url": "https://images.unsplash.com/photo-1571530761802-ca9ed9e7e3cd?w=800&q=70&fm=jpg",
+    "photo_id": "1571530761802"
+  },
+  "SZ-LH-016": {
+    "status": "success",
+    "file": "SZ-LH-016.jpg",
+    "source_url": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+    "image_url": "https://images.unsplash.com/photo-1786397980399-0d2752eb0b72?w=800&q=70&fm=jpg",
+    "photo_id": "1786397980399"
+  },
+  "SZ-YT-038": {
+    "status": "success",
+    "file": "SZ-YT-038.jpg",
+    "source_url": "https://unsplash.com/photos/green-grass-in-front-of-a-calm-blue-ocean-s7Fd4wK5fww",
+    "image_url": "https://images.unsplash.com/photo-1776423270803-4ba11ffe1dc1?w=800&q=70&fm=jpg",
+    "photo_id": "1776423270803"
+  },
+  "SZ-DP-042": {
+    "status": "success",
+    "file": "SZ-DP-042.jpg",
+    "source_url": "https://unsplash.com/photos/a-lifeguard-tower-on-the-beach-with-a-life-preserver-wixXScIDrIw",
+    "image_url": "https://images.unsplash.com/photo-1677728050942-19232bd2e9e8?w=800&q=70&fm=jpg",
+    "photo_id": "1677728050942"
+  },
+  "SZ-NS-031": {
+    "status": "success",
+    "file": "SZ-NS-031.jpg",
+    "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+    "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+    "photo_id": "1787565715042"
+  },
+  "SZ-LH-012": {
+    "status": "success",
+    "file": "SZ-LH-012.jpg",
+    "source_url": "https://unsplash.com/photos/a-group-of-people-standing-around-a-store-5i3XtQAvW3o",
+    "image_url": "https://images.unsplash.com/photo-1648168984747-567d0f90d315?w=800&q=70&fm=jpg",
+    "photo_id": "1648168984747"
+  }
+}
