@@ -1,0 +1,692 @@
+{
+  "SZ-FT-017": {
+    "name": "Ping An Free Sky Observation Deck",
+    "query": "Ping An Finance Centre Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+        "image_url": "https://images.unsplash.com/photo-1787565766110-a0d80f634c14?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+        "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-tall-modern-skyscraper-with-glass-facade-QK_twH4PAuk",
+        "image_url": "https://images.unsplash.com/photo-1766923939526-b83d961be3cb?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-large-city-with-tall-buildings-in-the-background-4IYjxFlvvhY",
+        "image_url": "https://images.unsplash.com/photo-1656658577043-025a85b3f0a9?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-group-of-people-standing-in-front-of-a-tall-building-v1P6ogERHhY",
+        "image_url": "https://images.unsplash.com/photo-1703145202849-b25f43a23dc9?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-022": {
+    "name": "Shenzhen Civic Center",
+    "query": "site:unsplash.com/photos Shenzhen government building",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-building-with-a-sign-that-says-central-government-offices-r5s0VQnG-Hc",
+        "image_url": "https://images.unsplash.com/photo-1698917469776-bd761d0d66f2?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/modern-building-with-a-flag-pole-in-front-T4H81URk11U",
+        "image_url": "https://images.unsplash.com/photo-1767540885885-13c84203f2c9?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/4PXPqiB2apA",
+        "image_url": "https://images.unsplash.com/photo-1576826631324-45b4a8585f6b?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/modern-building-with-curved-roof-and-surrounding-trees-prBurzughnE",
+        "image_url": "https://images.unsplash.com/photo-1770829330611-43d222feab24?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-018": {
+    "name": "Shenzhen Museum",
+    "query": "Shenzhen Museum building",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/skyscrapers-above-residential-buildings-in-shenzhen-f62P29CwpRM",
+        "image_url": "https://images.unsplash.com/photo-1787453228502-75dc638ea4f4?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-006": {
+    "name": "Lianhua Hill Park",
+    "query": "Lianhua Hill Park Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/griffith-observatory-atop-a-lush-green-hill-Xz4dw5wqBWY",
+        "image_url": "https://images.unsplash.com/photo-1768201796127-9c11ec9dd5da?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/person-standing-on-hill-EAvS-4KnGrk",
+        "image_url": "https://images.unsplash.com/photo-1492681290082-e932832941e6?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-001": {
+    "name": "Huaqiangbei Electronics Market",
+    "query": "Huaqiangbei Electronics Market Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/red-and-blue-building-Aw3I6YsS9pw",
+        "image_url": "https://images.unsplash.com/photo-1564514186755-212b99a8d9f7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-003": {
+    "name": "Sea World Shekou",
+    "query": "site:unsplash.com/photos Sea World Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-large-white-building-with-people-standing-outside-of-it-M7QgN-_Kroo",
+        "image_url": "https://images.unsplash.com/photo-1634016920849-e81a39594688?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/man-looking-out-large-window-at-sunrise-over-city-9j6k3EaZPRs",
+        "image_url": "https://images.unsplash.com/photo-1760734291224-30a9ad0f79a7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-fake-tree-on-display-in-a-museum-Tc6KUWaM894",
+        "image_url": "https://images.unsplash.com/photo-1702040764375-29818f4182a6?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-007": {
+    "name": "Window of the World",
+    "query": "Window of the World Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+        "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/man-looking-out-large-window-at-sunrise-over-city-9j6k3EaZPRs",
+        "image_url": "https://images.unsplash.com/photo-1760734291224-30a9ad0f79a7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-spiral-staircase-inside-of-a-building-TZAowbn2aZA",
+        "image_url": "https://images.unsplash.com/photo-1633665449239-895ec8e3bf22?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-028": {
+    "name": "OCT-LOFT Creative Culture Park",
+    "query": "OCT-LOFT Shenzhen art district",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+        "image_url": "https://images.unsplash.com/photo-1786397980399-0d2752eb0b72?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+        "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+        "image_url": "https://images.unsplash.com/photo-1787565766110-a0d80f634c14?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-005": {
+    "name": "Nantou Ancient Town",
+    "query": "site:unsplash.com/photos ancient town China",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/traditional-chinese-water-town-with-boats-and-ancient-buildings-tAhTLyqJKno",
+        "image_url": "https://images.unsplash.com/photo-1783949483219-88baa09c1286?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/traditional-chinese-village-with-people-by-the-water-Am3CJW76F9U",
+        "image_url": "https://images.unsplash.com/photo-1757102455225-677174ad2fc2?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-LG-035": {
+    "name": "Dafen Oil Painting Village",
+    "query": "site:unsplash.com/photos oil painting village",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/abstract-painting-AP-29z0BTmA",
+        "image_url": "https://images.unsplash.com/photo-1562447141-5ab151b2638f?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-YT-037": {
+    "name": "Dameisha Seaside Park",
+    "query": "site:unsplash.com/photos Shenzhen beach",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/two-young-girls-playing-in-the-sand-on-a-beach-Ib8QnHHtxUs",
+        "image_url": "https://images.unsplash.com/photo-1704628080017-2747c156206d?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/two-people-standing-on-a-beach-with-their-feet-in-the-sand-Fezd2aRXUwk",
+        "image_url": "https://images.unsplash.com/photo-1681384323095-ab21ecb5b959?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-DP-041": {
+    "name": "Dapeng Ancient Town",
+    "query": "Dapeng Ancient Town Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/ornate-chinese-city-gate-with-stone-wall-and-archway-hhPikZaZsi0",
+        "image_url": "https://images.unsplash.com/photo-1783249376554-0afc9656c199?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ancient-chinese-gate-welcomes-visitors-to-the-village-NClgRl411G0",
+        "image_url": "https://images.unsplash.com/photo-1746960645609-c95bef77a911?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-BA-033": {
+    "name": "Bay Glory Ferris Wheel",
+    "query": "Bay Glory Ferris Wheel Shenzhen Baoan",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/singapore-skyline-with-marina-bay-sands-and-ferris-wheel-3GRENNknIsw",
+        "image_url": "https://images.unsplash.com/photo-1774075884764-be7319c06e08?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-004": {
+    "name": "Shenzhen Bay Park",
+    "query": "Shenzhen Bay Park coastal",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/city-skyline-silhouette-over-water-4ShEFaSeqcY",
+        "image_url": "https://images.unsplash.com/photo-1786625059950-00529301397c?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-047": {
+    "name": "Central Book City",
+    "query": "Central Book City Shenzhen bookstore",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/muji-store-with-illuminated-signage-YYrpgWECSbM",
+        "image_url": "https://images.unsplash.com/photo-1786114475619-1a90dc4f3758?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/two-red-banners-with-chinese-characters-hang-above-windows-r36BBuMWkzE",
+        "image_url": "https://images.unsplash.com/photo-1778855024406-6d073a7b11dc?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-010": {
+    "name": "Gangxia North Station Eye of Shenzhen",
+    "query": "Gangxia North metro station Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/man-in-black-jacket-sitting-on-train-station-u2lrg_fZ2Ro",
+        "image_url": "https://images.unsplash.com/photo-1585356907062-83a982f9be38?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/people-waiting-on-a-busy-metro-station-platform-R300Nf6qfH0",
+        "image_url": "https://images.unsplash.com/photo-1760816418270-fc76fda62668?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/black-and-white-train-at-station-platform-CT-smXPp8qk",
+        "image_url": "https://images.unsplash.com/photo-1760816416826-8926197f4b02?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/people-boarding-a-train-at-a-station-vKuqptIYGW0",
+        "image_url": "https://images.unsplash.com/photo-1760816416763-1de91462ef5b?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/train-at-night-with-station-sign-O4W5PplwMQM",
+        "image_url": "https://images.unsplash.com/photo-1760816417652-e9c28d6625df?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-021": {
+    "name": "COCO Park Shopping Mall",
+    "query": "COCO Park shopping mall Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-bright-modern-shopping-mall-interior-mAUeTdaU93Q",
+        "image_url": "https://images.unsplash.com/photo-1747358351862-0b3168d4a0ef?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/interior-of-a-modern-shopping-mall-with-escalators-and-shops-brqQcWhP7UI",
+        "image_url": "https://images.unsplash.com/photo-1772760224872-db7c8f49404a?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/an-escalator-in-a-shopping-mall-with-a-giant-spider-on-the-wall-YQERsaHwtTs",
+        "image_url": "https://images.unsplash.com/photo-1712139692837-5010ea791d89?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-view-of-a-shopping-mall-with-a-skylight-overhead-fsUhT3uSAJ4",
+        "image_url": "https://images.unsplash.com/photo-1652716688792-3a3cde5799a5?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-027": {
+    "name": "Shenzhen Talent Park",
+    "query": "Shenzhen Talent Park",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/skyline-at-night-8jJlYMVU4Tg",
+        "image_url": "https://images.unsplash.com/photo-1575301236982-2857a6daf71a?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-couple-of-people-looking-at-a-city-skyline-uosZi-1WROI",
+        "image_url": "https://images.unsplash.com/photo-1668711288658-96fb99eaeaad?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-030": {
+    "name": "MixC World",
+    "query": "MixC World shopping mall Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/teardrop-skylight-with-glass-dome-dAkskMwhXM8",
+        "image_url": "https://images.unsplash.com/photo-1787492616871-87ed7bdde8e9?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/modern-building-with-i-love-sz-sign-at-dusk-YMAIZM5qDjg",
+        "image_url": "https://images.unsplash.com/photo-1771172193611-15ae7564d5c5?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-LH-049": {
+    "name": "The MixC Luohu",
+    "query": "MixC shopping mall Luohu Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/shopping-mall-interior-with-clothing-racks-gs3ZqZaTpfU",
+        "image_url": "https://images.unsplash.com/photo-1786456629213-d087d121044f?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-bright-modern-shopping-mall-interior-mAUeTdaU93Q",
+        "image_url": "https://images.unsplash.com/photo-1747358351862-0b3168d4a0ef?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/people-on-escalators-in-shopping-mall-yulOyh6ArmU",
+        "image_url": "https://images.unsplash.com/photo-1786282244528-5786e28b0315?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-decorated-christmas-tree-in-a-shopping-mall-6Zo02ETiUys",
+        "image_url": "https://images.unsplash.com/photo-1731520551252-319b35fe6d6e?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/an-escalator-in-a-shopping-mall-with-a-giant-spider-on-the-wall-YQERsaHwtTs",
+        "image_url": "https://images.unsplash.com/photo-1712139692837-5010ea791d89?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-BA-011": {
+    "name": "Bay Eye Bookstore",
+    "query": "Bay Eye bookstore Baoan Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/interior-view-of-a-bookstore-with-shelves-full-of-books-lUVOWdpPEW4",
+        "image_url": "https://images.unsplash.com/photo-1774070231417-4bf4d2025878?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ferris-wheel-near-city-buildings-during-night-time-r4AA8QHzMSo",
+        "image_url": "https://images.unsplash.com/photo-1626527273047-6d44b612a25f?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/people-browsing-shelves-in-a-modern-bookstore-interior-Xo1Mha1x-gQ",
+        "image_url": "https://images.unsplash.com/photo-1764923678478-b69bbc13493b?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/people-entering-a-bookstore-at-night-TzRk0NbWsvQ",
+        "image_url": "https://images.unsplash.com/photo-1767794733479-b1529ec8e946?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-ferris-wheel-in-front-of-a-city-skyline-rJDXI0Tfkcs",
+        "image_url": "https://images.unsplash.com/photo-1697163853079-5924aa9367d9?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-009": {
+    "name": "Shekou Market",
+    "query": "site:unsplash.com/photos Chinese market",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/fresh-seafood-is-displayed-at-a-market-stall-Z4u1bD4Gb9Q",
+        "image_url": "https://images.unsplash.com/photo-1748341302229-cf78497b9b6b?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-LH-008": {
+    "name": "Dongmen Food Street",
+    "query": "Dongmen food street Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/people-walk-with-umbrellas-on-a-wet-city-street-gV6yDWJ5Yvc",
+        "image_url": "https://images.unsplash.com/photo-1778824127272-ec36c41727ef?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-LG-002": {
+    "name": "Robot 6S Store",
+    "query": "site:unsplash.com/photos robot store",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-robot-arm-works-in-a-factory-setting-nM71nHjH4Vk",
+        "image_url": "https://images.unsplash.com/photo-1752614671052-92e18f534db1?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-026": {
+    "name": "Sea World Culture Arts Center",
+    "query": "Sea World Culture Arts Center Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-large-white-building-with-people-standing-outside-of-it-M7QgN-_Kroo",
+        "image_url": "https://images.unsplash.com/photo-1634016920849-e81a39594688?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-car-is-parked-in-front-of-a-building-1hcWeQ2ss3A",
+        "image_url": "https://images.unsplash.com/photo-1650112797449-fa07433e49a3?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-029": {
+    "name": "He Xiangning Art Museum",
+    "query": "site:unsplash.com/photos art museum China",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/traditional-chinese-landscape-painting-with-a-pavilion-VKagibOTZRY",
+        "image_url": "https://images.unsplash.com/photo-1762115839625-8f793c491f54?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/traditional-chinese-landscape-painting-featuring-mountains-and-trees-_TUPtcmOQE4",
+        "image_url": "https://images.unsplash.com/photo-1782743285217-e74f742d1401?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/green-trees-and-brown-brick-floor-NXVMRWGgCfg",
+        "image_url": "https://images.unsplash.com/photo-1595146463222-19603449c6af?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ink-wash-painting-of-a-rocky-archway-over-water-Ai1qdq3bpto",
+        "image_url": "https://images.unsplash.com/photo-1762119594597-de01cfd19a07?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/bmw-museum-entrance-with-modern-architecture-bYL4zb3lBks",
+        "image_url": "https://images.unsplash.com/photo-1767606971171-6da6b7dd9bb7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-025": {
+    "name": "Splendid China Folk Village",
+    "query": "site:unsplash.com/photos theme park China",
+    "images": []
+  },
+  "SZ-LG-036": {
+    "name": "GanKeng Hakka Town",
+    "query": "Gankeng Hakka town Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-group-of-people-standing-around-a-store-5i3XtQAvW3o",
+        "image_url": "https://images.unsplash.com/photo-1648168984747-567d0f90d315?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+        "image_url": "https://images.unsplash.com/photo-1786397980399-0d2752eb0b72?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+        "image_url": "https://images.unsplash.com/photo-1787565766110-a0d80f634c14?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+        "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-FT-023": {
+    "name": "Futian Mangrove Nature Reserve",
+    "query": "Futian Mangrove Nature Reserve Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-ip_9T6fu9cs",
+        "image_url": "https://images.unsplash.com/photo-1696679083984-ae6d11da1d4a?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-city-skyline-at-night-with-a-blue-sky-Tec-FnIxsts",
+        "image_url": "https://images.unsplash.com/photo-1696678519198-5bb5199ad79d?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-very-tall-building-with-a-lot-of-lights-on-top-of-it-PnWwrgsyhXo",
+        "image_url": "https://images.unsplash.com/photo-1699455790015-da3e113241f6?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/nature-reserve-sign-with-forest-background-lJN_JIgs2OI",
+        "image_url": "https://images.unsplash.com/photo-1776238490879-031b5d614e4e?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/aerial-view-of-mangrove-trees-on-a-sandy-coastline-_pnto22F7jM",
+        "image_url": "https://images.unsplash.com/photo-1763688506823-b9b5056a6f79?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-048": {
+    "name": "Shenzhen Bay MixC",
+    "query": "Shenzhen Bay MixC mall",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-building-with-a-red-roof-aTvX4RTHuac",
+        "image_url": "https://images.unsplash.com/photo-1668010424618-4a9656fd1a96?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-LH-014": {
+    "name": "Luohu Border Crossing",
+    "query": "Luohu border crossing Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/black-and-brown-road-sign-at-night-iDOZ8eMvU0A",
+        "image_url": "https://images.unsplash.com/photo-1571530761802-ca9ed9e7e3cd?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-sign-that-has-a-bunch-of-red-bricks-on-it-dhbV2ojTklc",
+        "image_url": "https://images.unsplash.com/photo-1724220635566-cbdf97655482?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/red-and-white-entrance-sign-hanging-on-building-ceiling-Bc30Gk8iVjs",
+        "image_url": "https://images.unsplash.com/photo-1561270313-68be3de1ba67?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/street-signs-point-to-escolta-intramuros-and-quintin-paredes-st-j1kmvSGkI0c",
+        "image_url": "https://images.unsplash.com/photo-1772832407871-39ab0cb7e08a?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-LH-016": {
+    "name": "Shun Hing Square",
+    "query": "Shun Hing Square Diwang Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/skyscrapers-and-residential-buildings-in-shenzhen-w7KiXTfpu3I",
+        "image_url": "https://images.unsplash.com/photo-1786397980399-0d2752eb0b72?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-view-of-a-city-skyline-with-mountains-in-the-background-hb0aRA7ZSCg",
+        "image_url": "https://images.unsplash.com/photo-1634357482393-15d81283dcea?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-group-of-people-standing-around-a-store-5i3XtQAvW3o",
+        "image_url": "https://images.unsplash.com/photo-1648168984747-567d0f90d315?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+        "image_url": "https://images.unsplash.com/photo-1787565766110-a0d80f634c14?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+        "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-YT-038": {
+    "name": "Yantian Seaside Boardwalk",
+    "query": "Yantian seaside boardwalk Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/green-grass-in-front-of-a-calm-blue-ocean-s7Fd4wK5fww",
+        "image_url": "https://images.unsplash.com/photo-1776423270803-4ba11ffe1dc1?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-DP-042": {
+    "name": "Jiaochangwei Beach Village",
+    "query": "Jiaochangwei beach Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-lifeguard-tower-on-the-beach-with-a-life-preserver-wixXScIDrIw",
+        "image_url": "https://images.unsplash.com/photo-1677728050942-19232bd2e9e8?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-NS-031": {
+    "name": "Tencent Seafront Towers",
+    "query": "site:unsplash.com/photos Shenzhen office building",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-OZpq4-tAo94",
+        "image_url": "https://images.unsplash.com/photo-1787565715042-96394e33e3d7?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ewjRUnYgnMg",
+        "image_url": "https://images.unsplash.com/photo-1665667206065-0ae6b8e866be?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-tall-white-building-sitting-next-to-a-tall-white-building---P1Dv_mmhw",
+        "image_url": "https://images.unsplash.com/photo-1646485745767-74f4879cd4db?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  },
+  "SZ-LH-012": {
+    "name": "MINISO LAND Dongmen",
+    "query": "MINISO flagship store Shenzhen",
+    "images": [
+      {
+        "source_url": "https://unsplash.com/photos/a-group-of-people-standing-around-a-store-5i3XtQAvW3o",
+        "image_url": "https://images.unsplash.com/photo-1648168984747-567d0f90d315?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/a-very-tall-building-with-a-lot-of-lights-on-top-of-it-PnWwrgsyhXo",
+        "image_url": "https://images.unsplash.com/photo-1699455790015-da3e113241f6?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/an-architectural-dome-with-a-blue-sky-through-it-1_u5G2QKOj8",
+        "image_url": "https://images.unsplash.com/photo-1746108346084-bc324c010f11?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/crackers-arranged-diagonally-in-a-repeating-pattern-5axTZbwxlIA",
+        "image_url": "https://images.unsplash.com/photo-1746439263043-6401c2f2e363?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      },
+      {
+        "source_url": "https://unsplash.com/photos/ping-an-finance-centre-in-shenzhen-XXww5L6g0Ow",
+        "image_url": "https://images.unsplash.com/photo-1787565766110-a0d80f634c14?w=800&q=70&fm=jpg",
+        "platform": "unsplash"
+      }
+    ]
+  }
+}
