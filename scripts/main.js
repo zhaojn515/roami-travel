@@ -32,4 +32,42 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Starter Kit form submission
+  const starterKitForm = document.getElementById('starter-kit-form');
+  if (starterKitForm) {
+    starterKitForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const submitButton = starterKitForm.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      
+      // Disable button and show loading state
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      
+      try {
+        const response = await fetch('/api/send-starter-kit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success && data.redirectUrl) {
+          // Redirect to thank-you page
+          window.location.href = data.redirectUrl;
+        } else {
+          throw new Error(data.error || 'Submission failed');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        alert('Sorry, there was an error. Please try again or contact hello@roamitravel.com');
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    });
+  }
 });

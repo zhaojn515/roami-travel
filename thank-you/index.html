@@ -86,6 +86,19 @@
     if (typeof window.trackConversion === 'function') {
       window.trackConversion('starterKit');
     }
+    
+    // Auto-trigger PDF download
+    window.addEventListener('load', function() {
+      // Small delay to let page render first
+      setTimeout(function() {
+        var link = document.createElement('a');
+        link.href = '/downloads/starter-kit.pdf';
+        link.download = 'Roami-China-Travel-Starter-Kit.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 500);
+    });
   </script>
 </body>
 </html>
