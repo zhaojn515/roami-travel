@@ -48,19 +48,28 @@ document.addEventListener('DOMContentLoaded', function() {
       submitButton.textContent = 'Sending...';
       
       try {
+        // Use FormData for better compatibility
+        const formData = new FormData();
+        formData.append('email', email);
+        
         const response = await fetch('/api/send-starter-kit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
+          body: formData,
+          redirect: 'follow'
         });
         
-        const data = await response.json();
-        
-        if (data.success && data.redirectUrl) {
-          // Redirect to thank-you page
-          window.location.href = data.redirectUrl;
+        // Function returns 302 redirect to thank-you page
+        // If we got here, check if redirected
+        if (response.redirected || response.url.includes('/thank-you')) {
+          window.location.href = '/thank-you/?product=starter-kit';
         } else {
-          throw new Error(data.error || 'Submission failed');
+          // Try to parse as JSON fallback
+          const data = await response.json();
+          if (data.success && data.redirectUrl) {
+            window.location.href = data.redirectUrl;
+          } else {
+            throw new Error(data.error || 'Submission failed');
+          }
         }
       } catch (error) {
         console.error('Form submission error:', error);
