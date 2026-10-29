@@ -9,6 +9,11 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18518352623"></script>
   <script src="/scripts/ga4.js"></script>
   <style>
+.si{display:inline-block;width:1.1em;height:1.1em;vertical-align:-0.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.si-check{color:#059669;stroke-width:2.5}
+.si-x{color:#dc2626;stroke-width:2.5}
+.si-heart{color:#ef4444;fill:#ef4444;stroke:none}
+
     .ty-wrap {
       max-width: 600px;
       margin: 0 auto;
@@ -229,7 +234,7 @@
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a href="/" class="logo" aria-label="Roami Travel Home">🌏 Roami Travel</a>
+        <a href="/" class="logo" aria-label="Roami Travel Home"><svg class="si" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Roami Travel</a>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <nav class="main-nav" aria-label="Main navigation">
           <ul class="nav-list">
@@ -263,7 +268,7 @@
   <script>
     const PRODUCTS = {
       'starter-kit': {
-        emoji: '📘',
+        emoji: '<svg class="si" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
         name: 'Shenzhen Starter Kit',
         tagline: 'Your free travel guide is on its way!',
         delivery: 'Check your email for the download link. It should arrive within 2-3 minutes.',
@@ -272,12 +277,12 @@
         autoDownload: true,
         trackKey: 'starterKit',
         cards: [
-          { icon: '🗺️', name: 'Shenzhen Playbook', price: '$19', desc: '12 walking routes, 51 POIs with verified hours, interactive maps, PWA offline mode.', link: 'https://playbook.roamitravel.com/', hot: true },
-          { icon: '🎯', name: 'Custom Itinerary', price: '$69', desc: 'A personal 1-3 day plan built around your dates, interests, and travel pace.', link: '/order/personalized/' }
+          { icon: '<svg class="si" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', name: 'Shenzhen Playbook', price: '$19', desc: '12 walking routes, 51 POIs with verified hours, interactive maps, PWA offline mode.', link: 'https://playbook.roamitravel.com/', hot: true },
+          { icon: '<svg class="si" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>', name: 'Custom Itinerary', price: '$69', desc: 'A personal 1-3 day plan built around your dates, interests, and travel pace.', link: '/order/personalized/' }
         ]
       },
       'playbook': {
-        emoji: '🗺️',
+        emoji: '<svg class="si" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>',
         name: 'Shenzhen Playbook',
         tagline: 'Your interactive guide is ready!',
         delivery: 'A confirmation email with your access instructions is on its way.',
@@ -286,12 +291,12 @@
         autoDownload: false,
         trackKey: 'playbook',
         cards: [
-          { icon: '🎯', name: 'Custom Itinerary', price: '$69', desc: 'A personal 1-3 day plan built around your dates, interests, and travel pace.', link: '/order/personalized/' },
-          { icon: '🧳', name: 'Shenzhen Companion', price: '$129', desc: 'Full 4-7 day itinerary with 12 walking routes, priority support, and offline maps.', link: '/order/companion/', hot: true }
+          { icon: '<svg class="si" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>', name: 'Custom Itinerary', price: '$69', desc: 'A personal 1-3 day plan built around your dates, interests, and travel pace.', link: '/order/personalized/' },
+          { icon: '<svg class="si" viewBox="0 0 24 24"><path d="M6 20h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-2-2H8l-2 2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/><line x1="9" y1="12" x2="15" y2="12"/></svg>', name: 'Shenzhen Companion', price: '$129', desc: 'Full 4-7 day itinerary with 12 walking routes, priority support, and offline maps.', link: '/order/companion/', hot: true }
         ]
       },
       'personalized': {
-        emoji: '🎯',
+        emoji: '<svg class="si" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
         name: 'Custom Itinerary',
         tagline: 'We\'ve received your order!',
         delivery: null,
@@ -304,12 +309,12 @@
           'We\'ll craft and deliver your plan within 24 hours'
         ],
         cards: [
-          { icon: '🗺️', name: 'Shenzhen Playbook', price: '$19', desc: 'Explore 12 walking routes and 51 verified POIs while waiting for your plan.', link: 'https://playbook.roamitravel.com/', hot: true },
-          { icon: '🧳', name: 'Shenzhen Companion', price: '$129', desc: 'Full 4-7 day itinerary with priority 2-hour support and offline maps.', link: '/order/companion/' }
+          { icon: '<svg class="si" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', name: 'Shenzhen Playbook', price: '$19', desc: 'Explore 12 walking routes and 51 verified POIs while waiting for your plan.', link: 'https://playbook.roamitravel.com/', hot: true },
+          { icon: '<svg class="si" viewBox="0 0 24 24"><path d="M6 20h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-2-2H8l-2 2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/><line x1="9" y1="12" x2="15" y2="12"/></svg>', name: 'Shenzhen Companion', price: '$129', desc: 'Full 4-7 day itinerary with priority 2-hour support and offline maps.', link: '/order/companion/' }
         ]
       },
       'companion': {
-        emoji: '🧳',
+        emoji: '<svg class="si" viewBox="0 0 24 24"><path d="M6 20h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-2-2H8l-2 2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/><line x1="9" y1="12" x2="15" y2="12"/></svg>',
         name: 'Shenzhen Companion',
         tagline: 'We\'ve received your order!',
         delivery: null,
@@ -322,8 +327,8 @@
           'We\'ll deliver your full itinerary within 24 hours'
         ],
         cards: [
-          { icon: '🗺️', name: 'Shenzhen Playbook', price: '$19', desc: 'Explore 12 walking routes while our team builds your Companion plan.', link: 'https://playbook.roamitravel.com/', hot: true },
-          { icon: '🎯', name: 'Custom Itinerary', price: '$69', desc: 'Know a travel companion? Give them their own custom plan.', link: '/order/personalized/' }
+          { icon: '<svg class="si" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>', name: 'Shenzhen Playbook', price: '$19', desc: 'Explore 12 walking routes while our team builds your Companion plan.', link: 'https://playbook.roamitravel.com/', hot: true },
+          { icon: '<svg class="si" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>', name: 'Custom Itinerary', price: '$69', desc: 'Know a travel companion? Give them their own custom plan.', link: '/order/personalized/' }
         ]
       }
     };
@@ -346,13 +351,13 @@
       if (p.download) {
         dlHtml = `
           <div class="ty-download">
-            <a href="${p.download}" class="ty-dl-btn" data-track="${p.trackKey}">📥 ${p.downloadLabel}</a>
+            <a href="${p.download}" class="ty-dl-btn" data-track="${p.trackKey}"><svg class="si" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> ${p.downloadLabel}</a>
             <p class="ty-dl-hint">Or check your email for the download link</p>
           </div>`;
       } else if (p.accessLink) {
         dlHtml = `
           <div class="ty-download">
-            <a href="${p.accessLink}" class="ty-dl-btn">🔓 Access Your Playbook</a>
+            <a href="${p.accessLink}" class="ty-dl-btn"><svg class="si" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg> Access Your Playbook</a>
             <p class="ty-dl-hint">Or check your email for the access link</p>
           </div>`;
       }
@@ -386,7 +391,7 @@
           ${dlHtml}
 
           <div class="ty-upgrade">
-            <div class="ty-upgrade-title">🚀 Level Up Your Trip</div>
+            <div class="ty-upgrade-title"><svg class="si" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Level Up Your Trip</div>
             <div class="ty-upgrade-sub">Get more out of your Shenzhen adventure</div>
             <div class="ty-grid">${cardsHtml}</div>
           </div>
@@ -407,7 +412,7 @@
         setTimeout(function() {
           const link = document.createElement('a');
           link.href = p.download;
-          link.download = 'Roami-China-Travel-Starter-Kit.pdf';
+          link.download = 'Roami-China-Starter-Kit.pdf';
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
