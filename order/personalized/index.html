@@ -13,6 +13,34 @@
   <meta property="og:site_name" content="Roami Travel">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/styles/main.css">
+  <style>
+    /* SVG Icon Styles */
+    .icon-svg {
+      display: inline-block;
+      width: 1.25em;
+      height: 1.25em;
+      vertical-align: -0.25em;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .feature-title .icon-svg {
+      color: var(--color-primary);
+      margin-right: 0.5rem;
+    }
+    .product-preview-icon {
+      width: 2rem;
+      height: 2rem;
+      color: var(--color-primary);
+    }
+    .itinerary-item-icon {
+      width: 1.5em;
+      height: 1.5em;
+      color: #64748b;
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,7 +118,7 @@
     <!-- Product Preview -->
     <section class="section section-alt">
       <div class="container" style="text-align:center;">
-        <div class="section-label" style="color:var(--color-primary);font-weight:700;font-size:0.875rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:var(--space-xs);">✦ Product Preview</div>
+        <div class="section-label" style="color:var(--color-primary);font-weight:700;font-size:0.875rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:var(--space-xs);"><svg class="icon-svg" viewBox="0 0 24 24" style="width:1em;height:1em;vertical-align:-0.15em;margin-right:0.3em;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Product Preview</div>
         <h2 class="section-title">See what your itinerary looks like</h2>
         <p style="color:var(--color-text);max-width:600px;margin:0 auto var(--space-lg);font-size:1.0625rem;">This is the actual format you'll receive — a mobile-optimized live page with real-time navigation, Chinese addresses for drivers, and curated local tips.</p>
 
@@ -103,7 +131,7 @@
           </div>
           <!-- App Header -->
           <div style="background:linear-gradient(135deg,#0f766e,#14b8a6);padding:20px 20px 16px;color:#fff;">
-            <div style="display:flex;align-items:center;gap:6px;font-size:0.875rem;font-weight:600;opacity:0.9;margin-bottom:4px;">🌏 Roami Live Itinerary</div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:0.875rem;font-weight:600;opacity:0.9;margin-bottom:4px;"><svg class="icon-svg" viewBox="0 0 24 24" style="width:1em;height:1em;"><circle cx="12" cy="12" r="10" stroke="white"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="white"/></svg> Roami Live Itinerary</div>
             <div style="font-size:1.25rem;font-weight:700;">Shenzhen · Day 1</div>
           </div>
           <!-- Itinerary Items -->
@@ -111,35 +139,35 @@
             <div style="display:flex;gap:16px;padding:12px 0;border-bottom:1px solid #f0f0f0;">
               <div style="font-size:0.8125rem;font-weight:700;color:var(--color-primary);min-width:44px;padding-top:2px;">09:00</div>
               <div style="text-align:left;">
-                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;">☕ Breakfast at Oct Coffee</div>
+                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;display:flex;align-items:center;gap:0.4em;"><svg class="itinerary-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a3 3 0 1 1 0 6h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg> Breakfast at Oct Coffee</div>
                 <div style="font-size:0.8125rem;color:#64748b;margin-top:2px;">Nanshan · Specialty pour-over · ¥35</div>
               </div>
             </div>
             <div style="display:flex;gap:16px;padding:12px 0;border-bottom:1px solid #f0f0f0;">
               <div style="font-size:0.8125rem;font-weight:700;color:var(--color-primary);min-width:44px;padding-top:2px;">10:30</div>
               <div style="text-align:left;">
-                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;">🏛️ OCAT Contemporary Art</div>
+                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;display:flex;align-items:center;gap:0.4em;"><svg class="itinerary-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> OCAT Contemporary Art</div>
                 <div style="font-size:0.8125rem;color:#64748b;margin-top:2px;">Free entry · 1.5h recommended</div>
               </div>
             </div>
             <div style="display:flex;gap:16px;padding:12px 0;border-bottom:1px solid #f0f0f0;">
               <div style="font-size:0.8125rem;font-weight:700;color:var(--color-primary);min-width:44px;padding-top:2px;">12:30</div>
               <div style="text-align:left;">
-                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;">🍜 Lunch: Hakkabun</div>
+                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;display:flex;align-items:center;gap:0.4em;"><svg class="itinerary-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a3 3 0 1 1 0 6h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg> Lunch: Hakkabun</div>
                 <div style="font-size:0.8125rem;color:#64748b;margin-top:2px;">Hakka cuisine · English menu · ¥60</div>
               </div>
             </div>
             <div style="display:flex;gap:16px;padding:12px 0;border-bottom:1px solid #f0f0f0;">
               <div style="font-size:0.8125rem;font-weight:700;color:var(--color-primary);min-width:44px;padding-top:2px;">14:00</div>
               <div style="text-align:left;">
-                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;">🌿 OCT Loft Creative Park</div>
+                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;display:flex;align-items:center;gap:0.4em;"><svg class="itinerary-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 0 0-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 0 1 5.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 0 1 9.288 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg> OCT Loft Creative Park</div>
                 <div style="font-size:0.8125rem;color:#64748b;margin-top:2px;">Art galleries + cafes · Free entry</div>
               </div>
             </div>
             <div style="display:flex;gap:16px;padding:12px 0;">
               <div style="font-size:0.8125rem;font-weight:700;color:var(--color-primary);min-width:44px;padding-top:2px;">19:00</div>
               <div style="text-align:left;">
-                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;">🥘 Dinner: Beef Hotpot</div>
+                <div style="font-weight:600;font-size:0.9375rem;color:#0b1220;display:flex;align-items:center;gap:0.4em;"><svg class="itinerary-item-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a3 3 0 1 1 0 6h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg> Dinner: Beef Hotpot</div>
                 <div style="font-size:0.8125rem;color:#64748b;margin-top:2px;">Chaoshan style · Photo menu available</div>
               </div>
             </div>
