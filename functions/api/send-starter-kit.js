@@ -88,12 +88,13 @@ export async function onRequest(context) {
       }
     }
 
-    // 重定向到 thank-you 页面
-    return new Response(null, {
-      status: 302,
-      headers: {
-        'Location': '/thank-you/?product=starter-kit'
-      }
+    // 返回成功 JSON，前端处理跳转
+    return new Response(JSON.stringify({
+      success: true,
+      redirectUrl: '/thank-you/?product=starter-kit'
+    }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
     });
 
   } catch (error) {
