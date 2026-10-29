@@ -9,17 +9,7 @@ export async function onRequest(context) {
   }
 
   try {
-    // Handle both JSON and form data
-    let email;
-    const contentType = request.headers.get('content-type');
-    if (contentType && contentType.includes('application/json')) {
-      const data = await request.json();
-      email = data.email;
-    } else {
-      const formData = await request.formData();
-      email = formData.get('email');
-    }
-
+    const { email } = await request.json();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
     if (!email || !emailRegex.test(email)) {
@@ -88,12 +78,12 @@ export async function onRequest(context) {
       }
     }
 
-    // 重定向到 thank-you 页面
-    return new Response(null, {
-      status: 302,
-      headers: {
-        'Location': '/thank-you/?product=starter-kit'
-      }
+    // 返回成功状态和重定向 URL
+    return new Response(JSON.stringify({ 
+      success: true,
+      redirectUrl: '/thank-you/?product=starter-kit'
+    }), {
+      headers: { 'Content-Type': 'application/json' }
     });
 
   } catch (error) {
