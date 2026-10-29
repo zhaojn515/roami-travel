@@ -8,17 +8,22 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#111827;background:#f9fafb;line-height:1.6}
+
+/* SVG Icons */
+.i{display:inline-block;width:1em;height:1em;vertical-align:-0.125em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
 .container{max-width:900px;margin:0 auto;padding:24px}
 .back-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:white;border-radius:999px;font-size:14px;font-weight:500;color:#374151;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,0.06);margin-bottom:24px;transition:box-shadow 0.15s}
 .back-link:hover{box-shadow:0 4px 12px rgba(0,0,0,0.1);text-decoration:none}
 
 /* Header */
 .route-header{background:linear-gradient(135deg,#0f766e 0%,#0d6b63 100%);color:white;border-radius:16px;padding:32px;margin-bottom:32px;box-shadow:0 4px 12px rgba(15,118,110,0.2)}
-.route-header h1{font-size:32px;font-weight:700;margin-bottom:8px}
+.route-header h1{font-size:28px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.route-header h1 .i{width:1.1em;height:1.1em}
 .route-header .subtitle{font-size:18px;opacity:0.9;margin-bottom:20px}
-.route-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:20px}
-.meta-item{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);padding:12px 20px;border-radius:12px;display:flex;align-items:center;gap:8px;font-size:15px}
-.meta-item .icon{font-size:20px}
+.route-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.meta-item{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);padding:10px 16px;border-radius:12px;display:flex;align-items:center;gap:8px;font-size:14px}
+.meta-item .i{width:1.1em;height:1.1em}
 .route-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:20px}
 .info-card{background:rgba(255,255,255,0.1);padding:16px;border-radius:12px}
 .info-card h3{font-size:14px;font-weight:600;opacity:0.8;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
@@ -42,21 +47,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 .stop-category{display:inline-block;background:#f0fdfa;color:#0f766e;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:500}
 .stop-details{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
 .detail-item{display:flex;align-items:start;gap:8px}
-.detail-item .label{font-size:13px;color:#6b7280;font-weight:500}
-.detail-item .value{font-size:14px;color:#111827}
+.detail-item .label{font-size:13px;color:#6b7280;font-weight:500;display:flex;align-items:center;gap:4px}
+.detail-item .label .i{width:0.9em;height:0.9em}
+.detail-item .value{font-size:14px;color:#111827;margin-top:2px}
+
 .highlight-box{background:#f0fdfa;border:1px solid #ccfbf1;border-radius:12px;padding:16px;margin:16px 0}
-.highlight-box h4{font-size:14px;font-weight:600;color:#0f766e;margin-bottom:8px}
+.highlight-box h4{font-size:14px;font-weight:600;color:#0f766e;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.highlight-box h4 .i{color:#0f766e;width:1em;height:1em}
 .highlight-box p{font-size:14px;color:#374151}
 .avoid-box{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:16px;margin:16px 0}
-.avoid-box h4{font-size:14px;font-weight:600;color:#dc2626;margin-bottom:8px}
+.avoid-box h4{font-size:14px;font-weight:600;color:#dc2626;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.avoid-box h4 .i{color:#dc2626;width:1em;height:1em}
 .avoid-box p{font-size:14px;color:#374151}
-.order-box{background:#fef3c7;border:1px solid #fde68a;border-radius:12px;padding:16px;margin:16px 0}
-.order-box h4{font-size:14px;font-weight:600;color:#d97706;margin-bottom:8px}
-.order-box p{font-size:14px;color:#374151}
 
 /* Walking Segment */
 .walking-segment{background:#f3f4f6;border-radius:12px;padding:16px;margin:16px 0;display:flex;align-items:center;gap:12px}
-.walking-icon{font-size:24px}
+.walking-icon{color:#0f766e;display:flex;align-items:center}
+.walking-icon .i{width:1.5em;height:1.5em}
 .walking-info{flex:1}
 .walking-info .distance{font-size:16px;font-weight:700;color:#0f766e}
 .walking-info .duration{font-size:13px;color:#6b7280}
@@ -64,39 +71,59 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 /* Dining Section */
 .dining-section{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:20px;margin-top:16px}
 .dining-section h3{font-size:16px;font-weight:700;color:#d97706;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.dining-section h3 .i{width:1.1em;height:1.1em;color:#d97706}
 .dining-card{background:white;border-radius:8px;padding:12px;margin-bottom:8px}
 .dining-name{font-size:15px;font-weight:600;color:#111827;margin-bottom:4px}
-.dining-details{display:flex;gap:16px;font-size:13px;color:#6b7280}
+.dining-details{display:flex;flex-wrap:wrap;gap:12px;font-size:13px;color:#6b7280}
 .dining-details span{display:flex;align-items:center;gap:4px}
+.dining-details .i{width:0.85em;height:0.85em}
 
 /* CTA */
 .cta-card{background:linear-gradient(135deg,#0f766e,#0d6b63);color:white;border-radius:16px;padding:40px;text-align:center;margin-top:40px;box-shadow:0 4px 16px rgba(15,118,110,0.3)}
-.cta-card h2{font-size:28px;font-weight:700;margin-bottom:12px}
-.cta-card p{font-size:16px;opacity:0.9;margin-bottom:24px}
+.cta-card h2{font-size:24px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px}
+.cta-card h2 .i{width:1.2em;height:1.2em}
+.cta-card p{font-size:16px;opacity:0.9;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto}
 .cta-btn{display:inline-block;padding:16px 40px;background:white;color:#0f766e;border-radius:12px;font-weight:700;font-size:18px;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
 .cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.25);text-decoration:none}
 .cta-note{font-size:14px;opacity:0.7;margin-top:16px}
 
 @media(max-width:640px){
-.route-header h1{font-size:24px}
+.route-header h1{font-size:22px}
 .route-header .subtitle{font-size:16px}
 .stop-title h2{font-size:18px}
 .container{padding:16px}
+.cta-card h2{font-size:20px}
 }
 </style>
 </head>
 <body>
 <div class="container">
-<a href="https://roamitravel.com" class="back-link">← Back to Roami Travel</a>
+<a href="https://roamitravel.com" class="back-link">
+<svg class="i" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+Back to Roami Travel</a>
 
 <div class="route-header">
-<h1>🏛️ Futian Civic Center Cultural Loop</h1>
+<h1>
+<svg class="i" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+Futian Civic Center Cultural Loop</h1>
 <div class="subtitle">Experience Shenzhen's civic architecture, history, and panoramic views in one perfect loop</div>
 <div class="route-meta">
-<div class="meta-item"><span class="icon">⏱️</span><span>1.5 hours</span></div>
-<div class="meta-item"><span class="icon">🚶</span><span>2.1 km total</span></div>
-<div class="meta-item"><span class="icon">📍</span><span>4 stops</span></div>
-<div class="meta-item"><span class="icon">🚇</span><span>Civic Center Station</span></div>
+<div class="meta-item">
+<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<span>1.5 hours</span>
+</div>
+<div class="meta-item">
+<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M13 8.5l-2.5 5 2.5 3.5-1 5M8 10l2.5 1.5 2-2.5"/></svg>
+<span>2.1 km total</span>
+</div>
+<div class="meta-item">
+<svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<span>4 stops</span>
+</div>
+<div class="meta-item">
+<svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+<span>Civic Center Station</span>
+</div>
 </div>
 <div class="route-info">
 <div class="info-card">
@@ -147,60 +174,62 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 <div class="stop-details">
 <div class="detail-item">
 <div>
-<div class="label">📍 Address</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Address</div>
 <div class="value">Fuzhong Road, Civic Center Area</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🚇 Metro</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg> Metro</div>
 <div class="value">Civic Center Station, ~3-min walk</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🕐 Hours</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Hours</div>
 <div class="value">Open 24 hours (exterior)</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">💰 Ticket</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Ticket</div>
 <div class="value">Free (exterior)</div>
 </div>
 </div>
 </div>
 
 <div class="highlight-box">
-<h4>✨ Highlights</h4>
+<h4><svg class="i" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Highlights</h4>
 <p>Iconic undulating roof design inspired by a flying phoenix. The building's dramatic curves and massive scale make it one of Shenzhen's most photographed landmarks. Best viewed from multiple angles—front, side, and especially from Lianhua Hill across the street.</p>
 </div>
 
 <div class="dining-section">
-<h3>🍜 Nearby Dining Options</h3>
+<h3><svg class="i" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg> Nearby Dining Options</h3>
 <div class="dining-card">
 <div class="dining-name">Tonkatsu Restaurant (堂本家·二代目)</div>
 <div class="dining-details">
-<span>⭐ 4.5</span>
-<span>💰 ¥95/person</span>
-<span>📍 224m</span>
-<span>🍱 Japanese cuisine</span>
+<span><svg class="i" viewBox="0 0 24 24" style="color:#f59e0b;stroke:none;fill:currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 4.5</span>
+<span><svg class="i" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> ¥95/person</span>
+<span><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 224m</span>
+<span>Japanese cuisine</span>
 </div>
 </div>
 <div class="dining-card">
 <div class="dining-name">Local Chinese Cuisine</div>
 <div class="dining-details">
-<span>⭐ 4.4</span>
-<span>💰 ¥63/person</span>
-<span>📍 118m</span>
-<span>🥢 Regional Chinese</span>
+<span><svg class="i" viewBox="0 0 24 24" style="color:#f59e0b;stroke:none;fill:currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> 4.4</span>
+<span><svg class="i" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> ¥63/person</span>
+<span><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 118m</span>
+<span>Regional Chinese</span>
 </div>
 </div>
 </div>
 </div>
 
 <div class="walking-segment">
-<div class="walking-icon">🚶</div>
+<div class="walking-icon">
+<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M13 8.5l-2.5 5 2.5 3.5-1 5M8 10l2.5 1.5 2-2.5"/></svg>
+</div>
 <div class="walking-info">
 <div class="distance">332m</div>
 <div class="duration">~4 min walk to next stop</div>
@@ -221,49 +250,51 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 <div class="stop-details">
 <div class="detail-item">
 <div>
-<div class="label">📍 Address</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Address</div>
 <div class="value">Fuzhong Road, Civic Center Area (350m from Civic Center Metro Station Exit B)</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🚇 Metro</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg> Metro</div>
 <div class="value">Civic Center Station, ~3-min walk</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🕐 Hours</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Hours</div>
 <div class="value">Tue-Sun 10:00-18:00</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">💰 Ticket</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Ticket</div>
 <div class="value">Free</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">📞 Phone</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Phone</div>
 <div class="value">0755-88125550</div>
 </div>
 </div>
 </div>
 
 <div class="highlight-box">
-<h4>✨ Highlights</h4>
+<h4><svg class="i" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Highlights</h4>
 <p>Learn Shenzhen's remarkable transformation from a small fishing village to a megacity of 17+ million people. The museum's permanent exhibitions cover local history, culture, and the economic reforms that created modern Shenzhen. Excellent English signage and interactive displays.</p>
 </div>
 
 <div class="avoid-box">
-<h4>⚠️ What to Avoid</h4>
+<h4><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> What to Avoid</h4>
 <p>Closed on Mondays. Allow at least 60 minutes for a proper visit. Photography is allowed but no flash.</p>
 </div>
 </div>
 
 <div class="walking-segment">
-<div class="walking-icon">🚶</div>
+<div class="walking-icon">
+<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M13 8.5l-2.5 5 2.5 3.5-1 5M8 10l2.5 1.5 2-2.5"/></svg>
+</div>
 <div class="walking-info">
 <div class="distance">566m</div>
 <div class="duration">~8 min walk to next stop</div>
@@ -284,38 +315,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 <div class="stop-details">
 <div class="detail-item">
 <div>
-<div class="label">📍 Address</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Address</div>
 <div class="value">Fuzhong Yi Road 2010, Civic Center (near Civic Center Metro Station)</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🚇 Metro</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg> Metro</div>
 <div class="value">Civic Center Station, direct access</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🕐 Hours</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Hours</div>
 <div class="value">Daily 10:00-22:00</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">💰 Ticket</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Ticket</div>
 <div class="value">Free entry</div>
 </div>
 </div>
 </div>
 
 <div class="highlight-box">
-<h4>✨ Highlights</h4>
+<h4><svg class="i" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Highlights</h4>
 <p>One of China's largest bookstores with an impressive multi-story layout. Perfect for browsing English books, picking up souvenirs, or escaping the heat/rain. The bookstore has a cozy café area and regular cultural events. Great place to spend 30 minutes browsing or picking up unique gifts.</p>
 </div>
 </div>
 
 <div class="walking-segment">
-<div class="walking-icon">🚶</div>
+<div class="walking-icon">
+<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M13 8.5l-2.5 5 2.5 3.5-1 5M8 10l2.5 1.5 2-2.5"/></svg>
+</div>
 <div class="walking-info">
 <div class="distance">1.15 km</div>
 <div class="duration">~15 min walk to next stop</div>
@@ -336,43 +369,45 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;c
 <div class="stop-details">
 <div class="detail-item">
 <div>
-<div class="label">📍 Address</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Address</div>
 <div class="value">Hongli Road, Futian District (600m from Civic Center Metro Station)</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🚇 Metro</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg> Metro</div>
 <div class="value">Civic Center Station or Lianhua North Station</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">🕐 Hours</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Hours</div>
 <div class="value">Open 24 hours</div>
 </div>
 </div>
 <div class="detail-item">
 <div>
-<div class="label">💰 Ticket</div>
+<div class="label"><svg class="i" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Ticket</div>
 <div class="value">Free</div>
 </div>
 </div>
 </div>
 
 <div class="highlight-box">
-<h4>✨ Highlights</h4>
+<h4><svg class="i" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Highlights</h4>
 <p>The crown jewel of this route. Hike to the hilltop plaza (easy 15-minute climb) for the best panoramic view of Shenzhen's CBD skyline. You'll see the Civic Center's iconic roof from above, the Ping An Tower (one of the world's tallest buildings), and the sprawling cityscape. Perfect spot for photos, especially in the morning light or at sunset.</p>
 </div>
 
 <div class="avoid-box">
-<h4>⚠️ What to Avoid</h4>
+<h4><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> What to Avoid</h4>
 <p>Not rain-friendly (no covered areas). Wear comfortable shoes for the hill climb. Bring water on hot days. The hilltop has no shade—visit in the morning or late afternoon to avoid midday heat.</p>
 </div>
 </div>
 
 <div class="cta-card">
-<h2>🔓 Get All 12 Curated Routes</h2>
+<h2>
+<svg class="i" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+Get All 12 Curated Routes</h2>
 <p>Unlock complete walking routes with detailed POI info, navigation tips, restaurant recommendations, offline maps, and local secrets for just $19.</p>
 <a href="https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl" class="cta-btn" target="_blank" rel="noopener">Get Full Access — $19</a>
 <div class="cta-note">Instant digital delivery · No subscription · Works offline</div>
