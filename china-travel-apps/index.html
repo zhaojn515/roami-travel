@@ -87,6 +87,11 @@
   <script src="/scripts/ga4.js"></script>
 
   <style>
+.si{display:inline-block;width:1.1em;height:1.1em;vertical-align:-0.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.si-check{color:#059669;stroke-width:2.5}
+.si-x{color:#dc2626;stroke-width:2.5}
+.si-heart{color:#ef4444;fill:#ef4444;stroke:none}
+
     .apps-hero {
       background: linear-gradient(135deg, #0a0e1a 0%, #0f2027 100%);
       color: white;
@@ -180,7 +185,7 @@
       font-size: 0.9375rem;
     }
     .caution::before {
-      content: "⚠️ ";
+      content: "<svg class="si" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> ";
     }
     .checklist-visual {
       list-style: none;
@@ -297,7 +302,7 @@
   <header class="site-header">
     <div class="container">
       <div class="header-inner">
-        <a href="/" class="logo" aria-label="Roami Travel Home">🌏 Roami Travel</a>
+        <a href="/" class="logo" aria-label="Roami Travel Home"><svg class="si" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Roami Travel</a>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <nav class="main-nav" aria-label="Main navigation">
           <ul class="nav-list">
@@ -328,7 +333,7 @@
           <p>China's app ecosystem is different from most countries. Many Western apps don't work or aren't widely used. Here are the categories you should prepare for, based on what travelers actually need on the ground.</p>
 
           <div class="app-category">
-            <h3>💳 Payments</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> Payments</h3>
             <p style="color:var(--color-text-light);margin-bottom:0.75rem;">China is largely cashless. You'll need at least one of these to pay for almost everything — meals, transport, shops, even street vendors.</p>
             <ul class="app-list">
               <li>
@@ -343,7 +348,7 @@
           </div>
 
           <div class="app-category">
-            <h3>🗺️ Maps & Navigation</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg> Maps & Navigation</h3>
             <p style="color:var(--color-text-light);margin-bottom:0.75rem;">Google Maps has limited data in China. Plan your navigation strategy before arrival.</p>
             <ul class="app-list">
               <li>
@@ -362,7 +367,7 @@
           </div>
 
           <div class="app-category">
-            <h3>🚕 Ride-Hailing</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><path d="M5 17h14v-5H5z"/><path d="M3 17h18v3H3z"/><circle cx="7" cy="17" r="1"/><circle cx="17" cy="17" r="1"/><path d="M6 12l1.5-5h9L18 12"/></svg> Ride-Hailing</h3>
             <ul class="app-list">
               <li>
                 <span class="app-name">DiDi (滴滴)</span>
@@ -372,7 +377,7 @@
           </div>
 
           <div class="app-category">
-            <h3>🗣️ Translation</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Translation</h3>
             <ul class="app-list">
               <li>
                 <span class="app-name">Phone built-in translator</span>
@@ -386,7 +391,7 @@
           </div>
 
           <div class="app-category">
-            <h3>💬 Communication</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Communication</h3>
             <ul class="app-list">
               <li>
                 <span class="app-name">WeChat (微信)</span>
@@ -428,7 +433,7 @@
           <p>Having reliable internet access is critical for maps, payments, and translation. Here are the main options for staying connected in China:</p>
 
           <div class="app-category">
-            <h3>📱 eSIM (Recommended for most travelers)</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg> eSIM (Recommended for most travelers)</h3>
             <p style="color:var(--color-text-light);margin-bottom:0.5rem;">International eSIMs connect via roaming partners (China Unicom or China Mobile). They typically provide access to international websites and apps.</p>
             <ul class="app-list">
               <li>
@@ -448,12 +453,12 @@
           </div>
 
           <div class="app-category">
-            <h3>📶 International Roaming</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg> International Roaming</h3>
             <p style="color:var(--color-text-light);">Check with your home carrier about China roaming plans. Some carriers offer daily or trip-based passes. This is often more expensive than eSIM but requires no setup.</p>
           </div>
 
           <div class="app-category">
-            <h3>🏪 Local SIM Card</h3>
+            <h3><svg class="si" viewBox="0 0 24 24"><path d="M3 9l1-4h16l1 4"/><path d="M3 9v11h18V9"/><path d="M9 21V13h6v8"/><path d="M3 9h18"/></svg> Local SIM Card</h3>
             <p style="color:var(--color-text-light);">Available at airports and carrier stores with passport registration. Cheapest option for longer stays, but Chinese SIMs typically cannot access international websites.</p>
           </div>
 
