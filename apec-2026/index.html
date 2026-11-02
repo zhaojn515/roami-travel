@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEC 2026 Shenzhen — Your City Guide by Roami</title>
+  <meta name="description" content="Curated walking routes, verified restaurants & local tips for APEC 2026 delegates and visitors. Navigate Shenzhen like a local.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="APEC 2026 Shenzhen — Your City Guide">
+  <meta property="og:description" content="Curated walking routes, verified restaurants & local tips. Built for APEC delegates.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://roamitravel.com/apec-2026">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #0055AA;
+      --primary-dark: #003d7a;
+      --accent: #e74c3c;
+      --text: #1a1a1a;
+      --text-light: #666;
+      --bg: #ffffff;
+      --bg-alt: #f8f9fa;
+      --border: #e0e0e0;
+      --success: #27ae60;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--bg);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .nav-cta {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .nav-cta:hover {
+      background: var(--primary-dark);
+    }
+    
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0055AA 0%, #003d7a 100%);
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero p {
+      font-size: 18px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    
+    .hero-cta {
+      display: inline-block;
+      background: white;
+      color: var(--primary);
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+    
+    .hero-cta:hover {
+      transform: translateY(-2px);
+    }
+    
+    .hero-meta {
+      margin-top: 24px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    
+    /* Audience Segments */
+    .audience {
+      padding: 60px 0;
+      background: var(--bg-alt);
+    }
+    
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+    
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .audience-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    
+    .audience-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+    }
+    
+    .audience-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    
+    .audience-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    .audience-card p {
+      font-size: 14px;
+      color: var(--text-light);
+    }
+    
+    /* Products */
+    .products {
+      padding: 80px 0;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    
+    .product-card {
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    
+    .product-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 12px 32px rgba(0,85,170,0.1);
+    }
+    
+    .product-card.featured {
+      border-color: var(--primary);
+      position: relative;
+    }
+    
+    .product-card.featured::before {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--primary);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    
+    .product-header {
+      padding: 32px 24px 16px;
+      background: var(--bg-alt);
+    }
+    
+    .product-name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .product-tagline {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+    
+    .product-price {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 16px;
+    }
+    
+    .product-price span {
+      font-size: 14px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+    
+    .product-features {
+      padding: 24px;
+      list-style: none;
+    }
+    
+    .product-features li {
+      padding: 8px 0;
+      display: flex;
+      align-items: flex-start;
+      font-size: 14px;
+    }
+    
+    .product-features li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 700;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    
+    .product-cta {
+      display: block;
+      margin: 0 24px 24px;
+      padding: 14px;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .product-cta:hover {
+      background: var(--primary-dark);
+    }
+    
+    /* Routes Preview */
+    .routes {
+      padding: 80px 0;
+      background: var(--bg-alt);
+    }
+    
+    .routes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    
+    .route-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    .route-image {
+      height: 180px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+    }
+    
+    .route-content {
+      padding: 20px;
+    }
+    
+    .route-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .route-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    
+    .route-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+    
+    .route-link {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    
+    /* Survival Kit */
+    .survival {
+      padding: 80px 0;
+    }
+    
+    .survival-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    
+    .survival-item {
+      text-align: center;
+      padding: 24px;
+      background: var(--bg-alt);
+      border-radius: 12px;
+    }
+    
+    .survival-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    
+    .survival-item h4 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .survival-item p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    
+    /* Social Proof */
+    .proof {
+      padding: 60px 0;
+      background: var(--bg-alt);
+      text-align: center;
+    }
+    
+    .proof-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    
+    .cta-section p {
+      font-size: 18px;
+      color: var(--text-light);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .cta-button:hover {
+      background: var(--primary-dark);
+    }
+    
+    /* Footer */
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 40px 0 24px;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+    
+    .footer-brand {
+      max-width: 300px;
+    }
+    
+    .footer-brand h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    
+    .footer-brand p {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 40px;
+    }
+    
+    .footer-col h4 {
+      font-size: 14px;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+    
+    .footer-col a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 4px 0;
+      opacity: 0.9;
+    }
+    
+    .footer-col a:hover {
+      opacity: 1;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      font-size: 13px;
+      opacity: 0.6;
+      text-align: center;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+      
+      .hero p {
+        font-size: 16px;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        gap: 32px;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 24px;
+      }
+      
+      .proof-stats {
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="/" class="logo">Roami</a>
+      <a href="#products" class="nav-cta">Get the Guide</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">APEC 2026 · Nov 17-19 · Shenzhen</div>
+      <h1>Your Shenzhen Experience, Between the Meetings</h1>
+      <p>Curated walking routes, verified restaurants & local tips — built for APEC delegates and visitors by people who know Shenzhen.</p>
+      <a href="#products" class="hero-cta">Get the APEC Guide</a>
+      <div class="hero-meta">Instant download · Works offline · English</div>
+    </div>
+  </section>
+
+  <!-- Audience Segments -->
+  <section class="audience">
+    <div class="container">
+      <h2 class="section-title">Built for You</h2>
+      <p class="section-subtitle">Whatever brings you to Shenzhen, we've got you covered.</p>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <div class="audience-icon">🏢</div>
+          <h3>Business Delegate</h3>
+          <p>Between-meeting routes, venue-adjacent dining, client hosting spots</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">👫</div>
+          <h3>Spouse & Companion</h3>
+          <p>Full-day itineraries, cultural highlights, shopping destinations</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">📰</div>
+          <h3>Media & Staff</h3>
+          <p>Quick city orientation, flexible half-day routes</p>
+        </div>
+        <div class="audience-card">
+          <div class="audience-icon">✈️</div>
+          <h3>First-time Visitor</h3>
+          <p>Complete survival kit: payment, transport, language basics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <div class="container">
+      <h2 class="section-title">Choose Your Guide</h2>
+      <p class="section-subtitle">Everything you need to navigate Shenzhen with confidence.</p>
+      
+      <div class="product-grid">
+        <!-- Starter Kit -->
+        <div class="product-card">
+          <div class="product-header">
+            <div class="product-name">Starter Kit</div>
+            <div class="product-tagline">Essential Shenzhen orientation</div>
+            <div class="product-price">$9 <span>one-time</span></div>
+          </div>
+          <ul class="product-features">
+            <li>Payment setup guide (Alipay & WeChat Pay)</li>
+            <li>Transport survival: metro, taxi, airport transfer</li>
+            <li>Connectivity: SIM/eSIM recommendations</li>
+            <li>10 essential Chinese phrases with audio</li>
+            <li>Weather & packing tips for November</li>
+            <li>Emergency contacts & useful apps</li>
+          </ul>
+          <a href="#" class="product-cta">Get Starter Kit</a>
+        </div>
+
+        <!-- Playbook (Featured) -->
+        <div class="product-card featured">
+          <div class="product-header">
+            <div class="product-name">APEC Playbook</div>
+            <div class="product-tagline">Complete city guide for delegates</div>
+            <div class="product-price">$29 <span>one-time</span></div>
+          </div>
+          <ul class="product-features">
+            <li><strong>12 curated walking routes</strong> with maps</li>
+            <li>50+ verified POIs with English descriptions</li>
+            <li>Restaurant guide by cuisine, budget & distance</li>
+            <li>APEC-specific: venue-adjacent dining & routes</li>
+            <li>Half-day & full-day itineraries</li>
+            <li>Offline PDF + mobile-friendly HTML</li>
+            <li>Free updates through APEC 2026</li>
+          </ul>
+          <a href="#" class="product-cta">Get APEC Playbook</a>
+        </div>
+
+        <!-- Bundle -->
+        <div class="product-card">
+          <div class="product-header">
+            <div class="product-name">Complete Bundle</div>
+            <div class="product-tagline">Everything + live support</div>
+            <div class="product-price">$49 <span>one-time</span></div>
+          </div>
+          <ul class="product-features">
+            <li><strong>Everything in Playbook + Starter Kit</strong></li>
+            <li>Live itinerary planning via WhatsApp/WeChat</li>
+            <li>Real-time restaurant availability checks</li>
+            <li>Custom route adjustments on request</li>
+            <li>Priority support during APEC week</li>
+            <li>Post-trip: Shanghai/Beijing guides included</li>
+          </ul>
+          <a href="#" class="product-cta">Get Complete Bundle</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routes Preview -->
+  <section class="routes">
+    <div class="container">
+      <h2 class="section-title">Preview: Featured Routes</h2>
+      <p class="section-subtitle">A taste of what's inside the Playbook.</p>
+      
+      <div class="routes-grid">
+        <div class="route-card">
+          <div class="route-image">🏛️</div>
+          <div class="route-content">
+            <div class="route-title">Civic Center Cultural Loop</div>
+            <div class="route-meta">
+              <span>⏱️ 1.5 hours</span>
+              <span>🚶 2.1 km</span>
+              <span>📍 4 POIs</span>
+            </div>
+            <div class="route-desc">Museum, bookstore, hilltop panorama. Perfect between sessions.</div>
+            <a href="#" class="route-link">View route →</a>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-image">🌊</div>
+          <div class="route-content">
+            <div class="route-title">Shekou Expat Half-Day</div>
+            <div class="route-meta">
+              <span>⏱️ 4 hours</span>
+              <span>🚶 1.9 km</span>
+              <span>📍 4 POIs</span>
+            </div>
+            <div class="route-desc">Seafood market, maritime culture, arts district. Great for spouses.</div>
+            <a href="#" class="route-link">View route →</a>
+          </div>
+        </div>
+
+        <div class="route-card">
+          <div class="route-image">🔌</div>
+          <div class="route-content">
+            <div class="route-title">Huaqiangbei Tech Safari</div>
+            <div class="route-meta">
+              <span>⏱️ 2.5 hours</span>
+              <span>🚶 indoor</span>
+              <span>📍 1 POI</span>
+            </div>
+            <div class="route-desc">Asia's largest electronics market. A must for tech enthusiasts.</div>
+            <a href="#" class="route-link">View route →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Survival Kit -->
+  <section class="survival">
+    <div class="container">
+      <h2 class="section-title">Shenzhen Survival Kit</h2>
+      <p class="section-subtitle">Everything you need to know, before you arrive.</p>
+      
+      <div class="survival-grid">
+        <div class="survival-item">
+          <div class="survival-icon">💳</div>
+          <h4>Payment</h4>
+          <p>Alipay & WeChat Pay setup guides with screenshots</p>
+        </div>
+        <div class="survival-item">
+          <div class="survival-icon">🚇</div>
+          <h4>Transport</h4>
+          <p>Metro cards, taxi apps, airport transfers explained</p>
+        </div>
+        <div class="survival-item">
+          <div class="survival-icon">📱</div>
+          <h4>Connectivity</h4>
+          <p>SIM/eSIM options, WiFi hotspots, useful apps</p>
+        </div>
+        <div class="survival-item">
+          <div class="survival-icon">🗣️</div>
+          <h4>Language</h4>
+          <p>10 essential phrases + translation app recommendations</p>
+        </div>
+        <div class="survival-item">
+          <div class="survival-icon">🌤️</div>
+          <h4>Weather</h4>
+          <p>November: 22-26°C, occasional rain, light layers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="proof">
+    <div class="container">
+      <h2 class="section-title">Built by Locals Who Know Shenzhen</h2>
+      <div class="proof-stats">
+        <div class="stat">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Curated Routes</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Verified POIs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">English Content</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Support During APEC</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Explore Shenzhen?</h2>
+      <p>Get instant access to everything you need for APEC 2026.</p>
+      <a href="#products" class="cta-button">Get Your Guide Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Roami Travel</h3>
+          <p>Your digital companion for exploring China's cities. Built by locals, for travelers.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Products</h4>
+            <a href="#">Starter Kit</a>
+            <a href="#">APEC Playbook</a>
+            <a href="#">Complete Bundle</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Roami Travel Technologies. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
