@@ -682,9 +682,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 // Centralized CTA links - easy to replace with MoR payment links later
 window.ROAMI_ORDER_CTAs = {
   'starter-kit': { sku: 'China Starter Kit', price: 'Free', action: 'Download', subject: '[Download] China Starter Kit', href: '/starter-kit/' },
-  'playbook-19': { sku: 'Shenzhen Playbook', price: '$19', action: 'Order', subject: '[Order] Shenzhen Playbook - $19', href: 'https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl' },
-  'personalized-69': { sku: 'Personalized Shenzhen', price: '$69', action: 'Order', href: '/order/personalized/' },
-  'companion-129': { sku: 'Shenzhen Companion', price: '$129', action: 'Order', href: '/order/companion/' },
+  'playbook-5': { sku: 'Shenzhen Playbook', price: '$5', action: 'Order', subject: '[Order] Shenzhen Playbook - $5', href: 'https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl' },
+  'personalized-19': { sku: 'Personalized Shenzhen', price: '$19', action: 'Order', href: '/order/personalized/' },
+  'companion-49': { sku: 'Shenzhen Companion', price: '$49', action: 'Order', href: '/order/companion/' },
   'nav-cta': { sku: null, price: null, action: 'Start', subject: 'Roami Itinerary Request', href: 'mailto:hello@roamitravel.com?subject=Roami%20Itinerary%20Request' },
   'hero': { sku: null, price: null, action: 'Start', subject: 'Roami Itinerary Request', href: 'mailto:hello@roamitravel.com?subject=Roami%20Itinerary%20Request' }
 };
@@ -849,54 +849,57 @@ window.ROAMI_ORDER_CTAs = {
     <!-- Shenzhen Playbook -->
     <div class="pricing-card fade-in">
       <div class="pricing-name">Shenzhen Playbook</div>
-      <div class="pricing-price">$19</div>
-      <div class="pricing-desc">Curated guide to the best of Shenzhen for foreigners.</div>
+      <div class="pricing-price">$5</div>
+      <div class="pricing-desc">Your complete self-guided Shenzhen adventure. 12 curated routes with 51+ verified POIs — everything you need to explore like a local, no guide required.</div>
       <ul class="pricing-features">
-        <li>50+ researched POIs with addresses</li>
-        <li>Neighborhood guides</li>
-        <li>Restaurant picks (English-friendly)</li>
-        <li>Transport & navigation tips</li>
-        <li>Regular updates</li>
+        <li>12 walking routes (4-6 hours each)</li>
+        <li>51+ verified POIs with Chinese addresses</li>
+        <li>Offline-first PWA — works without data</li>
+        <li>One-tap navigation & DiDi integration</li>
+        <li>Restaurant recommendations per stop</li>
+        <li>Foreigner-tested tips for every location</li>
       </ul>
-      <div data-order-id="playbook-19">
+      <div data-order-id="playbook-5">
         <div style="display:flex;gap:8px;align-items:stretch;">
           <a href="https://playbook.roamitravel.com/sample/" class="pricing-cta pricing-cta-sample" style="background:transparent;color:var(--color-accent);border:1.5px solid var(--color-accent);padding:10px 16px;font-size:13px;display:flex;align-items:center;">Sample Routes</a>
-          <a href="https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl" target="_blank" rel="noopener" class="pricing-cta pricing-cta-outline">Get Playbook</a>
+          <a href="https://www.creem.io/payment/prod_7d6dJccrK2CiesvbTo3CNl" target="_blank" rel="noopener" class="pricing-cta pricing-cta-outline">Get Playbook — $5</a>
         </div>
-        <small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Secure checkout · Instant confirmation</small>
+        <small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Secure checkout · Instant access</small>
         <small style="display:block;margin-top:6px;font-size:12px;font-weight:500;"><a href="https://playbook.roamitravel.com/access/" style="color:var(--color-accent);text-decoration:underline;">Already purchased? Enter code →</a></small>
       </div>
     </div>
     <!-- Personalized -->
-    <div class="pricing-card fade-in">
-      <div class="pricing-name">Personalized Shenzhen</div>
-      <div class="pricing-price">$69</div>
-      <div class="pricing-desc">Your custom Live Itinerary, built for you in 24 hours.</div>
+    <div class="pricing-card featured fade-in">
+      <div class="pricing-name">Personalized Itinerary</div>
+      <div class="pricing-price">$19</div>
+      <div class="pricing-desc">Your trip, your pace. Expertly planned and human-verified custom itinerary delivered in 24h — no more copy-pasting from forums or outdated blogs.</div>
       <ul class="pricing-features">
         <li>2-min trip questionnaire</li>
-        <li>Personalized Live Itinerary (mobile page)</li>
+        <li>Expertly optimized route planning</li>
+        <li>Human-verified POIs and restaurants</li>
+        <li>Mobile-optimized Live Itinerary page</li>
+        <li>Chinese addresses for drivers (copy-paste)</li>
+        <li>One-tap navigation links</li>
         <li>24h delivery guaranteed</li>
-        <li>1 round of revisions included</li>
-        <li>Copy-paste addresses for drivers</li>
-        <li>Researched POIs matched to your interests</li>
-        <li>Not satisfied? Full refund</li>
+        <li>1 revision round included</li>
       </ul>
-      <div data-order-id="personalized-69"><a href="/order/personalized/" class="pricing-cta pricing-cta-outline">Get My Itinerary →</a><small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Tell us about your trip · Delivered within 24h</small></div>
+      <div data-order-id="personalized-19"><a href="/order/personalized/" class="pricing-cta pricing-cta-primary">Get My Itinerary — $19 →</a><small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Tell us about your trip · Delivered within 24h</small></div>
     </div>
     <!-- Companion -->
     <div class="pricing-card fade-in" id="companion">
       <div class="pricing-name">Shenzhen Companion</div>
-      <div class="pricing-price">$129</div>
-      <div class="pricing-desc">Full-service: itinerary + 7 days of concierge support.</div>
+      <div class="pricing-price">$49</div>
+      <div class="pricing-desc">Never feel alone in China. 3-day dedicated WeChat concierge — real-time translation, photo rescue, local booking help, and instant answers while you explore.</div>
       <ul class="pricing-features">
-        <li>Everything in Personalized</li>
-        <li>7-day WeChat Concierge access</li>
-        <li>Ask a Local (AI + human backup)</li>
-        <li>Photo Rescue (unlimited)</li>
-        <li>5 Local Actions (bookings, calls, etc.)</li>
-        <li>Priority revision rounds</li>
+        <li>Everything in Personalized Itinerary</li>
+        <li>3-day live WeChat concierge support</li>
+        <li>Photo rescue (snap & solve)</li>
+        <li>Restaurant booking & local reservations</li>
+        <li>Real-time troubleshooting (lost? stuck?)</li>
+        <li>Priority 30-min response guarantee</li>
+        <li>Unlimited questions during support period</li>
       </ul>
-      <div data-order-id="companion-129"><a href="/order/companion/" class="pricing-cta pricing-cta-outline">Get Companion</a><small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Tell us about your trip · Delivered within 24h</small></div>
+      <div data-order-id="companion-49"><a href="/order/companion/" class="pricing-cta pricing-cta-outline">Get Companion — $49</a><small style="display:block;margin-top:8px;font-size:11px;color:var(--color-text-muted);font-weight:400;">Includes itinerary + 3-day live support</small></div>
     </div>
   </div>
   <div class="pricing-refund fade-in">
@@ -991,7 +994,7 @@ window.ROAMI_ORDER_CTAs = {
         <span class="nav-logo-icon"><svg viewBox="0 0 32 32" width="20" height="20" fill="none" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14.5" stroke="white" stroke-width="1.6"/><path d="M16 0.5 L17.6 4.2 L14.4 4.2 Z" fill="#fbbf24"/><path d="M16 31.5 L17.2 28.4 L14.8 28.4 Z M0.5 16 L4.2 14.4 L4.2 17.6 Z M31.5 16 L27.8 14.4 L27.8 17.6 Z" fill="white" opacity="0.55"/><path fill="white" d="M10.2 8.2h6.6c2.5 0 4.1 1.5 4.1 3.6 0 1.7-1.0 3.0-2.6 3.4L22.4 24h-3.3l-4.1-9.1H12.6V24h-2.4V8.2zm2.4 2.2v5.8h3.8c1.4 0 2.1-.85 2.1-1.9 0-1.05-.7-1.9-2.1-1.9h-3.8z"/></svg></span>
         Roami
       </a>
-      <p>Your AI travel concierge for China. Personalized itineraries, local support, and researched places — all in your pocket.</p>
+      <p>Expert travel planning meets on-the-ground local knowledge. From free China prep guides to personalized Shenzhen itineraries and dedicated concierge support — everything you need for a confident China journey.</p>
     </div>
     <div class="footer-col">
       <h4>Product</h4>
