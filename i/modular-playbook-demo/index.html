@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roami Modular Playbook Demo | Build Your Own Shenzhen Adventure</title>
+  <meta name="description" content="Build your perfect Shenzhen itinerary by dragging and dropping 50+ curated modules. Flexible, customizable, and designed for your travel style.">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --roami-teal: #0B7A6B;
+      --roami-teal-dark: #096156;
+      --roami-teal-light: #E8F5F2;
+      --roami-coral: #FF6B5B;
+      --roami-amber: #F5A623;
+      --roami-navy: #1A2B3C;
+      --bg: #F7F8FA;
+      --surface: #FFFFFF;
+      --border: #E5E7EB;
+      --text-primary: #1A2B3C;
+      --text-secondary: #6B7280;
+      --text-tertiary: #9CA3AF;
+      --text-on-teal: #FFFFFF;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --category-food: #EF4444;
+      --category-tech: #3B82F6;
+      --category-culture: #8B5CF6;
+      --category-nature: #10B981;
+      --category-shopping: #F59E0B;
+      --category-indoor: #6366F1;
+      --category-outdoor: #14B8A6;
+      --max-width: 1400px;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--roami-teal) 0%, var(--roami-teal-dark) 100%);
+      color: var(--text-on-teal);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-md);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .header-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .stats {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+    }
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Main Layout */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 24px;
+      min-height: calc(100vh - 100px);
+    }
+
+    /* Module Library (Left Sidebar) */
+    .library {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 120px;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+    }
+    .library-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .filter-tab {
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--surface);
+    }
+    .filter-tab:hover {
+      border-color: var(--roami-teal);
+      color: var(--roami-teal);
+    }
+    .filter-tab.active {
+      background: var(--roami-teal);
+      color: white;
+      border-color: var(--roami-teal);
+    }
+    .module-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .module-card {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      cursor: grab;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .module-card:hover {
+      border-color: var(--roami-teal);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-2px);
+    }
+    .module-card:active {
+      cursor: grabbing;
+    }
+    .module-card.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .module-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .module-icon.food { background: rgba(239, 68, 68, 0.1); color: var(--category-food); }
+    .module-icon.tech { background: rgba(59, 130, 246, 0.1); color: var(--category-tech); }
+    .module-icon.culture { background: rgba(139, 92, 246, 0.1); color: var(--category-culture); }
+    .module-icon.nature { background: rgba(16, 185, 129, 0.1); color: var(--category-nature); }
+    .module-icon.shopping { background: rgba(245, 158, 11, 0.1); color: var(--category-shopping); }
+    .module-icon.indoor { background: rgba(99, 102, 241, 0.1); color: var(--category-indoor); }
+    .module-icon.outdoor { background: rgba(20, 184, 166, 0.1); color: var(--category-outdoor); }
+    .module-name {
+      font-size: 14px;
+      font-weight: 700;
+      flex: 1;
+    }
+    .module-duration {
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--surface);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .module-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    .module-pois {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    /* Builder Area (Right) */
+    .builder {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .builder-header {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .builder-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .builder-subtitle {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    .builder-stats {
+      display: flex;
+      gap: 24px;
+      padding: 16px;
+      background: var(--roami-teal-light);
+      border-radius: var(--radius-sm);
+    }
+    .builder-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .builder-stat-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+    .builder-stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--roami-teal-dark);
+    }
+
+    /* Drop Zone */
+    .drop-zone {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      min-height: 400px;
+      border: 2px dashed var(--border);
+      transition: all 0.3s;
+    }
+    .drop-zone.drag-over {
+      border-color: var(--roami-teal);
+      background: var(--roami-teal-light);
+    }
+    .drop-zone-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+    .drop-zone-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+      opacity: 0.3;
+    }
+    .drop-zone-text {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .drop-zone-hint {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    /* Itinerary Timeline */
+    .itinerary {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .itinerary-item {
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .itinerary-item:hover {
+      border-color: var(--roami-teal);
+      box-shadow: var(--shadow-sm);
+    }
+    .itinerary-item-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .itinerary-item-number {
+      width: 32px;
+      height: 32px;
+      background: var(--roami-teal);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .itinerary-item-title {
+      font-size: 16px;
+      font-weight: 700;
+      flex: 1;
+    }
+    .itinerary-item-remove {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(239, 68, 68, 0.1);
+      color: var(--category-food);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+    .itinerary-item-remove:hover {
+      background: var(--category-food);
+      color: white;
+    }
+    .itinerary-item-content {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .itinerary-item-pois {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .poi-tag {
+      padding: 4px 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* Action Buttons */
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      flex: 1;
+    }
+    .btn-primary {
+      background: var(--roami-teal);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--roami-teal-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--roami-teal);
+      border: 2px solid var(--roami-teal);
+    }
+    .btn-secondary:hover {
+      background: var(--roami-teal-light);
+    }
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--roami-navy);
+      color: white;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-lg);
+      font-size: 14px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: all 0.3s;
+      z-index: 1000;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .library {
+        position: static;
+        max-height: none;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .itinerary-item {
+      animation: fadeIn 0.3s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/>
+            <line x1="8" y1="2" x2="8" y2="18"/>
+            <line x1="16" y1="6" x2="16" y2="22"/>
+          </svg>
+        </div>
+        Roami Modular Playbook
+      </div>
+      <div class="header-info">
+        <span class="badge">Demo</span>
+        <div class="stats">
+          <span class="stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            <span id="moduleCount">0</span> modules
+          </span>
+          <span class="stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span id="totalDuration">0h</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Module Library (Left Sidebar) -->
+    <aside class="library">
+      <h2 class="library-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        Module Library
+      </h2>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-category="all">All</button>
+        <button class="filter-tab" data-category="food">🍜 Food</button>
+        <button class="filter-tab" data-category="tech">🔌 Tech</button>
+        <button class="filter-tab" data-category="culture">🏛️ Culture</button>
+        <button class="filter-tab" data-category="nature">🌿 Nature</button>
+        <button class="filter-tab" data-category="shopping">🛍️ Shopping</button>
+        <button class="filter-tab" data-category="indoor">🏢 Indoor</button>
+        <button class="filter-tab" data-category="outdoor">☀️ Outdoor</button>
+      </div>
+
+      <!-- Module List -->
+      <div class="module-list" id="moduleList">
+        <!-- Modules will be injected here -->
+      </div>
+    </aside>
+
+    <!-- Builder Area (Right) -->
+    <main class="builder">
+      <!-- Builder Header -->
+      <div class="builder-header">
+        <h1 class="builder-title">Build Your Shenzhen Adventure</h1>
+        <p class="builder-subtitle">Drag modules from the library to create your perfect itinerary. Mix and match based on your interests, time, and weather!</p>
+        
+        <div class="builder-stats">
+          <div class="builder-stat">
+            <span class="builder-stat-label">Modules Selected</span>
+            <span class="builder-stat-value" id="modulesSelected">0</span>
+          </div>
+          <div class="builder-stat">
+            <span class="builder-stat-label">Total Duration</span>
+            <span class="builder-stat-value" id="durationTotal">0h</span>
+          </div>
+          <div class="builder-stat">
+            <span class="builder-stat-label">POIs Covered</span>
+            <span class="builder-stat-value" id="poisCovered">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drop Zone -->
+      <div class="drop-zone" id="dropZone">
+        <div class="drop-zone-empty" id="emptyState">
+          <div class="drop-zone-icon">📋</div>
+          <div class="drop-zone-text">Drag modules here to build your itinerary</div>
+          <div class="drop-zone-hint">Your personalized adventure starts here</div>
+        </div>
+        <div class="itinerary" id="itinerary">
+          <!-- Itinerary items will be injected here -->
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="actions">
+        <button class="btn btn-secondary" id="clearBtn" disabled>Clear All</button>
+        <button class="btn btn-primary" id="saveBtn" disabled>Save Itinerary</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Module Data (50+ modules)
+    const modules = [
+      // Food Modules
+      { id: 1, name: "Morning Dim Sum Experience", category: "food", duration: 1.5, icon: "🥟", desc: "Authentic Cantonese morning tea with har gow, siu mai, and egg tarts", pois: ["Dian Dou De (3 branches)", "Tim Ho Wan", "Lian Xiang Lou"] },
+      { id: 2, name: "Street Food Crawl", category: "food", duration: 2, icon: "🍢", desc: "Explore Dongmen Old Street's famous snack stalls and local favorites", pois: ["Dongmen Food Street", "Lao Men Night Market", "Huaqiangbei Snacks"] },
+      { id: 3, name: "Chaoshan Beef Hotpot", category: "food", duration: 2, icon: "🍲", desc: "Paper-thin beef slices cooked in seconds - a must-try local delicacy", pois: ["Ba He Li Hai Ji", "Chao Zhou Ren Jia", "Huang Ting Ji"] },
+      { id: 4, name: "Specialty Coffee Tour", category: "food", duration: 2, icon: "☕", desc: "Visit Shenzhen's top third-wave coffee shops in OCT-LOFT", pois: ["Oct Coffee", "Park Coffee", "Greybox Coffee"] },
+      { id: 5, name: "Seafood Feast", category: "food", duration: 2.5, icon: "🦐", desc: "Fresh seafood at Shekou's waterfront restaurants", pois: ["Sea World Seafood", "Shui Shang Ren Jia", "Hai Yue Ming Zhu"] },
+      { id: 6, name: "Vegan/Vegetarian Guide", category: "food", duration: 1, icon: "🥗", desc: "Best plant-based restaurants in Futian and Nanshan", pois: ["Green Common", "Vegetarian Paradise", "Buddha's Delight"] },
+
+      // Tech Modules
+      { id: 7, name: "Huaqiangbei Tech Safari", category: "tech", duration: 4, icon: "🔌", desc: "World's largest electronics market - drones, gadgets, components", pois: ["SEG Electronics", "Yuanwang Digital Mall", "Longsheng Accessories"] },
+      { id: 8, name: "Drone Experience", category: "tech", duration: 2, icon: "🚁", desc: "Test-fly drones at DJI flagship store and observe drone delivery", pois: ["DJI Flagship (MixC)", "Meituan Drone Delivery Hub", "Huaqiangbei Drone Zone"] },
+      { id: 9, name: "Robot Coffee & AI Cafe", category: "tech", duration: 1, icon: "🤖", desc: "Order coffee from a robot arm - Instagram-worthy tech experience", pois: ["Robot Coffee (Huaqiangbei)", "AI Cafe (Nanshan)", "Smart Restaurant"] },
+      { id: 10, name: "Maker Space Visit", category: "tech", duration: 2, icon: "🛠️", desc: "Explore Shenzhen's maker culture and fabrication labs", pois: ["Seeed Studio", "Chaihuo Maker Space", "Xinchejian"] },
+      { id: 11, name: "Tencent Campus Exterior", category: "tech", duration: 0.5, icon: "🏢", desc: "Photo stop at China's tech giant headquarters", pois: ["Tencent Seafront Towers", "Tencent Binhai Mansion"] },
+      { id: 12, name: "Custom Phone Case Workshop", category: "tech", duration: 1, icon: "📱", desc: "Design and create your own phone case in 30 minutes", pois: ["Huaqiangbei Custom Shop", "Longsheng Phone Case Floor"] },
+
+      // Culture Modules
+      { id: 13, name: "Nantou Ancient City", category: "culture", duration: 2, icon: "🏛️", desc: "1,700-year-old walled city with indie cafes and street art", pois: ["Ancient City Walls", "Nantou Museum", "Creative Shops"] },
+      { id: 14, name: "Hakka Village Experience", category: "culture", duration: 3, icon: "🏘️", desc: "Traditional Hakka architecture and culture in Guanlan", pois: ["Guanlan Painted Village", "Hakka Museum", "Traditional Houses"] },
+      { id: 15, name: "Shenzhen Museum", category: "culture", duration: 2, icon: "🏛️", desc: "Learn about Shenzhen's transformation from fishing village to megacity", pois: ["Shenzhen Museum (Futian)", "Ancient Art Hall", "Contemporary Art Gallery"] },
+      { id: 16, name: "Calligraphy Workshop", category: "culture", duration: 1.5, icon: "🖌️", desc: "Learn basic Chinese calligraphy with a local master", pois: ["Culture Center Workshop", "Nantou Art Studio"] },
+      { id: 17, name: "Temple Visit", category: "culture", duration: 1.5, icon: "🏯", desc: "Visit Hongfa Temple - Shenzhen's most important Buddhist temple", pois: ["Hongfa Temple", "Xianhu Botanical Garden"] },
+
+      // Nature Modules
+      { id: 18, name: "Lianhuashan Park Hike", category: "nature", duration: 2, icon: "⛰️", desc: "Climb to the hilltop for the best Shenzhen skyline view", pois: ["Deng Xiaoping Statue", "Hilltop Platform", "City Viewpoint"] },
+      { id: 19, name: "Shenzhen Bay Sunset Walk", category: "nature", duration: 2, icon: "🌅", desc: "Coastal promenade with Hong Kong views at golden hour", pois: ["Talent Park", "Shenzhen Bay Bridge View", "Sunset Spot"] },
+      { id: 20, name: "Fairy Lake Botanical Garden", category: "nature", duration: 3, icon: "🌺", desc: "Peaceful gardens and the famous Hongfa Temple", pois: ["Fairy Lake", "Buddhist Temple", "Orchid Garden"] },
+      { id: 21, name: "Mangrove Nature Reserve", category: "nature", duration: 2, icon: "🌿", desc: "Birdwatching and coastal ecology at Futian Mangrove", pois: ["Mangrove Boardwalk", "Bird Watching Spot", "Nature Center"] },
+      { id: 22, name: "Dameisha Beach Day", category: "nature", duration: 5, icon: "🏖️", desc: "Shenzhen's most popular beach - swimming and sunbathing", pois: ["Dameisha Beach", "Seafood Restaurants", "Beach Volleyball"] },
+
+      // Shopping Modules
+      { id: 23, name: "MixC World Mall", category: "shopping", duration: 2, icon: "🛍️", desc: "High-end shopping with flagship tech stores", pois: ["Apple Store", "Huawei Flagship", "DJI Store"] },
+      { id: 24, name: "Coco Park Shopping", category: "shopping", duration: 2, icon: "🏬", desc: "Popular expat-friendly mall with international brands", pois: ["Fashion Brands", "Restaurants", "Cinema"] },
+      { id: 25, name: "Dongmen Bargain Hunt", category: "shopping", duration: 2, icon: "💰", desc: "Shenzhen's oldest market - bargain for clothes and accessories", pois: ["Dongmen Pedestrian Street", "Underground Market", "Night Market"] },
+      { id: 26, name: "Luxury Mall Tour", category: "shopping", duration: 2, icon: "💎", desc: "High-end luxury brands at The MixC and KK Mall", pois: ["The MixC Luohu", "KK Mall", "Luxury Brands"] },
+
+      // Indoor Modules (Rain-friendly)
+      { id: 27, name: "Huaqiangbei Museum", category: "indoor", duration: 1, icon: "🏛️", desc: "Compact museum telling the story of China's electronics capital", pois: ["Exhibition Halls", "Vintage Electronics", "Maker History"] },
+      { id: 28, name: "OCT-LOFT Art Galleries", category: "indoor", duration: 2, icon: "🎨", desc: "Contemporary art in converted factory warehouses", pois: ["OCAT Museum", "Independent Galleries", "Art Cafes"] },
+      { id: 29, name: "Escape Room Challenge", category: "indoor", duration: 2, icon: "🔐", desc: "English-friendly escape rooms in Futian", pois: ["Escape Room Futian", "Mystery Room", "Puzzle Challenge"] },
+      { id: 30, name: "Indoor Climbing", category: "indoor", duration: 2, icon: "🧗", desc: "Bouldering and climbing gyms with English-speaking staff", pois: ["Rock Climbing Gym", "Bouldering Cafe", "Climbing Wall"] },
+      { id: 31, name: "VR Gaming Center", category: "indoor", duration: 1.5, icon: "🎮", desc: "Cutting-edge virtual reality gaming experience", pois: ["VR Arcade", "Gaming Lounge", "Esports Center"] },
+      { id: 32, name: "Massage & Spa", category: "indoor", duration: 2, icon: "💆", desc: "Traditional Chinese massage and foot reflexology", pois: ["Blind Massage Center", "Foot Reflexology", "Spa Resort"] },
+
+      // Outdoor Modules
+      { id: 33, name: "Sea World Waterfront", category: "outdoor", duration: 3, icon: "🚢", desc: "Expat-friendly waterfront with restaurants and the Minghua ship", pois: ["Minghua Ship", "Waterfront Plaza", "Fountain Show"] },
+      { id: 34, name: "Civic Center Architecture", category: "outdoor", duration: 1.5, icon: "🏛️", desc: "Iconic butterfly-shaped building and rooftop city views", pois: ["Civic Center Plaza", "Rooftop Observation", "Light Show"] },
+      { id: 35, name: "Window to the World", category: "outdoor", duration: 3, icon: "🗼", desc: "Theme park with miniature replicas of world landmarks", pois: ["Eiffel Tower Replica", "Pyramids", "Taj Mahal"] },
+      { id: 36, name: "Splendid China Folk Village", category: "outdoor", duration: 4, icon: "🏯", desc: "Miniature Chinese landmarks and ethnic minority culture", pois: ["Great Wall Replica", "Forbidden City", "Ethnic Shows"] },
+      { id: 37, name: "Night City Tour", category: "outdoor", duration: 3, icon: "🌃", desc: "Shenzhen's illuminated skyline and neon-lit streets", pois: ["Ping An Tower View", "Futian CBD Lights", "Luohu Night Market"] },
+
+      // Bonus: Hybrid Modules
+      { id: 38, name: "Photography Walk", category: "outdoor", duration: 3, icon: "📸", desc: "Instagram-worthy spots in Nanshan's art district", pois: ["OCT-LOFT Murals", "Sea World Pier", "Sunset Spots"] },
+      { id: 39, name: "Budget Traveler Special", category: "food", duration: 1, icon: "💵", desc: "Eat like a local for under ¥50 per meal", pois: ["Lanzhou Noodles", "Street Food Stalls", "Food Courts"] },
+      { id: 40, name: "Luxury Dining Experience", category: "food", duration: 2.5, icon: "🍽️", desc: "Michelin-starred restaurants and fine dining", pois: ["Michelin Restaurants", "Rooftop Bars", "Wine Bars"] },
+      { id: 41, name: "Tech Shopping Spree", category: "shopping", duration: 3, icon: "📦", desc: "Buy the latest gadgets at wholesale prices", pois: ["Huaqiangbei Wholesale", "Phone Market", "Accessories Floor"] },
+      { id: 42, name: "Souvenir Hunting", category: "shopping", duration: 1.5, icon: "🎁", desc: "Unique Chinese gifts and local specialties", pois: ["Tea Shops", "Silk Stores", "Handicraft Markets"] },
+      { id: 43, name: "Rainy Day Indoor Fun", category: "indoor", duration: 4, icon: "🌧️", desc: "Complete indoor itinerary: museum + mall + cafe", pois: ["Museum", "Shopping Mall", "Indoor Cafes"] },
+      { id: 44, name: "Perfect Weather Outdoor", category: "outdoor", duration: 5, icon: "☀️", desc: "Full day of parks, beaches, and outdoor activities", pois: ["Beach", "Park", "Outdoor Cafes"] },
+      { id: 45, name: "Family-Friendly Day", category: "outdoor", duration: 6, icon: "👨‍👩‍👧", desc: "Theme parks and activities for kids", pois: ["Theme Parks", "Zoos", "Family Restaurants"] },
+      { id: 46, name: "Solo Traveler Adventure", category: "culture", duration: 4, icon: "🎒", desc: "Flexible itinerary for independent explorers", pois: ["Hostels", "Cafes", "Local Markets"] },
+      { id: 47, name: "Business Traveler Express", category: "tech", duration: 2, icon: "💼", desc: "Quick tech tour for business visitors", pois: ["Tencent Exterior", "DJI Store", "Business Cafes"] },
+      { id: 48, name: "Romantic Date Night", category: "outdoor", duration: 3, icon: "💕", desc: "Romantic spots for couples", pois: ["Sunset Viewpoints", "Fine Dining", "Rooftop Bars"] },
+      { id: 49, name: "Nightlife Experience", category: "outdoor", duration: 4, icon: "🍸", desc: "Bars, clubs, and late-night entertainment", pois: ["Coco Park Bars", "Sea World Clubs", "Rooftop Lounges"] },
+      { id: 50, name: "Early Bird Special", category: "nature", duration: 3, icon: "🌅", desc: "Morning hike, breakfast, and meditation", pois: ["Lianhuashan Sunrise", "Morning Tea", "Temple Meditation"] },
+      { id: 51, name: "Night Owl Adventure", category: "outdoor", duration: 4, icon: "🦉", desc: "Late-night street food and neon city tour", pois: ["Night Markets", "Street Food", "Neon Streets"] },
+      { id: 52, name: "Fitness Enthusiast", category: "nature", duration: 3, icon: "🏃", desc: "Running routes, gyms, and healthy food", pois: ["Shenzhen Bay Running Path", "Climbing Gyms", "Health Food Cafes"] }
+    ];
+
+    // State
+    let selectedModules = [];
+    let draggedModule = null;
+
+    // DOM Elements
+    const moduleList = document.getElementById('moduleList');
+    const dropZone = document.getElementById('dropZone');
+    const emptyState = document.getElementById('emptyState');
+    const itinerary = document.getElementById('itinerary');
+    const modulesSelectedEl = document.getElementById('modulesSelected');
+    const durationTotalEl = document.getElementById('durationTotal');
+    const poisCoveredEl = document.getElementById('poisCovered');
+    const moduleCountEl = document.getElementById('moduleCount');
+    const totalDurationEl = document.getElementById('totalDuration');
+    const clearBtn = document.getElementById('clearBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const toast = document.getElementById('toast');
+
+    // Initialize
+    function init() {
+      renderModules('all');
+      moduleCountEl.textContent = modules.length;
+      updateStats();
+      attachEventListeners();
+    }
+
+    // Render modules
+    function renderModules(category) {
+      const filtered = category === 'all' ? modules : modules.filter(m => m.category === category);
+      moduleList.innerHTML = filtered.map(m => `
+        <div class="module-card" draggable="true" data-id="${m.id}">
+          <div class="module-header">
+            <div class="module-icon ${m.category}">${m.icon}</div>
+            <div class="module-name">${m.name}</div>
+            <div class="module-duration">${m.duration}h</div>
+          </div>
+          <div class="module-desc">${m.desc}</div>
+          <div class="module-pois">📍 ${m.pois.length} POIs</div>
+        </div>
+      `).join('');
+
+      // Attach drag events
+      document.querySelectorAll('.module-card').forEach(card => {
+        card.addEventListener('dragstart', handleDragStart);
+        card.addEventListener('dragend', handleDragEnd);
+      });
+    }
+
+    // Drag handlers
+    function handleDragStart(e) {
+      draggedModule = parseInt(e.target.dataset.id);
+      e.target.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function handleDragEnd(e) {
+      e.target.classList.remove('dragging');
+      draggedModule = null;
+    }
+
+    // Drop zone handlers
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      dropZone.classList.add('drag-over');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('drag-over');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('drag-over');
+      
+      if (draggedModule) {
+        addModuleToItinerary(draggedModule);
+      }
+    });
+
+    // Add module to itinerary
+    function addModuleToItinerary(moduleId) {
+      const module = modules.find(m => m.id === moduleId);
+      if (!module) return;
+
+      selectedModules.push(module);
+      renderItinerary();
+      updateStats();
+      showToast(`Added: ${module.name}`);
+    }
+
+    // Remove module from itinerary
+    function removeModuleFromItinerary(index) {
+      const removed = selectedModules.splice(index, 1)[0];
+      renderItinerary();
+      updateStats();
+      showToast(`Removed: ${removed.name}`);
+    }
+
+    // Render itinerary
+    function renderItinerary() {
+      if (selectedModules.length === 0) {
+        emptyState.style.display = 'flex';
+        itinerary.innerHTML = '';
+        clearBtn.disabled = true;
+        saveBtn.disabled = true;
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      clearBtn.disabled = false;
+      saveBtn.disabled = false;
+
+      itinerary.innerHTML = selectedModules.map((m, i) => `
+        <div class="itinerary-item">
+          <div class="itinerary-item-header">
+            <div class="itinerary-item-number">${i + 1}</div>
+            <div class="itinerary-item-title">${m.icon} ${m.name}</div>
+            <button class="itinerary-item-remove" onclick="removeModuleFromItinerary(${i})">×</button>
+          </div>
+          <div class="itinerary-item-content">
+            ${m.desc}
+            <div style="margin-top: 8px; font-weight: 600; color: var(--roami-teal-dark);">Duration: ${m.duration} hours</div>
+          </div>
+          <div class="itinerary-item-pois">
+            ${m.pois.map(poi => `<span class="poi-tag">${poi}</span>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Update stats
+    function updateStats() {
+      const count = selectedModules.length;
+      const duration = selectedModules.reduce((sum, m) => sum + m.duration, 0);
+      const pois = selectedModules.reduce((sum, m) => sum + m.pois.length, 0);
+
+      modulesSelectedEl.textContent = count;
+      durationTotalEl.textContent = `${duration.toFixed(1)}h`;
+      poisCoveredEl.textContent = pois;
+      totalDurationEl.textContent = `${duration.toFixed(1)}h`;
+    }
+
+    // Filter tabs
+    function attachEventListeners() {
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          renderModules(tab.dataset.category);
+        });
+      });
+
+      clearBtn.addEventListener('click', () => {
+        if (confirm('Clear all modules from your itinerary?')) {
+          selectedModules = [];
+          renderItinerary();
+          updateStats();
+          showToast('Itinerary cleared');
+        }
+      });
+
+      saveBtn.addEventListener('click', () => {
+        const itineraryData = {
+          modules: selectedModules,
+          totalDuration: selectedModules.reduce((sum, m) => sum + m.duration, 0),
+          totalPois: selectedModules.reduce((sum, m) => sum + m.pois.length, 0),
+          savedAt: new Date().toISOString()
+        };
+        localStorage.setItem('roami-itinerary', JSON.stringify(itineraryData));
+        showToast('Itinerary saved! (Demo - no backend)');
+      });
+    }
+
+    // Toast notification
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Start
+    init();
+  </script>
+</body>
+</html>
