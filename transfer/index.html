@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong - Shenzhen Transfer | Roami Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d9488;
+            --primary-dark: #0f766e;
+            --accent: #14b8a6;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+            padding: 100px 20px 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,144C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero .highlight {
+            color: #99f6e4;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .hero-feature svg {
+            width: 24px;
+            height: 24px;
+            fill: #99f6e4;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 36px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 20px;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.75rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Popular Routes */
+        .popular-routes {
+            background: var(--bg-white);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .popular-routes h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .route-item {
+            background: var(--bg-light);
+            padding: 24px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .route-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .route-name {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .route-price {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        /* Surcharges */
+        .surcharges {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 40px;
+            border: 2px solid #fbbf24;
+        }
+
+        .surcharges h4 {
+            color: #92400e;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .surcharges ul {
+            list-style: none;
+        }
+
+        .surcharges li {
+            padding: 12px 0;
+            color: #78350f;
+            padding-left: 28px;
+            position: relative;
+            font-size: 1rem;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(146, 64, 14, 0.1);
+        }
+
+        .surcharges li:last-child {
+            border-bottom: none;
+        }
+
+        .surcharges li:before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: #92400e;
+            font-weight: 700;
+        }
+
+        /* Why Us */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .why-us-card {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .why-us-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .why-us-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .why-us-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        .why-us-card h3 {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .why-us-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--bg-white);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0 auto 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .step-card h3 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 850px;
+            margin: 50px auto 0;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+        }
+
+        footer p:first-child {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+            }
+
+            .section-title {
+                font-size: 2.25rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .routes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-features {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hong Kong ↔ <span class="highlight">Shenzhen</span><br>Cross-Border Transfer</h1>
+            <p>Premium Business MPV · No Car Change at Border · Door-to-Door Service</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>HK Licensed Vehicle</span>
+                </div>
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>English-speaking Driver</span>
+                </div>
+                <div class="hero-feature">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    <span>Immigration Assistance</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#popular" class="btn btn-primary">Popular Routes</a>
+                <a href="mailto:concierge@roamitravel.com" class="btn btn-secondary">Contact Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes -->
+    <section id="popular">
+        <div class="container">
+            <h2 class="section-title">Popular Routes</h2>
+            <p class="section-subtitle">Most booked cross-border transfers — all prices in USD per vehicle</p>
+            
+            <div class="popular-routes">
+                <h3>🔥 Top Routes</h3>
+                <div class="routes-grid">
+                    <div class="route-item">
+                        <span class="route-name">Shenzhen → HK Kowloon</span>
+                        <span class="route-price">$139</span>
+                    </div>
+                    <div class="route-item">
+                        <span class="route-name">Shenzhen → HK Airport</span>
+                        <span class="route-price">$159</span>
+                    </div>
+                    <div class="route-item">
+                        <span class="route-name">Guangzhou → HK Kowloon</span>
+                        <span class="route-price">$349</span>
+                    </div>
+                    <div class="route-item">
+                        <span class="route-name">Guangzhou → HK Airport</span>
+                        <span class="route-price">$389</span>
+                    </div>
+                    <div class="route-item">
+                        <span class="route-name">Zhuhai → HK Kowloon</span>
+                        <span class="route-price">$309</span>
+                    </div>
+                    <div class="route-item">
+                        <span class="route-name">Dongguan → HK Kowloon</span>
+                        <span class="route-price">$219–$289</span>
+                    </div>
+                    <div class="route-item">
+                        <span class="route-name">Zhongshan → HK Kowloon</span>
+                        <span class="route-price">$269–$329</span>
+                    </div>
+                    <div class="route-item">
+                        <span class="route-name">Foshan → HK Kowloon</span>
+                        <span class="route-price">$369</span>
+                    </div>
+                </div>
+
+                <!-- Surcharges -->
+                <div class="surcharges">
+                    <h4>⚠️ Key Additional Charges</h4>
+                    <ul>
+                        <li>Peak hours (20:00–06:00): +$19</li>
+                        <li>Waiting time (after 30 min free): $19 per 30 minutes</li>
+                        <li>Holiday surcharge (CNY, National Day): +$59</li>
+                        <li>Cancellation (within 2hrs): $59 fee</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Why Choose Roami Transfer?</h2>
+            <p class="section-subtitle">Unlike traditional services that require vehicle changes at the border, our HK-licensed MPV takes you directly to your destination</p>
+            
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+                    </div>
+                    <h3>No Car Change</h3>
+                    <p>Stay in the same vehicle from Hong Kong to your Shenzhen destination. No need to get off, change cars, or handle luggage at the border.</p>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <h3>Door-to-Door Service</h3>
+                    <p>We pick you up at your location and drop you off at your exact destination. No intermediate stops, no confusion.</p>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="why-us-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+                    </div>
+                    <h3>Full Assistance</h3>
+                    <p>English-speaking driver helps with immigration forms, visa policies, SIM cards, and payment setup. We handle everything so you don't have to worry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Four simple steps from booking to arrival</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Book Online</h3>
+                    <p>Fill out the booking form with your flight details, destination, and service preference. Instant confirmation.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Meet Your Driver</h3>
+                    <p>Your driver will be waiting at arrivals with a name sign. WhatsApp contact provided in advance.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Cross Border</h3>
+                    <p>Driver assists with immigration forms and guides you through the border. Stay in the same MPV.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Arrive Safely</h3>
+                    <p>Direct to your destination. Driver helps with luggage, provides local tips, and ensures a smooth arrival.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a visa to enter China?</div>
+                    <div class="faq-answer">It depends on your nationality. Many countries are eligible for 144-hour visa-free transit in Shenzhen. Your driver will provide guidance on visa policies and assist with entry forms.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What if my flight is delayed?</div>
+                    <div class="faq-answer">We monitor flight statuses in real-time. If your flight is delayed, we'll adjust the pickup time accordingly. The first 30 minutes of waiting is complimentary.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I pay for the service?</div>
+                    <div class="faq-answer">We accept credit card (via secure online payment), Alipay, WeChat Pay, and cash (HKD/RMB/USD). Payment details will be sent after booking confirmation.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I cancel or modify my booking?</div>
+                    <div class="faq-answer">Yes, you can cancel or modify your booking up to 24 hours before the pickup time for a full refund. Cancellations within 2 hours incur a $59 fee.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is the price per person or per vehicle?</div>
+                    <div class="faq-answer">The price is per vehicle (7-seater Business MPV), not per person. You can book for 1–7 passengers. All passengers in your group travel together in the same vehicle.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What type of vehicle is used?</div>
+                    <div class="faq-answer">We use premium 7-seater Business MPVs — spacious, comfortable, and perfect for families or small groups with luggage. All vehicles are HK-licensed for direct border crossing.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner: Two-way Vehicle Service -->
+    <section style="padding: 60px 20px; background: linear-gradient(135deg, rgba(20, 184, 166, 0.08) 0%, rgba(13, 148, 136, 0.08) 100%); border-top: 2px solid rgba(20, 184, 166, 0.2); border-bottom: 2px solid rgba(20, 184, 166, 0.2);">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <div style="display: inline-block; background: rgba(20, 184, 166, 0.15); color: #0f766e; padding: 6px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 16px;">
+                🚗 Also Available
+            </div>
+            <h3 style="font-size: 2rem; color: #1e293b; margin-bottom: 12px; font-weight: 700;">Two-way Cross-Border Vehicle Service</h3>
+            <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 24px; line-height: 1.6;">Flexible point-to-point transfers between Hong Kong and Shenzhen. Perfect for day trips, business meetings, or multi-city itineraries.</p>
+            <a href="#pricing" style="display: inline-block; background: transparent; color: #0f766e; border: 2px solid #0f766e; padding: 12px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s;">
+                View Two-way Service Details →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Roami Travel</p>
+        <p>Your trusted partner for cross-border transfers</p>
+        <p style="margin-top: 20px; font-size: 0.9rem;">© 2026 Roami Travel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
