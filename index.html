@@ -677,6 +677,94 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .footer-brand { grid-column: span 1; }
   .footer-bottom { flex-direction: column; text-align: center; }
 }
+
+/* ===== Two-way Vehicle Banner ===== */
+.vehicle-banner {
+  padding: 70px 20px;
+  background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 50%, #f0fdfa 100%);
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.vehicle-banner-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vehicle-banner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(13, 148, 136, 0.1);
+  color: #0d9488;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.vehicle-banner-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0d9488;
+  display: inline-block;
+}
+
+.vehicle-banner-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.vehicle-banner-desc {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vehicle-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0d9488;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 1.5px solid #0d9488;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.vehicle-banner-btn:hover {
+  background: #0d9488;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .vehicle-banner {
+    padding: 50px 16px;
+  }
+  .vehicle-banner-title {
+    font-size: 1.4rem;
+  }
+  .vehicle-banner-desc {
+    font-size: 0.95rem;
+  }
+}
+
 </style>
 <script>
 // Centralized CTA links - easy to replace with MoR payment links later
@@ -983,6 +1071,25 @@ window.ROAMI_ORDER_CTAs = {
   </div>
 </section>
 
+<!-- ===== TWO-WAY VEHICLE BANNER ===== -->
+<section class="vehicle-banner">
+  <div class="container">
+    <div class="vehicle-banner-inner">
+      <div class="vehicle-banner-tag">
+        <span class="vehicle-banner-dot"></span>
+        Cross-Border Vehicle Service
+      </div>
+      <h2 class="vehicle-banner-title">Hong Kong ↔ Shenzhen, On Your Terms</h2>
+      <p class="vehicle-banner-desc">
+        Need a private MPV for your cross-border trip? We offer flexible point-to-point vehicle transfers between Hong Kong and mainland China — no fixed schedule, no car change at the border. Ideal for day trips, business meetings, or multi-city itineraries.
+      </p>
+      <a href="/transfer/" class="vehicle-banner-btn">
+        View Vehicle Service
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <!-- ===== FOOTER ===== -->
